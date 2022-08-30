@@ -19,6 +19,7 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
+    "@headlessui/react": "^1.6.6",
     "react-countdown": "^2.3.2",
     "zod": "^3.18.0"
   }

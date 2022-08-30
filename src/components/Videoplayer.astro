@@ -1,0 +1,28 @@
+---
+type Props = {
+  url: string;
+};
+
+const { url } = Astro.props as Props;
+---
+
+<style>
+  .ytplayer {
+    width: 320px;
+    height: 320px;
+  }
+
+  @media screen and (max-width: 840px) {
+    .ytplayer {
+      width: 384px;
+      height: 270px;
+    }
+  }
+</style>
+
+<iframe
+  id="ytplayer"
+  src={`https://www.youtube.com/embed/${url}`}
+  title="video"
+  frameborder="0"
+  class="ytplayer"></iframe>

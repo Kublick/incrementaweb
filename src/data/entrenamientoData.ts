@@ -16,7 +16,7 @@ export const entrenamiento = [
 		img: 'claseRibbon2gray.png',
 		alt: 'Clase 2',
 		activeImg: 'berenice_Ribboncolor2.png',
-		openDate: Number(new Date('30 august 2022 9:57')),
+		openDate: Number(new Date('30 august 2022 11:04')),
 		url: 'plc2',
 	},
 	{
@@ -26,7 +26,7 @@ export const entrenamiento = [
 		img: 'claseRibbon3gray.png',
 		alt: 'Clase 3',
 		activeImg: 'berenice_Ribboncolor3.png',
-		openDate: Number(new Date('30 august 2022 9:58')),
+		openDate: Number(new Date('30 august 2022 11:05')),
 		url: 'plc3',
 	},
 	{

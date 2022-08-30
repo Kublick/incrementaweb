@@ -68,12 +68,6 @@ export default function Formulario() {
 
 	return (
 		<div className="container mx-auto max-w-3xl mt-4 md:mt-0">
-			<div className="p-4 border-4 border-primary items-center md:mx-24 mx-8 rounded-xl text-center">
-				<h1 className="md:text-3xl text-xl">4 clases gratuitas en vivo</h1>
-				<h2 className="md:text-2xl text-xl font-semibold">
-					Del 17 al 20 de octubre
-				</h2>
-			</div>
 			<form
 				onSubmit={handleSubmit}
 				className="mx-4 mt-4 flex flex-col gap-4 md:mx-24 md:mt-12"
@@ -107,18 +101,15 @@ export default function Formulario() {
 				<div className="mt-8 flex items-center flex-col">
 					<div className="relative group ">
 						<div className="animate-pulse absolute  bg-primary rounded-lg blur -inset-0.5 opacity-90 group-hover:opacity-100" />
-						<button className="relative px-7 py-4 rounded-lg leading-none bg-secondary text-white hover:font-semibold">
+						<button
+							className="relative px-7 py-4 rounded-lg leading-none bg-secondary text-white hover:font-semibold"
+							type="submit"
+						>
 							<span className="text-xl lg:text-2xl">
 								Quiero tener más pacientes
 							</span>
 						</button>
 					</div>
-				</div>
-				<div className="flex flex-col md:gap-4 items-center py-8 mx-4">
-					<p className="text-2xl text-center">
-						La oportunidad de registro expira en:
-					</p>
-					<CountdownTimer targetDate={dateTimeAfterThreeDays} />
 				</div>
 			</form>
 		</div>
