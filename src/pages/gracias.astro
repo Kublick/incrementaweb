@@ -1,1 +1,57 @@
-<h1>Gracias</h1>
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<script>
+  const whatsappUrl = "https://chat.whatsapp.com/JxLB1prRvVBEv6K4Ha5wUV";
+  document.getElementById("groupbutton").addEventListener("click", () => {
+    window.open(whatsappUrl, "_blank");
+  });
+</script>
+
+<Layout title="Gracias por registrarte">
+  <div class="flex scale-75 transform justify-center">
+    <img src="mainLogo.svg" alt="logo" />
+  </div>
+  <div class="bg-primary-light p-8 lg:px-20">
+    <h1 class="text-center text-2xl lg:text-4xl">
+      ¡ESPERA! Tu registro no ha sido completado
+    </h1>
+    <div class="my-6 grid md:grid-cols-2 place-content-center">
+      <div>
+        <img
+          src="webinarbere.webp"
+          alt="Berenice Bastidas"
+          width="423"
+          loading="lazy"
+          class="rounded-lg"
+        />
+      </div>
+      <div class="flex flex-col gap-6 justify-center">
+        <p class="text-center text-lg font-bold md:text-3xl mb-4">
+          Te falta dar un último paso.
+        </p>
+        <p class="text-center text-lg md:text-xl">
+          Ingresa al grupo exclusivo de WhatsApp donde recibirás información
+          previa y durante el entrenamiento.
+        </p>
+        <p class="text-center text-lg md:text-xl">
+          Asegúrate de ingresar para apartar tu lugar.
+        </p>
+        <p class="text-center text-lg md:text-xl">
+          Por cierto, en tu correo también te dejé un regalo especial.
+        </p>
+      </div>
+    </div>
+
+    <div class="flex justify-center">
+      <button
+        id="groupbutton"
+        class="font-bold text-sm lg:text-2xl disabled:cursor-not-allowed flex gap-4 bg-whats items-center px-6 py-2 rounded-full text-white animate-bounce hover:animate-none"
+      >
+        <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
+        <span>Quiero ingresa ya al grupo de WhatsApp</span>
+      </button>
+    </div>
+  </div>
+</Layout>
