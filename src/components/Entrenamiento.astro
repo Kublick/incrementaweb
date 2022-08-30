@@ -1,5 +1,6 @@
 ---
 import { entrenamiento } from "../data/entrenamientoData";
+const date = Date.now();
 ---
 
 <section class="bg-white">
@@ -11,13 +12,26 @@ import { entrenamiento } from "../data/entrenamientoData";
     <ul class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 py-8">
         {
             entrenamiento.map((e) => (
-                <div class="">
-                    <img
-                        src={e.img}
-                        alt={e.alt}
-                        class="mx-auto mb-8 w-[300px]"
-                    />
-                    <p class="px-4 lg:px-12 text-lg lg:text-3xl text-center">
+                <div>
+                    {date <= e.openDate ? (
+                        <img
+                            src={e.img}
+                            alt={e.alt}
+                            class="mx-auto mb-8 w-[300px] cursor-not-allowed"
+                            loading="lazy"
+                        />
+                    ) : (
+                        <a href={e.url}>
+                            <img
+                                src={e.activeImg}
+                                alt={e.alt}
+                                class="mx-auto mb-8 w-[300px] cursor-pointer "
+                                loading="lazy"
+                            />
+                        </a>
+                    )}
+
+                    <p class="px-4 lg:px-12 text-lg lg:text-2xl text-center leading-tight">
                         {e.contents}
                     </p>
                 </div>
