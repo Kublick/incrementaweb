@@ -8,16 +8,16 @@ import { entrenamiento } from "../data/entrenamientoData";
             ¿Qué aprenderás en este entrenamiento?
         </h1>
     </div>
-    <ul class="grid md:grid-cols-4 gap-4 py-8">
+    <ul class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 py-8">
         {
             entrenamiento.map((e) => (
                 <div class="">
                     <img
-                        src="./anfritrion_small.webp"
-                        alt="anfritrion"
-                        class="rounded-full mx-auto mb-8"
+                        src={e.img}
+                        alt={e.alt}
+                        class="mx-auto mb-8 w-[300px]"
                     />
-                    <p class="px-4 md:px-12 text-lg md:text-2xl text-center">
+                    <p class="px-4 lg:px-12 text-lg lg:text-3xl text-center">
                         {e.contents}
                     </p>
                 </div>
