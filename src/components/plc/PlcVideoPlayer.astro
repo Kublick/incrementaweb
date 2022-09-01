@@ -1,0 +1,22 @@
+---
+const { titulo, videoId, clase } = Astro.props;
+
+import Videoplayer from "../Videoplayer.astro";
+---
+
+<div class="order-first py-8 bg-gray-100 shadow-lg lg:order-none lg:col-span-2">
+  <div class="flex flex-col gap-2 md:gap-6">
+    <h1
+      class="self-center text-2xl font-semibold text-center text-secondary md:w-3/4"
+    >
+      Tu oportunidad de tener pacientes desde las redes sociales
+    </h1>
+    <div>
+      <Videoplayer />
+    </div>
+
+    <p class="self-center font-semibold">
+      <span class="font-bold text-secondary">CLASE:</span> 1 DE 4
+    </p>
+  </div>
+</div>

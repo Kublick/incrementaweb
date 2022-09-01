@@ -1,9 +1,27 @@
 ---
+import PlcHeader from "../components/PlcHeader.astro";
 import Layout from "../layouts/Layout.astro";
+import Fbwhite from "../components/icons/Fbwhite.astro";
+import Wswhite from "../components/icons/Wswhite.astro";
+import Notebookwhite from "../components/icons/Notebookwhite.astro";
+import Plc1Sidebar from "../components/plc/Plc1Sidebar.astro";
+import PlcVideoPlayer from "../components/plc/PlcVideoPlayer.astro";
 ---
 
-<Layout title="Tu PLC1">
-    <section>
-        <h1>Welcome to PLC1</h1>
-    </section>
+<Layout title="Clase 1 | Incrementa tu Consulta">
+  <PlcHeader bgcolor="bg-mango" />
+  <main>
+    <div class="grid lg:grid-cols-4">
+      <Plc1Sidebar />
+      <div>
+        <PlcVideoPlayer
+          titulo="Como ofrecer o vender tu consulta online"
+          videoId="https://youtu.be/QtKCnfgs48k"
+          clase="1"
+        />
+      </div>
+      <div>3</div>
+      <div>4</div>
+    </div>
+  </main>
 </Layout>
