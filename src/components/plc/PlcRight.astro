@@ -1,0 +1,51 @@
+---
+const { sesiones } = Astro.props;
+
+type Items = {
+  id: number;
+  img: string;
+  alt: string;
+  href: string;
+};
+
+const items = [
+  {
+    id: 1,
+    img: "Miniaturas-640px-01.webp",
+    alt: "foto sesion 1",
+    href: "/plc1",
+  },
+  {
+    id: 2,
+    img: "Miniaturas-640px-02.webp",
+    alt: "foto sesion 2",
+    href: "/plc2",
+  },
+  {
+    id: 3,
+    img: "Miniaturas-640px-03.webp",
+    alt: "foto sesion 3",
+    href: "/plc3",
+  },
+  {
+    id: 4,
+    img: "Miniaturas-640px-04.webp",
+    alt: "foto sesion 4",
+    href: "/plc4",
+  },
+];
+
+const clases = sesiones.map((s: number) =>
+  items.find((i: Items) => i.id === s)
+);
+---
+
+<div>
+  {
+    clases.map((clase: Items) => (
+      <a href={clase.href}>
+        <img src={clase.img} alt={clase.alt} />
+      </a>
+    ))
+  }
+</div>

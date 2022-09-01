@@ -3,9 +3,9 @@ import PlcHeader from "../components/PlcHeader.astro";
 import Layout from "../layouts/Layout.astro";
 import Plc1Sidebar from "../components/plc/Plc1Sidebar.astro";
 import PlcVideoPlayer from "../components/plc/PlcVideoPlayer.astro";
-import Plc1Right from "../components/plc/Plc1Right.astro";
 import CommentsFacebook from "../components/CommentsFacebook.astro";
 import PlcTestimonios from "../components/plc/PlcTestimonios.astro";
+import PlcRight from "../components/plc/PlcRight.astro";
 ---
 
 <Layout title="Clase 1 | Incrementa tu Consulta">
@@ -23,7 +23,7 @@ import PlcTestimonios from "../components/plc/PlcTestimonios.astro";
         />
       </div>
       <div>
-        <Plc1Right />
+        <PlcRight sesiones={[2, 3, 4]} />
       </div>
     </div>
     <div class="grid gap-6 pt-8 mx-2 bg-gray-50 md:grid-cols-2">

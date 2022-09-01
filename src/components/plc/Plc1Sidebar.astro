@@ -2,6 +2,12 @@
 import Fbwhite from "../icons/Fbwhite.astro";
 import Notebookwhite from "../icons/Notebookwhite.astro";
 import Wswhite from "../icons/Wswhite.astro";
+
+type Props = {
+  bgcolor?: string;
+};
+
+const { bgcolor = "bg-secondary" } = Astro.props as Props;
 ---
 
 <script>
@@ -25,7 +31,7 @@ import Wswhite from "../icons/Wswhite.astro";
 </script>
 
 <div class="flex flex-col order-last gap-2 p-2 md:order-none lg:gap-6 lg:p-10">
-  <div class="p-8 rounded-lg shadow-lg bg-secondary">
+  <div class={`p-8 rounded-lg shadow-lg ${bgcolor} `}>
     <div class="flex items-center">
       <h2 class="text-3xl font-bold text-white">TIP</h2>
       <svg

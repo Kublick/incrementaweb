@@ -1,7 +1,7 @@
 ---
 import CommentsFacebook from "../components/CommentsFacebook.astro";
-import Plc2Right from "../components/plc/Plc2Right.astro";
 import Plc2Sidebar from "../components/plc/Plc2Sidebar.astro";
+import PlcRight from "../components/plc/PlcRight.astro";
 import PlcTestimonios from "../components/plc/PlcTestimonios.astro";
 import PlcVideoPlayer from "../components/plc/PlcVideoPlayer.astro";
 import PlcHeader from "../components/PlcHeader.astro";
@@ -23,7 +23,7 @@ import Layout from "../layouts/Layout.astro";
         />
       </div>
       <div>
-        <Plc2Right />
+        <PlcRight sesiones={[3, 4, 1]} />
       </div>
     </div>
     <div class="grid gap-6 pt-8 mx-2 bg-gray-50 md:grid-cols-2">
