@@ -1,0 +1,60 @@
+---
+import Fbwhite from "../icons/Fbwhite.astro";
+import Notebookwhite from "../icons/Notebookwhite.astro";
+import Wswhite from "../icons/Wswhite.astro";
+---
+
+<script>
+  const whatsappUrl = "https://chat.whatsapp.com/HPGVBPMRGMg43Q2UiiRii";
+  const facebookButton = document.getElementById("fbButton");
+  facebookButton?.addEventListener("click", () => {
+    window.open("http://www.facebook.com/groups/561601284963553/");
+  });
+  const whatsAppButton = document.getElementById("wsButton");
+  whatsAppButton?.addEventListener("click", () => {
+    window.open(whatsappUrl);
+  });
+
+  const ebookButton = document.getElementById("ebook");
+
+  ebookButton?.addEventListener("click", () => {
+    window.open(
+      "https://incrementafiles.s3.us-west-1.amazonaws.com/Manual+del+Taller+Internacional.pdf"
+    );
+  });
+</script>
+
+<div class="flex flex-col order-last gap-2 p-2 md:order-none lg:gap-6 lg:p-10">
+  <h1 class="text-lg font-semibold text-primary">
+    Cuéntanos en que podamos ayudarte:
+  </h1>
+  <p>
+    ¿Cual es el mayor desafío que tuviste al querer ofrecer o vender tus
+    servicios profesionales en redes sociales?
+  </p>
+  <p class="font-semibold">!Nos vemos en los comentarios!</p>
+
+  <div class="flex flex-col items-center gap-4 mx-2">
+    <button
+      class="mx-2 flex w-full items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white lg:w-64 lg:py-4 bg-secondary"
+      id="ebook"
+    >
+      <Notebookwhite /> Cuaderno de Trabajo
+    </button>
+
+    <button
+      class="bg-green-600 mx-2 flex w-full items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white lg:w-64 lg:py-4"
+      id="wsButton"
+    >
+      <Wswhite />
+      Grupo en Whatsapp
+    </button>
+    <button
+      class="mx-2 flex w-full items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white lg:w-64 lg:py-4 bg-primary"
+      id="fbButton"
+    >
+      <Fbwhite />
+      No te lo pierdas
+    </button>
+  </div>
+</div>

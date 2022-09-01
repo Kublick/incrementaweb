@@ -1,9 +1,14 @@
 ---
 import CountdownTimer from "./CountdownTimer";
 
-const { bgcolor, date } = Astro.props;
+type Props = {
+  bgcolor: string;
+  date: string;
+};
 
-const eventdate = new Date("October 17 2022 16:30");
+const { bgcolor, date } = Astro.props as Props;
+
+const eventdate = new Date(date);
 ---
 
 <header>
