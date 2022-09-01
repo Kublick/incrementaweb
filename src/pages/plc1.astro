@@ -1,11 +1,11 @@
 ---
 import PlcHeader from "../components/PlcHeader.astro";
 import Layout from "../layouts/Layout.astro";
-import Fbwhite from "../components/icons/Fbwhite.astro";
-import Wswhite from "../components/icons/Wswhite.astro";
-import Notebookwhite from "../components/icons/Notebookwhite.astro";
 import Plc1Sidebar from "../components/plc/Plc1Sidebar.astro";
 import PlcVideoPlayer from "../components/plc/PlcVideoPlayer.astro";
+import Plc1Right from "../components/plc/Plc1Right.astro";
+import CommentsFacebook from "../components/CommentsFacebook.astro";
+import PlcTestimonios from "../components/plc/PlcTestimonios.astro";
 ---
 
 <Layout title="Clase 1 | Incrementa tu Consulta">
@@ -13,15 +13,22 @@ import PlcVideoPlayer from "../components/plc/PlcVideoPlayer.astro";
   <main>
     <div class="grid lg:grid-cols-4">
       <Plc1Sidebar />
-      <div>
+      <div
+        class="order-first py-8 bg-gray-100 shadow-lg lg:order-none lg:col-span-2"
+      >
         <PlcVideoPlayer
           titulo="Como ofrecer o vender tu consulta online"
           videoId="https://youtu.be/QtKCnfgs48k"
           clase="1"
         />
       </div>
-      <div>3</div>
-      <div>4</div>
+      <div>
+        <Plc1Right />
+      </div>
+    </div>
+    <div class="grid gap-6 pt-8 mx-2 bg-gray-50 md:grid-cols-2">
+      <CommentsFacebook />
+      <PlcTestimonios />
     </div>
   </main>
 </Layout>
