@@ -11,7 +11,7 @@ import PlcRight from "../components/plc/PlcRight.astro";
 <Layout title="Clase 1 | Incrementa tu Consulta">
   <PlcHeader bgcolor="bg-mango" date="October 17 2022 16:30" />
   <main>
-    <div class="grid lg:grid-cols-4">
+    <div class="grid lg:grid-cols-4 order-4">
       <Plc1Sidebar />
       <div
         class="order-first py-8 bg-gray-100 shadow-lg lg:order-none lg:col-span-3"
@@ -21,14 +21,14 @@ import PlcRight from "../components/plc/PlcRight.astro";
           videoId="QtKCnfgs48k"
           clase="1"
         />
-
         <PlcRight sesiones={[2, 3, 4]} />
       </div>
-      <div></div>
-    </div>
-    <div class="grid gap-6 pt-8 mx-2 bg-gray-50 md:grid-cols-2">
-      <CommentsFacebook />
-      <PlcTestimonios />
+      <div class="md:col-span-3">
+        <CommentsFacebook />
+      </div>
+      <div class="">
+        <PlcTestimonios />
+      </div>
     </div>
   </main>
 </Layout>
