@@ -40,11 +40,11 @@ const clases = sesiones.map((s: number) =>
 );
 ---
 
-<div>
+<div class="flex gap-4 justify-center">
   {
     clases.map((clase: Items) => (
       <a href={clase.href}>
-        <img src={clase.img} alt={clase.alt} />
+        <img src={clase.img} alt={clase.alt} height="201" width="320" />
       </a>
     ))
   }

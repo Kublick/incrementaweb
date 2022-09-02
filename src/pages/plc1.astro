@@ -6,13 +6,12 @@ import PlcVideoPlayer from "../components/plc/PlcVideoPlayer.astro";
 import CommentsFacebook from "../components/CommentsFacebook.astro";
 import PlcTestimonios from "../components/plc/PlcTestimonios.astro";
 import PlcRight from "../components/plc/PlcRight.astro";
-import VP from "../components/vp";
 ---
 
 <Layout title="Clase 1 | Incrementa tu Consulta">
   <PlcHeader bgcolor="bg-mango" date="October 17 2022 16:30" />
   <main>
-    <div class="grid lg:grid-cols-4">
+    <div class="grid lg:grid-cols-3">
       <Plc1Sidebar />
       <div
         class="order-first py-8 bg-gray-100 shadow-lg lg:order-none lg:col-span-2"
@@ -22,10 +21,10 @@ import VP from "../components/vp";
           videoId="QtKCnfgs48k"
           clase="1"
         />
-      </div>
-      <div>
+
         <PlcRight sesiones={[2, 3, 4]} />
       </div>
+      <div></div>
     </div>
     <div class="grid gap-6 pt-8 mx-2 bg-gray-50 md:grid-cols-2">
       <CommentsFacebook />

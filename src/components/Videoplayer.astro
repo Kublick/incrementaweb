@@ -5,14 +5,36 @@ type Props = {
   height?: number;
 };
 
-import VP from "./vp";
-
-const { width = 640, height = 360, source } = Astro.props as Props;
+const { width = 560, height = 315, source } = Astro.props as Props;
 ---
 
-<VP
-  width={width}
-  height={height}
-  url={`https://www.youtube.com/watch?v=${source}`}
-  client:load
-/>
+<style>
+  .ytplayer {
+    width: 560px;
+    height: 315px;
+  }
+  .video-responsive {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    position: relative;
+  }
+  .video-responsive iframe,
+  .video-responsive object,
+  .video-responsive embed {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+</style>
+
+<div class="video-responsive">
+  <iframe
+    src={`http://www.youtube.com/embed/${source}`}
+    title="video"
+    frameborder="0"
+    class="ytplayer"></iframe>
+</div>
