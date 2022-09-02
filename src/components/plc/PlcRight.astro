@@ -3,11 +3,14 @@ const { sesiones } = Astro.props;
 
 import { Image, Picture } from "@astrojs/image/components";
 
-import anImg from "../../images/Miniaturas 640px-01.png";
+import Miniatura1 from "../../assets/Miniaturas 640px-01.png";
+import Miniatura2 from "../../assets/Miniaturas 640px-02.png";
+import Miniatura3 from "../../assets/Miniaturas 640px-03.png";
+import Miniatura4 from "../../assets/Miniaturas 640px-04.png";
 
 type Items = {
   id: number;
-  img: string;
+  img: any | string;
   alt: string;
   href: string;
 };
@@ -15,25 +18,25 @@ type Items = {
 const items = [
   {
     id: 1,
-    img: "../../images/Miniaturas 640px-01.png",
+    img: Miniatura1,
     alt: "foto sesion 1",
     href: "/plc1",
   },
   {
     id: 2,
-    img: "../../images/Miniaturas 640px-02.png",
+    img: Miniatura2,
     alt: "foto sesion 2",
     href: "/plc2",
   },
   {
     id: 3,
-    img: "../../images/Miniaturas 640px-03.png",
+    img: Miniatura3,
     alt: "foto sesion 3",
     href: "/plc3",
   },
   {
     id: 4,
-    img: "../..//images/Miniaturas 640px-04.png",
+    img: Miniatura4,
     alt: "foto sesion 4",
     href: "/plc4",
   },

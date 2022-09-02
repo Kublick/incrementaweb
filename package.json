@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.6.6",
+    "astro-imagetools": "^0.6.10",
     "zod": "^3.18.0"
   }
 }
