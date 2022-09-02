@@ -5,10 +5,14 @@ type Props = {
   height?: number;
 };
 
+import VP from "./vp";
+
 const { width = 640, height = 360, source } = Astro.props as Props;
 ---
 
-<script type="module" src="/node_modules/youtube-video-js/dist/youtube-video.js"
-></script>
-
-<youtube-video width={width} height={height} src={source} />
+<VP
+  width={width}
+  height={height}
+  url={`https://www.youtube.com/watch?v=${source}`}
+  client:load
+/>
