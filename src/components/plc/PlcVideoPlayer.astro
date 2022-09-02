@@ -1,6 +1,5 @@
 ---
-import VideoPlayer from "../VideoPlayer.astro";
-
+import Videoplayer from "../Videoplayer.astro";
 const { titulo, videoId, clase } = Astro.props;
 ---
 
@@ -9,10 +8,10 @@ const { titulo, videoId, clase } = Astro.props;
     {titulo}
   </h1>
   <div>
-    <VideoPlayer height={320} width={320} source={videoId} />
+    <Videoplayer height={320} width={320} source={videoId} />
   </div>
 
-  <p class="text-center font-semibold">
+  <p class="text-center font-semibold my-10">
     <span class="font-bold text-secondary">CLASE:</span>
     {clase} DE 4
   </p>

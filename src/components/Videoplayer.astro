@@ -9,10 +9,6 @@ const { width = 560, height = 315, source } = Astro.props as Props;
 ---
 
 <style>
-  .ytplayer {
-    width: 560px;
-    height: 315px;
-  }
   .video-responsive {
     height: 0;
     overflow: hidden;
@@ -35,6 +31,5 @@ const { width = 560, height = 315, source } = Astro.props as Props;
   <iframe
     src={`http://www.youtube.com/embed/${source}`}
     title="video"
-    frameborder="0"
-    class="ytplayer"></iframe>
+    frameborder="0"></iframe>
 </div>
