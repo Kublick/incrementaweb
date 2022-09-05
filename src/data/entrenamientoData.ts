@@ -22,7 +22,7 @@ export const entrenamiento = [
   {
     id: 3,
     contents:
-      "Te revelaré la fórmula que yo usé profesionalizar mi negocio, de esta forma podrás establecer tu marca de una manera sencilla y segura. Generarás autoridad en el mercado.",
+      "Te revelaré la fórmula que yo usé para profesionalizar mi negocio, de esta forma podrás establecer tu marca de una manera sencilla y segura. Generarás autoridad en el mercado.",
     img: "claseRibbon3gray.png",
     alt: "Clase 3",
     activeImg: "berenice_Ribboncolor3.png",
