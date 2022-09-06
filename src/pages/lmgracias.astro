@@ -4,18 +4,22 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <script>
+  import JSConfetti from "js-confetti";
+  const jsConfetti = new JSConfetti();
   const whatsappUrl = "https://chat.whatsapp.com/HPGVBPMRGMg43Q2UiiRiiy";
 
   const button = document.getElementById("groupbutton");
 
-  if (button)
-    button.addEventListener("click", () => {
+  button?.addEventListener("click", () => {
+    jsConfetti.addConfetti();
+    setTimeout(() => {
       window.open(whatsappUrl, "_blank");
-    });
+    }, 1200);
+  });
 </script>
 
 <Layout title="Gracias Ebook">
-  <section>
+  <section id="mycanvas">
     <h1
       class="text-3xl md:text-5xl text-primary text-center px-20 mt-4 md:mt-10 font-semibold"
     >
