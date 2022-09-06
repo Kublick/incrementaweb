@@ -1,5 +1,4 @@
 export const countries = [
-  { value: "MX", name: "México" },
   { value: "AF", name: "Afganistán" },
   { value: "AX", name: "Islas Aland" },
   { value: "AL", name: "Albania" },
@@ -143,7 +142,7 @@ export const countries = [
   { value: "MR", name: "Mauritania" },
   { value: "MU", name: "Mauricio" },
   { value: "YT", name: "Mayotte" },
-
+  { value: "MX", name: "México" },
   { value: "FM", name: "Micronesia (Estados Federados de)" },
   { value: "MD", name: "Moldavia (República de)" },
   { value: "MC", name: "Mónaco" },

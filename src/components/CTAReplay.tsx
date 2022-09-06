@@ -17,19 +17,15 @@ const CTAReplay = () => {
   return (
     <>
       <div className="mt-8 flex items-center flex-col">
-        <div className="relative group ">
-          <div className="animate-pulse absolute  bg-primary rounded-lg blur -inset-0.5 opacity-90 group-hover:opacity-100" />
-
-          <button
-            className="px-5 py-2.5 relative rounded group overflow-hidden bg-pink-50 text-secondary inline-block text-xl md:text-2xl font-semibold border-secondary border-2"
-            onClick={openModal}
-          >
-            <span className="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 bg-secondary group-hover:h-full opacity-90"></span>
-            <span className="relative group-hover:text-white">
-              Confirma tu asistencia aquí
-            </span>
-          </button>
-        </div>
+        <button
+          className="px-5 py-2.5 relative rounded group overflow-hidden bg-pink-50 text-secondary inline-block text-xl md:text-2xl font-semibold border-secondary border-2"
+          onClick={openModal}
+        >
+          <span className="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 bg-secondary group-hover:h-full opacity-90"></span>
+          <span className="relative group-hover:text-white">
+            Confirma tu asistencia aquí
+          </span>
+        </button>
       </div>
 
       <Transition appear show={isOpen} as={Fragment}>

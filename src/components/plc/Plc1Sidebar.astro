@@ -9,11 +9,11 @@ const { bgcolor = "bg-secondary" } = Astro.props as Props;
 ---
 
 <script>
+  import { ebook } from "../../data/downloads";
+
   const ebookButton = document.getElementById("ebook");
   ebookButton?.addEventListener("click", () => {
-    window.open(
-      "https://incrementafiles.s3.us-west-1.amazonaws.com/Manual+del+Taller+Internacional.pdf"
-    );
+    window.open(ebook);
   });
 </script>
 
