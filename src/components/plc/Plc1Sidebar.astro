@@ -1,7 +1,5 @@
 ---
-import Fbwhite from "../icons/Fbwhite.astro";
 import Notebookwhite from "../icons/Notebookwhite.astro";
-import Wswhite from "../icons/Wswhite.astro";
 
 type Props = {
   bgcolor?: string;
@@ -11,18 +9,7 @@ const { bgcolor = "bg-secondary" } = Astro.props as Props;
 ---
 
 <script>
-  const whatsappUrl = "https://chat.whatsapp.com/HPGVBPMRGMg43Q2UiiRii";
-  const facebookButton = document.getElementById("fbButton");
-  facebookButton?.addEventListener("click", () => {
-    window.open("http://www.facebook.com/groups/561601284963553/");
-  });
-  const whatsAppButton = document.getElementById("wsButton");
-  whatsAppButton?.addEventListener("click", () => {
-    window.open(whatsappUrl);
-  });
-
   const ebookButton = document.getElementById("ebook");
-
   ebookButton?.addEventListener("click", () => {
     window.open(
       "https://incrementafiles.s3.us-west-1.amazonaws.com/Manual+del+Taller+Internacional.pdf"
@@ -30,7 +17,7 @@ const { bgcolor = "bg-secondary" } = Astro.props as Props;
   });
 </script>
 
-<div class="flex flex-col order-last gap-2 p-2 md:order-none lg:gap-6 lg:p-10">
+<div class="flex flex-col order-last gap-2 p-2 lg:order-none lg:gap-6 lg:p-10">
   <div class={`p-8 rounded-lg shadow-lg ${bgcolor} `}>
     <div class="flex items-center">
       <h2 class="text-3xl font-bold text-white">TIP</h2>

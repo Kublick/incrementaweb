@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { z } from "zod";
-import CountdownTimer from "./CountdownTimer";
 
 const User = z.object({
   fullname: z
@@ -41,7 +40,6 @@ export default function Formulario() {
     if (!check.success) {
       setErrorMessage(check.error.issues[0].message);
       setHasError(true);
-
       setTimeout(() => {
         setHasError(false);
         setIsSending(false);

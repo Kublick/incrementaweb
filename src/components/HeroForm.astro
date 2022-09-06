@@ -2,8 +2,8 @@
 import CountdownTimer from "./CountdownTimer";
 import Formulario from "./Formulario";
 const fifteen = 15 * 60 * 1000;
-const NOW_IN_MS = new Date().getTime();
-const dateTimeAfterThreeDays = NOW_IN_MS + fifteen;
+const timenow = new Date().getTime();
+const targetDate = timenow + fifteen;
 ---
 
 <section>
@@ -17,11 +17,7 @@ const dateTimeAfterThreeDays = NOW_IN_MS + fifteen;
     <Formulario client:load />
     <div class="flex flex-col md:gap-4 items-center py-8 mx-4">
       <p class="text-2xl text-center">La oportunidad de registro expira en:</p>
-      <CountdownTimer
-        targetDate={dateTimeAfterThreeDays}
-        client:load
-        color="black"
-      />
+      <CountdownTimer targetDate={targetDate} client:load color="black" />
     </div>
   </div>
 </section>
