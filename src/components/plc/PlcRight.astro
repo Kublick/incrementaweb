@@ -48,25 +48,23 @@ const clases = sesiones.map((s: number) =>
 );
 ---
 
-<script>
+<!-- <script>
   import Splide from "@splidejs/splide";
 
   new Splide(".splide", {
     type: "loop",
     perPage: 2,
-    autoScroll: {
-      speed: 0.4,
-    },
     pauseOnHover: true,
     breakpoints: {
-      821: {
-        perPage: 1,
+      820: {
+        perPage: 2,
       },
     },
   }).mount();
-</script>
-
-<!-- <div class="flex gap-4 justify-center">
+</script> -->
+<div
+  class="flex flex-col sm:flex-row gap-4 md:justify-center items-center mx-4"
+>
   {
     clases.map((clase: Items) => (
       <a href={clase.href}>
@@ -80,14 +78,14 @@ const clases = sesiones.map((s: number) =>
       </a>
     ))
   }
-</div> -->
-
+</div>
+<!-- 
 <div class="splide" role="group" aria-label="carousel">
   <div class="splide__track">
     <ul class="splide__list">
       {
         clases.map((clase: Items) => (
-          <li class="splide__slide px-12  ">
+          <li class="splide__slide px-12   ">
             <a href={clase.href}>
               <Image
                 src={clase.img}
@@ -102,4 +100,4 @@ const clases = sesiones.map((s: number) =>
       }
     </ul>
   </div>
-</div>
+</div> -->
