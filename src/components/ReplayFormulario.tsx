@@ -19,7 +19,7 @@ const User = z.object({
 
 type IUser = z.infer<typeof User>;
 
-const ReplayFormulario = () => {
+function ReplayFormulario() {
   const {
     register,
     handleSubmit,
@@ -244,6 +244,6 @@ const ReplayFormulario = () => {
       </form>
     </div>
   );
-};
+}
 
 export default ReplayFormulario;

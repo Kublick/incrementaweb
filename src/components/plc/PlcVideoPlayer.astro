@@ -3,13 +3,13 @@ import Videoplayer from "../Videoplayer.astro";
 const { titulo, videoId, clase } = Astro.props;
 ---
 
-<body>
+<div>
   <h1
     class="text-2xl md:text-4xl font-semibold text-center text-secondary md:my-8 my:4"
   >
     {titulo}
   </h1>
-  <div>
+  <div class="mx-24">
     <Videoplayer height={320} width={320} source={videoId} />
   </div>
 
@@ -17,22 +17,4 @@ const { titulo, videoId, clase } = Astro.props;
     <span class="font-bold text-secondary">CLASE:</span>
     {clase} DE 4
   </p>
-</body>
-
-<!-- <div>
-  <div class="flex flex-col gap-2 md:gap-6">
-    <h1
-      class="self-center text-2xl font-semibold text-center text-secondary md:w-3/4"
-    >
-      {titulo}
-    </h1>
-    <div class="flex justify-center">
-      <Videoplayer source={videoId} />
-    </div>
-
-    <p class="self-center font-semibold">
-      <span class="font-bold text-secondary">CLASE:</span>
-      {clase} DE 4
-    </p>
-  </div>
-</div> -->
+</div>

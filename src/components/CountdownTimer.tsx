@@ -20,7 +20,7 @@ const ShowCounter = ({ days, hours, minutes, seconds, textColor }: any) => {
   );
 };
 
-const CountdownTimer = ({ targetDate, textColor }: any) => {
+export function CountdownTimer({ targetDate, textColor }: any) {
   const [days, hours, minutes, seconds] = useCountdown(targetDate);
 
   if (days + hours + minutes + seconds <= 0) {
@@ -36,6 +36,6 @@ const CountdownTimer = ({ targetDate, textColor }: any) => {
       />
     );
   }
-};
+}
 
 export default CountdownTimer;

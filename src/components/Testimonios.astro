@@ -8,14 +8,14 @@ import "@splidejs/splide/css";
 <script>
   import Splide from "@splidejs/splide";
   new Splide(".splide", {
-    type: "loop",
+    type: "slide",
     perPage: 2,
     autoScroll: {
       speed: 0.4,
     },
     pauseOnHover: true,
     breakpoints: {
-      820: {
+      420: {
         perPage: 1,
       },
     },
@@ -33,7 +33,7 @@ import "@splidejs/splide/css";
       <ul class="splide__list">
         {
           testimoniosData.map((testimonio) => (
-            <li class="splide__slide px-4">
+            <li class="splide__slide px-4 ">
               <Card
                 nombre={testimonio.nombre}
                 contenido={testimonio.contenido}

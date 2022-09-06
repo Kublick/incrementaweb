@@ -1,7 +1,8 @@
 ---
 const { sesiones } = Astro.props;
 
-import { Image, Picture } from "@astrojs/image/components";
+import { Image } from "@astrojs/image/components";
+import "@splidejs/splide/css";
 
 import Miniatura1 from "../../assets/Miniaturas 640px-01.png";
 import Miniatura2 from "../../assets/Miniaturas 640px-02.png";
@@ -47,7 +48,25 @@ const clases = sesiones.map((s: number) =>
 );
 ---
 
-<div class="flex gap-4 justify-center">
+<script>
+  import Splide from "@splidejs/splide";
+
+  new Splide(".splide", {
+    type: "loop",
+    perPage: 2,
+    autoScroll: {
+      speed: 0.4,
+    },
+    pauseOnHover: true,
+    breakpoints: {
+      821: {
+        perPage: 1,
+      },
+    },
+  }).mount();
+</script>
+
+<!-- <div class="flex gap-4 justify-center">
   {
     clases.map((clase: Items) => (
       <a href={clase.href}>
@@ -61,4 +80,26 @@ const clases = sesiones.map((s: number) =>
       </a>
     ))
   }
+</div> -->
+
+<div class="splide" role="group" aria-label="carousel">
+  <div class="splide__track">
+    <ul class="splide__list">
+      {
+        clases.map((clase: Items) => (
+          <li class="splide__slide px-12  ">
+            <a href={clase.href}>
+              <Image
+                src={clase.img}
+                alt={clase.alt}
+                width={320}
+                height={201}
+                format={"webp"}
+              />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </div>
