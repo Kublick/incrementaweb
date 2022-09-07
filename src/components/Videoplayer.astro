@@ -1,35 +1,42 @@
 ---
 type Props = {
-  source: string;
-  width?: number;
-  height?: number;
+	source: string;
+	width?: number;
+	height?: number;
 };
 
 const { width = 560, height = 315, source } = Astro.props as Props;
 ---
 
 <style>
-  .video-responsive {
-    height: 0;
-    overflow: hidden;
-    padding-bottom: 56.25%;
-    padding-top: 30px;
-    position: relative;
-  }
-  .video-responsive iframe,
-  .video-responsive object,
-  .video-responsive embed {
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
+	.video-responsive {
+		height: 0;
+		overflow: hidden;
+		padding-bottom: 56.25%;
+		padding-top: 30px;
+		position: relative;
+	}
+	.video-responsive iframe,
+	.video-responsive object,
+	.video-responsive embed {
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
 </style>
 
+<script
+	type="module"
+	async
+	src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.4.0/lite-youtube.js"
+></script>
+
 <div class="video-responsive">
-  <iframe
-    src={`https://www.youtube.com/embed/${source}`}
-    title="video"
-    frameborder="0"></iframe>
+	<lite-youtube videoid={source} />
+	<!-- <iframe
+		src={`https://www.youtube.com/embed/${source}`}
+		title="video"
+		frameborder="0"></iframe> -->
 </div>

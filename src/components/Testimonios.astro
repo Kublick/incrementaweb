@@ -1,53 +1,53 @@
 ---
-import { testimoniosData } from "../data/testimoniosData";
-import Card from "./Card.astro";
-import CTABoton from "./CTABoton";
-import "@splidejs/splide/css";
+import { testimoniosData } from '../data/testimoniosData';
+import Card from './Card.astro';
+import CTABoton from './CTABoton';
+import '@splidejs/splide/css';
 ---
 
 <script>
-  import Splide from "@splidejs/splide";
-  new Splide(".splide", {
-    type: "slide",
-    perPage: 2,
-    autoScroll: {
-      speed: 0.4,
-    },
-    pauseOnHover: true,
-    breakpoints: {
-      420: {
-        perPage: 1,
-      },
-    },
-  }).mount();
+	import Splide from '@splidejs/splide';
+	new Splide('.splide', {
+		type: 'slide',
+		perPage: 2,
+		autoScroll: {
+			speed: 0.4,
+		},
+		pauseOnHover: true,
+		breakpoints: {
+			954: {
+				perPage: 1,
+			},
+		},
+	}).mount();
 </script>
 
 <section class="py-12">
-  <h1 class="text-2xl md:text-4xl w-3/4 mx-auto text-center mb-8">
-    ¿Se puede multiplicar el número de consultas en pocos días? Ellos lograron
-    eso y mucho más
-  </h1>
+	<h1 class="text-2xl md:text-4xl w-3/4 mx-auto text-center mb-8">
+		¿Se puede multiplicar el número de consultas en pocos días? Ellos lograron
+		eso y mucho más
+	</h1>
 
-  <div class="splide mx-auto w-3/4" role="group" aria-label="carousel">
-    <div class="splide__track">
-      <ul class="splide__list">
-        {
-          testimoniosData.map((testimonio) => (
-            <li class="splide__slide px-4 ">
-              <Card
-                nombre={testimonio.nombre}
-                contenido={testimonio.contenido}
-                img={testimonio.img}
-                titulo={testimonio.titulo}
-              />
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-  </div>
+	<div class="splide mx-auto w-3/4" role="group" aria-label="carousel">
+		<div class="splide__track">
+			<ul class="splide__list">
+				{
+					testimoniosData.map((testimonio) => (
+						<li class="splide__slide px-4 ">
+							<Card
+								nombre={testimonio.nombre}
+								contenido={testimonio.contenido}
+								img={testimonio.img}
+								titulo={testimonio.titulo}
+							/>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</div>
 
-  <div class="py-12">
-    <CTABoton client:visible />
-  </div>
+	<div class="py-12">
+		<CTABoton client:visible />
+	</div>
 </section>
