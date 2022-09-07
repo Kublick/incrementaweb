@@ -1,8 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import FormularioLeadMagnet from "../components/FormularioLeadMagnet";
-import { Image } from "@astrojs/image/components";
-import Ebook from "../assets/eBook.png";
 import Footer from "../components/Footer.astro";
 ---
 
@@ -31,12 +29,14 @@ import Footer from "../components/Footer.astro";
     </div>
   </header>
   <section class="grid md:grid-cols-2 md:py-12 py-2" id="form">
-    <div class="mx-4 md:mx-10 hidden md:block">
+    <div
+      class="mx-4 md:mx-10 order-last md:order-first md:block place-self-center mt-4 md:mt-0"
+    >
       <img
         src={"/eBook.webp"}
         alt={"Ebook"}
-        width={720}
-        height={1000}
+        width={360}
+        height={500}
         loading="lazy"
       />
     </div>
@@ -65,7 +65,7 @@ import Footer from "../components/Footer.astro";
         height={394}
         loading="lazy"
       />
-      <h1 class="px-4">
+      <h1 class="px-4 text-xl md:text-3xl text-center">
         ¿Te imaginas cómo estaría tu consultorio si aplicaras estos 5 pasos?
       </h1>
       <div class="mt-8 flex items-center flex-col px-4">

@@ -1,6 +1,5 @@
 ---
 import Notebookwhite from "../icons/Notebookwhite.astro";
-
 type Props = {
   bgcolor?: string;
 };
@@ -10,7 +9,6 @@ const { bgcolor = "bg-secondary" } = Astro.props as Props;
 
 <script>
   import { ebook } from "../../data/downloads";
-
   const ebookButton = document.getElementById("ebook");
   ebookButton?.addEventListener("click", () => {
     window.open(ebook);

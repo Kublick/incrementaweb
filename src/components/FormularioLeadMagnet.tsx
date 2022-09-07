@@ -64,7 +64,7 @@ export default function FormularioLeadMagnet() {
     <div className="container mx-auto max-w-3xl mt-4 md:mt-0">
       <form
         onSubmit={handleSubmit}
-        className="mx-4 mt-4 flex flex-col gap-4 md:mx-24 md:mt-12"
+        className="mx-4 mt-4 flex flex-col gap-4 lg:mx-24 md:mt-12"
         noValidate
       >
         <input type="hidden" name="u" value={formNumber} />
