@@ -1,34 +1,32 @@
 ---
-import CommentsFacebook from "../components/CommentsFacebook.astro";
-import Plc2Sidebar from "../components/plc/Plc2Sidebar.astro";
-import PlcRight from "../components/plc/PlcRight.astro";
-import PlcTestimonios from "../components/plc/PlcTestimonios.astro";
-import PlcVideoPlayer from "../components/plc/PlcVideoPlayer.astro";
-import PlcHeader from "../components/PlcHeader.astro";
-import Layout from "../layouts/Layout.astro";
+import CommentsFacebook from '../components/CommentsFacebook.astro';
+import Plc2Sidebar from '../components/plc/Plc2Sidebar.astro';
+import PlcRight from '../components/plc/PlcRight.astro';
+import PlcTestimonios from '../components/plc/PlcTestimonios.astro';
+import PlcVideoPlayer from '../components/plc/PlcVideoPlayer.astro';
+import PlcHeader from '../components/PlcHeader.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Clase 2 | Incrementa tu Consulta">
-  <PlcHeader bgcolor="bg-secondary" date="October 18 2022 16:30" />
-  <main>
-    <div class="grid lg:grid-cols-4">
-      <Plc2Sidebar />
-      <div
-        class="order-first py-8 bg-gray-100 shadow-lg lg:order-none lg:col-span-2"
-      >
-        <PlcVideoPlayer
-          titulo="Las top 7 formas de tener dinero online y los 5 errores de novato"
-          videoId="https://youtu.be/QtKCnfgs48k"
-          clase="2"
-        />
-      </div>
-      <div>
-        <PlcRight sesiones={[3, 4, 1]} />
-      </div>
-    </div>
-    <div class="grid gap-6 pt-8 mx-2 bg-gray-50 md:grid-cols-2">
-      <CommentsFacebook />
-      <PlcTestimonios />
-    </div>
-  </main>
+	<PlcHeader bgcolor="bg-secondary" date="October 17 2022 16:30" />
+	<div class="grid sm:grid-cols-2 md:grid-cols-4">
+		<div class="order-4 md:-order-1 md:">
+			<Plc2Sidebar />
+		</div>
+		<div class="grid-cols-2 md:col-span-3">
+			<PlcVideoPlayer
+				titulo="Las top 7 formas de tener dinero online y los 5 errores de novato"
+				videoId="https://youtu.be/QtKCnfgs48k"
+				clase="2"
+			/>
+			<PlcRight sesiones={[3, 4, 1]} />
+		</div>
+		<div class="md:col-span-3">
+			<CommentsFacebook />
+		</div>
+		<div class="">
+			<PlcTestimonios />
+		</div>
+	</div>
 </Layout>

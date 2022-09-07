@@ -1,34 +1,32 @@
 ---
-import PlcHeader from "../components/PlcHeader.astro";
-import Layout from "../layouts/Layout.astro";
-import Plc1Sidebar from "../components/plc/Plc1Sidebar.astro";
-import PlcVideoPlayer from "../components/plc/PlcVideoPlayer.astro";
-import CommentsFacebook from "../components/CommentsFacebook.astro";
-import PlcTestimonios from "../components/plc/PlcTestimonios.astro";
-import PlcRight from "../components/plc/PlcRight.astro";
+import PlcHeader from '../components/PlcHeader.astro';
+import Layout from '../layouts/Layout.astro';
+import Plc1Sidebar from '../components/plc/Plc1Sidebar.astro';
+import PlcVideoPlayer from '../components/plc/PlcVideoPlayer.astro';
+import CommentsFacebook from '../components/CommentsFacebook.astro';
+import PlcTestimonios from '../components/plc/PlcTestimonios.astro';
+import PlcRight from '../components/plc/PlcRight.astro';
 ---
 
 <Layout title="Clase 3 | Incrementa tu Consulta">
-  <PlcHeader bgcolor="bg-mango" date="October 19 2022 16:30" />
-  <main>
-    <div class="grid lg:grid-cols-4">
-      <Plc1Sidebar bgcolor={"bg-primary"} />
-      <div
-        class="order-first py-8 bg-gray-100 shadow-lg lg:order-none lg:col-span-2"
-      >
-        <PlcVideoPlayer
-          titulo="Como ofrecer o vender tu consulta online"
-          videoId="https://youtu.be/r-3TcXuqk0A"
-          clase="3"
-        />
-      </div>
-      <div>
-        <PlcRight sesiones={[4, 1, 3]} />
-      </div>
-    </div>
-    <div class="grid gap-6 pt-8 mx-2 bg-gray-50 md:grid-cols-2">
-      <CommentsFacebook />
-      <PlcTestimonios />
-    </div>
-  </main>
+	<PlcHeader bgcolor="bg-mango" date="October 17 2022 16:30" />
+	<div class="grid sm:grid-cols-2 md:grid-cols-4">
+		<div class="order-4 md:-order-1 md:">
+			<Plc1Sidebar />
+		</div>
+		<div class="grid-cols-2 md:col-span-3">
+			<PlcVideoPlayer
+				titulo="Como ofrecer o vender tu consulta online"
+				videoId="https://youtu.be/r-3TcXuqk0A"
+				clase="3"
+			/>
+			<PlcRight sesiones={[4, 1, 3]} />
+		</div>
+		<div class="md:col-span-3">
+			<CommentsFacebook />
+		</div>
+		<div class="">
+			<PlcTestimonios />
+		</div>
+	</div>
 </Layout>

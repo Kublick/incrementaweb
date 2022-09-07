@@ -21,7 +21,6 @@ import '@splidejs/splide/css';
 		},
 	}).mount();
 </script>
-
 <section class="py-12">
 	<h1 class="text-2xl md:text-4xl w-3/4 mx-auto text-center mb-8">
 		¿Se puede multiplicar el número de consultas en pocos días? Ellos lograron
@@ -33,7 +32,7 @@ import '@splidejs/splide/css';
 			<ul class="splide__list">
 				{
 					testimoniosData.map((testimonio) => (
-						<li class="splide__slide px-4 ">
+						<li class="splide__slide ">
 							<Card
 								nombre={testimonio.nombre}
 								contenido={testimonio.contenido}
