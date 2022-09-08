@@ -2,7 +2,7 @@
 const { sesiones } = Astro.props;
 
 import { Image } from '@astrojs/image/components';
-
+import '@splidejs/splide/css';
 import Miniatura1 from '../../assets/Miniaturas 640px-01.png';
 import Miniatura2 from '../../assets/Miniaturas 640px-02.png';
 import Miniatura3 from '../../assets/Miniaturas 640px-03.png';
@@ -49,24 +49,21 @@ const clases = sesiones.map((s: number) =>
 
 <script>
 	import Splide from '@splidejs/splide';
-	import '@splidejs/splide/css';
 
-	document.addEventListener('DOMContentLoaded', function () {
-		const splide = new Splide('.carousel', {
-			type: 'loop',
-			perPage: 2,
-			pauseOnHover: true,
-			breakpoints: {
-				820: {
-					perPage: 1,
-				},
+	const splide = new Splide('.splide', {
+		type: 'loop',
+		perPage: 2,
+		pauseOnHover: true,
+		breakpoints: {
+			820: {
+				perPage: 1,
 			},
-		}).mount();
-	});
+		},
+	}).mount();
 </script>
 
-<section class="splide carousel">
-	<div role="group" aria-label="carousel">
+<section class="flex">
+	<div class="splide" role="group" aria-label="carousel">
 		<div class="splide__track">
 			<ul class="splide__list">
 				{
