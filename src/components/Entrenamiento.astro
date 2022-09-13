@@ -1,41 +1,41 @@
 ---
-import { entrenamiento } from "../data/entrenamientoData";
+import { entrenamiento } from '../data/entrenamientoData';
 const date = Date.now();
 ---
 
 <section class="bg-white">
-  <div class="bg-primary py-8">
-    <h1 class="text-2xl md:text-4xl text-center text-white">
-      ¿Qué aprenderás en este entrenamiento?
-    </h1>
-  </div>
-  <ul class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 py-8">
-    {
-      entrenamiento.map((e) => (
-        <div>
-          {date <= e.openDate ? (
-            <img
-              src={e.img}
-              alt={e.alt}
-              class="mx-auto mb-8 w-[300px] "
-              loading="lazy"
-            />
-          ) : (
-            <div>
-              <img
-                src={e.activeImg}
-                alt={e.alt}
-                class="mx-auto mb-8 w-[300px]  "
-                loading="lazy"
-              />
-            </div>
-          )}
+	<div class="bg-primary py-8">
+		<h1 class="text-2xl md:text-4xl text-center text-white">
+			¿Qué aprenderás en este entrenamiento?
+		</h1>
+	</div>
+	<ul class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 py-8">
+		{
+			entrenamiento.map((e) => (
+				<div>
+					{date <= e.openDate ? (
+						<img
+							src={e.img}
+							alt={e.alt}
+							class="mx-auto mb-8 w-[300px] "
+							loading="lazy"
+						/>
+					) : (
+						<div>
+							<img
+								src={e.activeImg}
+								alt={e.alt}
+								class="mx-auto mb-8 w-[300px]  "
+								loading="lazy"
+							/>
+						</div>
+					)}
 
-          <p class="px-4 lg:px-12 text-lg lg:text-2xl leading-tight">
-            {e.contents}
-          </p>
-        </div>
-      ))
-    }
-  </ul>
+					<p class="px-4 lg:px-12 text-lg lg:text-2xl leading-tight">
+						{e.contents}
+					</p>
+				</div>
+			))
+		}
+	</ul>
 </section>

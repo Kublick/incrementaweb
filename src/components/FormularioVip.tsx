@@ -3,7 +3,6 @@ import { z } from 'zod';
 import { countries } from '../data/countries';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { ErrorResult, validateForm } from '../utils/utils';
 
 const User = z.object({
 	fullname: z
@@ -12,90 +11,77 @@ const User = z.object({
 	email: z
 		.string({ required_error: 'El Email es requerido' })
 		.email({ message: 'El email no es valido' }),
-	phone: z
+	whatsapp: z
 		.string()
 		.min(12, { message: 'Ingrese un numero de 12 digitos sin simbolos' }),
-	'field[1]': z.string(),
+	countries: z.string(),
+	pais: z.string(),
+	pregunta: z
+		.string()
+		.min(12, { message: 'Ingrese una sentencia en este campo' }),
+	preguntados: z
+		.string()
+		.min(12, { message: 'Ingrese una sentencia en este campo' }),
 });
 
 type IUser = z.infer<typeof User>;
 
-const formNumber = '51';
-const formId = '3d908e462d022d980c2473a953a6b663';
-
-function ReplayFormulario() {
-	// const {
-	// 	register,
-	// 	handleSubmit,
-	// 	formState: { errors },
-	// } = useForm<IUser>({
-	// 	defaultValues: {
-	// 		fullname: '',
-	// 		email: '',
-	// 		whatsapp: '',
-	// 		pais: 'MX',
-	// 		phone: '',
-	// 	},
-	// 	resolver: zodResolver(User),
-	// });
+function FormularioVip() {
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm<IUser>({
+		defaultValues: {
+			fullname: '',
+			email: '',
+			whatsapp: '',
+			countries: 'MX',
+			pregunta: '',
+			preguntados: '',
+		},
+		resolver: zodResolver(User),
+	});
 	const [isSending, setIsSending] = useState(false);
-	const [errorMessage, setErrorMessage] = useState({} as ErrorResult);
-	const [hasError, setHasError] = useState(false);
 
-	const handleSubmit = (e: React.BaseSyntheticEvent) => {
-		e.preventDefault();
-
-		const formData = new FormData(e.target);
-
-		const { formValues, errors } = validateForm<typeof User>(formData, User);
-
-		if (errors) {
-			setHasError(true);
-			setErrorMessage(errors);
-
-			setTimeout(() => {
-				setHasError(false);
-			}, 2000);
-
-			return;
-		}
+	const onSubmit = (data: IUser) => {
 		setIsSending(true);
+		const formData = new FormData();
+		formData.append('fullname', data['fullname']);
+		formData.append('email', data['email']);
+		formData.append('whatsapp', data['whatsapp']);
+		formData.append('countries', data['countries']);
 
-		const url = 'https://psicologaberenicebastidas.activehosted.com/proc.php';
-		fetch(url, {
-			method: 'POST',
-			body: formData,
-			mode: 'no-cors',
-		})
-			.then((response) => {
-				if (response.status === 200) {
-				}
-			})
-			.catch((error) => {
-				console.log(error);
-			});
-		setTimeout(() => {
-			setIsSending(false);
-			window.location.href = '/gracias';
-		}, 2000);
+		// for (const key in data) {
+		//   if (key === "field") {
+		//     formData.append(key, data[key][1]);
+		//   } else {
+		//     formData.append(key, data[key]);
+		//   }
+		// }
+
+		// const url = "https://psicologaberenicebastidas.activehosted.com/proc.php";
+		// fetch(url, {
+		//   method: "POST",
+		//   body: formData,
+		//   mode: "no-cors",
+		// })
+		//   .then((response) => {
+		//     if (response.status === 200) {
+		//     }
+		//   })
+		//   .catch((error) => {
+		//     console.log(error);
+		//   });
+		// setTimeout(() => {
+		//   window.location.href = "/gracias";
+		// }, 2000);
 	};
 
 	return (
-		<div>
-			<h1 className="text-xl text-white md:text-3xl font-semibold text-center">
-				Completa el formulario y confirma tu asistencia
-			</h1>
-			<form onSubmit={handleSubmit}>
-				<input type="hidden" name="u" value={formNumber} />
-				<input type="hidden" name="f" value={formNumber} />
-				<input type="hidden" name="s" />
-				<input type="hidden" name="c" value="0" />
-				<input type="hidden" name="m" value="0" />
-				<input type="hidden" name="act" value="sub" />
-				<input type="hidden" name="v" value="2" />
-				<input type="hidden" name="or" value={formId} />
-
-				<div className="mt-2">
+		<div className="bg-secondary">
+			<form onSubmit={handleSubmit(onSubmit)}>
+				<div className="mt-2 ">
 					<label className="block mb-2 text-sm font-medium text-white">
 						Nombre:
 					</label>
@@ -119,18 +105,19 @@ function ReplayFormulario() {
 						<input
 							type="text"
 							id="fullname"
-							name="fullname"
 							className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5"
 							placeholder="Nombre"
+							{...register('fullname')}
 						/>
 					</div>
 				</div>
-
-				{hasError && (
-					<p className="text-sm bg-white text-red-500 mt-2 px-4 py-1 rounded-sm">
-						{errorMessage.fullname}
-					</p>
-				)}
+				{errors.fullname ? (
+					<div className="mt-4 flex justify-center">
+						<p className=" bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">
+							{errors.fullname.message}
+						</p>
+					</div>
+				) : null}
 
 				<div className="mt-2">
 					<label className="block mb-2 text-sm font-medium text-white">
@@ -153,13 +140,15 @@ function ReplayFormulario() {
 							type="text"
 							className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5"
 							placeholder="Correo"
-							name="email"
+							{...register('email')}
 						/>
 					</div>
-					{hasError ? (
-						<p className="text-sm bg-white text-red-500 mt-2 px-4 py-1 rounded-sm">
-							{errorMessage.email}
-						</p>
+					{errors.email ? (
+						<div className="mt-4 flex justify-center">
+							<p className=" bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">
+								{errors.email.message}
+							</p>
+						</div>
 					) : null}
 				</div>
 				<div className="mt-2">
@@ -170,10 +159,9 @@ function ReplayFormulario() {
 						Selecciona un país
 					</label>
 					<select
-						id="field[1]"
+						id="countries"
 						className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-						defaultValue={'MX'}
-						name="field[1]"
+						{...register('countries')}
 					>
 						{countries.map((country) => (
 							<option key={country.value} value={country.value}>
@@ -182,6 +170,13 @@ function ReplayFormulario() {
 						))}
 					</select>
 				</div>
+				{errors.countries ? (
+					<div className="mt-4 flex justify-center">
+						<p className=" bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">
+							{errors.countries.message}
+						</p>
+					</div>
+				) : null}
 
 				<div className="mt-2">
 					<label
@@ -203,30 +198,71 @@ function ReplayFormulario() {
 						</div>
 						<input
 							type="text"
-							name="phone"
-							id="phone"
+							id="whatsapp"
 							className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  "
 							placeholder="Numero Whatsapp"
+							{...register('whatsapp')}
 						/>
 					</div>
-					{hasError && (
-						<p className="text-sm bg-white text-red-500 mt-2 px-4 py-1 rounded-sm">
-							{errorMessage.phone}
-						</p>
-					)}
+					{errors.whatsapp ? (
+						<div className="mt-4 flex justify-center">
+							<p className=" bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">
+								{errors.whatsapp.message}
+							</p>
+						</div>
+					) : null}
 				</div>
+				<div className="mt-2">
+					<label
+						htmlFor="email-address-icon"
+						className="block mb-2 text-sm font-medium text-white"
+					>
+						¿Por qué quieres ser parte de Incrementa Tu Consulta?
+					</label>
+					<div className="relative">
+						<input
+							type="text"
+							id="pregunta"
+							className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  "
+							placeholder="Escribe aquí"
+							{...register('pregunta')}
+						/>
+					</div>
+				</div>
+
+				<div className="mt-2">
+					<label
+						htmlFor="email-address-icon"
+						className="block mb-2 text-sm font-medium text-white"
+					>
+						¿Estarías dispuesto a invertir en ti mismo, ya que es un programa
+						que tiene un valor por encima de $1.000?
+					</label>
+					<div className="relative">
+						<input
+							type="text"
+							id="preguntados"
+							className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  "
+							placeholder="Escribe aquí"
+							{...register('preguntados')}
+						/>
+					</div>
+				</div>
+
 				<div className="flex justify-center">
 					{!isSending ? (
 						<button
 							type="submit"
 							className={`text-2xl bg-primary text-white px-8 py-4 mt-8 hover:bg-primary-dark`}
+							disabled={isSending}
 						>
-							Confirmar mi asistencia ahora
+							¡ Quiero ser VIP !
 						</button>
 					) : (
 						<button
 							type="submit"
 							className={`text-2xl bg-green-600 text-white px-8 py-4 mt-8 rounded-lg flex gap-4`}
+							disabled={isSending}
 						>
 							<span>Confirmando Registro</span>
 							<svg
@@ -253,4 +289,4 @@ function ReplayFormulario() {
 	);
 }
 
-export default ReplayFormulario;
+export default FormularioVip;

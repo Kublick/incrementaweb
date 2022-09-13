@@ -1,0 +1,47 @@
+---
+import CountdownTimer from '../components/CountdownTimer';
+import Layout from '../layouts/Layout.astro';
+import FormularioVip from '../components/FormularioVip';
+const targetDate = new Date('October 20 2022 11:59').getTime();
+---
+
+<Layout title="Grupo VIP Incrementa Tu Consulta">
+	<div class="bg-red-800 p-6 text-white flex flex-col items-center">
+		<h1 class="text-xl md:text-3xl uppercase font-bold">
+			este grupo estara activo hasta
+		</h1>
+
+		<CountdownTimer targetDate={targetDate} client:only="react" color="white" />
+	</div>
+
+	<div class="mt-8">
+		<h1 class="text-lg md:text-2xl text-center uppercase font-bold">
+			bienvenido al grupo vip de
+		</h1>
+		<h1
+			class="text-3xl md:text-5xl text-center uppercase font-bold text-primary py-8"
+		>
+			incrementa tu consulta
+		</h1>
+		<h2 class="text-xl md:text-2xl text-center py-2">
+			Una comunidad exclusiva hecha para quienes conectar con su propósito y
+			transformar sus resultados
+		</h2>
+		<h2 class="text-xl md:text-2xl text-center uppercase">
+			ingresa ya mismo al grupo vip de <span class="font-semibold text-primary"
+				>incrementa tu consulta</span
+			>
+		</h2>
+	</div>
+	<FormularioVip />
+
+	<section class="mt-10 bg-black py-10">
+		<h1 class="text-white text-xl md:text-2xl font-bold text-center">
+			¿PARA QUIÉN ES ESTE GRUPO VIP?
+		</h1>
+
+		<h1 class="text-white text-xl md:text-2xl font-bold text-center">
+			¿QUÉ BENEFICIOS TIENE ESTE GRUPO VIP?
+		</h1>
+	</section>
+</Layout>
