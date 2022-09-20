@@ -1,27 +1,23 @@
 ---
-import CountdownTimer from "./CountdownTimer";
-import Formulario from "./Formulario";
+import CountdownTimer from './CountdownTimer';
+import Formulario from './Formulario';
 const fifteen = 15 * 60 * 1000;
 const timenow = new Date().getTime();
 const targetDate = timenow + fifteen;
 ---
 
 <section>
-  <div
-    class="p-4 border-4 border-primary items-center md:mx-24 mx-8 rounded-xl text-center"
-  >
-    <h1 class="md:text-3xl text-xl">4 clases gratuitas en vivo</h1>
-    <h2 class="md:text-2xl text-xl font-semibold">Del 17 al 20 de octubre</h2>
-  </div>
-  <div>
-    <Formulario client:load />
-    <div class="flex flex-col md:gap-4 items-center py-8 mx-4">
-      <p class="text-2xl text-center">La oportunidad de registro expira en:</p>
-      <CountdownTimer
-        targetDate={targetDate}
-        client:only="react"
-        color="black"
-      />
-    </div>
-  </div>
+	<div
+		class="p-4 border-4 border-primary items-center md:mx-24 mx-8 rounded-xl text-center"
+	>
+		<h1 class="md:text-3xl text-xl">4 clases gratuitas en vivo</h1>
+		<h2 class="md:text-2xl text-xl font-semibold">Del 17 al 20 de octubre</h2>
+	</div>
+	<div>
+		<Formulario client:load />
+		<div class="flex flex-col md:gap-4 items-center py-8 mx-4">
+			<p class="text-2xl text-center">La oportunidad de registro expira en:</p>
+			<CountdownTimer targetDate={targetDate} color="black" client:visible />
+		</div>
+	</div>
 </section>
