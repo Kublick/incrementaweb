@@ -79,7 +79,7 @@ function FormularioVip() {
 	};
 
 	return (
-		<div className="bg-secondary">
+		<div className="bg-secondary p-4 rounded-lg my-4">
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<div className="mt-2 ">
 					<label className="block mb-2 text-sm font-medium text-white">

@@ -1,0 +1,44 @@
+<div class="flex gap-2 mt-4" id="demo">
+	<div class="text-center">
+		<p id="minutes" class="font-semibold text-xl md:text-3xl w-12"></p>
+		<p>min</p>
+	</div>
+	<div class="text-center">
+		<p id="seconds" class="font-semibold text-xl md:text-3xl w-12"></p>
+		<p>seg</p>
+	</div>
+</div>
+
+<script>
+	const countDownDate = new Date().getTime() + 15 * 60 * 1000;
+
+	const x = setInterval(function () {
+		const now = new Date().getTime();
+		const distance = countDownDate - now;
+
+		const minutes = String(
+			Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+		).padStart(2, '0');
+		const seconds = String(
+			Math.floor((distance % (1000 * 60)) / 1000),
+		).padStart(2, '0');
+
+		const eMinutes = document.getElementById('minutes');
+		const eSeconds = document.getElementById('seconds');
+
+		if (eMinutes && eSeconds) {
+			(eMinutes.innerHTML = minutes), (eSeconds.innerHTML = seconds);
+		}
+
+		if (distance < 0) {
+			clearInterval(x);
+
+			const element = document.getElementById('demo');
+
+			if (element) {
+				element.innerHTML = 'Tu tiempo de registro expiro';
+				element.classList.add('text-red-600', 'text-2xl');
+			}
+		}
+	}, 1000);
+</script>

@@ -2,6 +2,7 @@
 import CountdownTimer from '../components/CountdownTimer';
 import Layout from '../layouts/Layout.astro';
 import FormularioVip from '../components/FormularioVip';
+import AstroTimer from '../components/AstroTimer.astro';
 const targetDate = new Date('October 20 2022 11:59').getTime();
 ---
 
@@ -11,7 +12,7 @@ const targetDate = new Date('October 20 2022 11:59').getTime();
 			este grupo estara activo hasta
 		</h1>
 
-		<CountdownTimer targetDate={targetDate} client:only="react" color="white" />
+		<AstroTimer />
 	</div>
 
 	<div class="mt-8">
@@ -33,7 +34,9 @@ const targetDate = new Date('October 20 2022 11:59').getTime();
 			>
 		</h2>
 	</div>
-	<FormularioVip />
+	<div class="max-w-3xl mx-auto">
+		<FormularioVip client:only="react" />
+	</div>
 
 	<section class="mt-10 bg-black py-10">
 		<h1 class="text-white text-xl md:text-2xl font-bold text-center">

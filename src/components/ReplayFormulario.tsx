@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { z } from 'zod';
 import { countries } from '../data/countries';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
 import { ErrorResult, validateForm } from '../utils/utils';
 
 const User = z.object({
@@ -24,20 +22,6 @@ const formNumber = '51';
 const formId = '3d908e462d022d980c2473a953a6b663';
 
 function ReplayFormulario() {
-	// const {
-	// 	register,
-	// 	handleSubmit,
-	// 	formState: { errors },
-	// } = useForm<IUser>({
-	// 	defaultValues: {
-	// 		fullname: '',
-	// 		email: '',
-	// 		whatsapp: '',
-	// 		pais: 'MX',
-	// 		phone: '',
-	// 	},
-	// 	resolver: zodResolver(User),
-	// });
 	const [isSending, setIsSending] = useState(false);
 	const [errorMessage, setErrorMessage] = useState({} as ErrorResult);
 	const [hasError, setHasError] = useState(false);
