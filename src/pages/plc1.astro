@@ -6,6 +6,9 @@ import PlcVideoPlayer from "../components/plc/PlcVideoPlayer.astro";
 import CommentsFacebook from "../components/CommentsFacebook.astro";
 import PlcTestimonios from "../components/plc/PlcTestimonios.astro";
 import PlcRight from "../components/plc/PlcRight.astro";
+
+const domain = "localhost";
+const videoId = "Qf1XHli2ukE";
 ---
 
 <Layout title="Clase 1 | Incrementa tu Consulta">
@@ -18,8 +21,8 @@ import PlcRight from "../components/plc/PlcRight.astro";
       <div class="grid lg:grid-cols-3">
         <div class="lg:col-span-2">
           <PlcVideoPlayer
-            titulo="Como ofrecer o vender tu consulta online"
-            videoId="VPN9WlZj5mo"
+            titulo="Tu oportunidad de tener pacientes desde las redes sociales"
+            videoId={videoId}
             clase="1"
           />
         </div>
@@ -27,7 +30,7 @@ import PlcRight from "../components/plc/PlcRight.astro";
           <iframe
             width="300"
             height="500"
-            src="https://www.youtube.com/live_chat?v=VPN9WlZj5mo&embed_domain=localhost"
+            src={`https://www.youtube.com/live_chat?v=${videoId}&embed_domain=${domain}`}
           ></iframe>
         </div>
       </div>
