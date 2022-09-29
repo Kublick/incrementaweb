@@ -1,0 +1,43 @@
+---
+import AstroTimer from "../components/AstroTimer.astro";
+import CTAVentaButtons from "../components/CTAVentaButtons.astro";
+import Videoplayer from "../components/Videoplayer.astro";
+import Layout from "../layouts/Layout.astro";
+
+const source = "QtKCnfgs48k";
+const eventDate = "18 October 2022 23:00";
+---
+
+<Layout title="Incrementa tu Consulta | Oferta Irresistible">
+  <section class="max-w-6xl mx-auto">
+    <div class="flex flex-col items-center justify-center mt-4 gap-2">
+      <img
+        src="mainLogo.svg"
+        alt="Logo Incremena tu consulta"
+        class="hidden md:block w-[200px]"
+      />
+      <h1 class="text-xl md:text-3xl font-bold mt-4">
+        Llena tu agenda de pacientes
+      </h1>
+      <h1 class="text-xl md:text-3xl font-bold">En menos de 60 días</h1>
+      <h2 class="text-lg md:text-2xl font-semibold">
+        Y multiplica tus ingresos
+      </h2>
+    </div>
+    <div class="my-4 flex flex-col items-center justify-center gap-4">
+      <div class="w-full md:w-1/2">
+        <Videoplayer source={source} />
+      </div>
+      <div class="mt-4 md:mt-8 mb-4">
+        <h1
+          class="text-xl md:text-5xl font-bold text-center mx-4 md:leading-tight"
+        >
+          Solo <span class="bg-primary text-white py-.5 px-3">20 cupos</span> disponibles
+          para los bonos de acción rápida
+        </h1>
+      </div>
+      <CTAVentaButtons />
+      <AstroTimer eventDate={eventDate} />
+    </div>
+  </section>
+</Layout>

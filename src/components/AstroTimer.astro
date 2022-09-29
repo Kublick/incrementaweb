@@ -1,44 +1,107 @@
+---
+type Props = {
+  time?: number;
+  eventDate?: string;
+};
+
+const { time, eventDate } = Astro.props as Props;
+---
+
 <div class="flex gap-2 mt-4" id="demo">
-	<div class="text-center">
-		<p id="minutes" class="font-semibold text-xl md:text-3xl w-12"></p>
-		<p>min</p>
-	</div>
-	<div class="text-center">
-		<p id="seconds" class="font-semibold text-xl md:text-3xl w-12"></p>
-		<p>seg</p>
-	</div>
+  <div class="text-center hidden" id="dias">
+    <p id="days" class="font-semibold text-xl md:text-3xl w-12"></p>
+    <p>dias</p>
+  </div>
+
+  <div class="hidden" id="event">
+    <p class="font-semibold text-xl md:text-3xl text-center w-12">:</p>
+  </div>
+
+  <div class="text-center hidden" id="horas">
+    <p id="hours" class="font-semibold text-xl md:text-3xl w-12"></p>
+    <p>horas</p>
+  </div>
+
+  <div class="hidden" id="event2">
+    <p class="font-semibold text-xl md:text-3xl w-12 text-center">:</p>
+  </div>
+
+  <div class="text-center hidden" id="minutos">
+    <p id="minutes" class="font-semibold text-xl md:text-3xl w-12"></p>
+    <p>min</p>
+  </div>
+
+  <div>
+    <p class="font-semibold text-xl md:text-3xl w-12 text-center">:</p>
+  </div>
+
+  <div class="text-center hidden" id="segundos">
+    <p id="seconds" class="font-semibold text-xl md:text-3xl w-12"></p>
+    <p>seg</p>
+  </div>
 </div>
 
-<script>
-	const countDownDate = new Date().getTime() + 15 * 60 * 1000;
+<script define:vars={{ time, eventDate }}>
+  if (!time) {
+    time = 15 * 60 * 1000;
+  }
+  let countDownDate = new Date().getTime() + time;
 
-	const x = setInterval(function () {
-		const now = new Date().getTime();
-		const distance = countDownDate - now;
+  if (eventDate) {
+    countDownDate = new Date(eventDate).getTime();
+  }
 
-		const minutes = String(
-			Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-		).padStart(2, '0');
-		const seconds = String(
-			Math.floor((distance % (1000 * 60)) / 1000),
-		).padStart(2, '0');
+  const x = setInterval(function () {
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+    const days = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(
+      2,
+      "0"
+    );
+    const hours = String(
+      Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+    ).padStart(2, "0");
 
-		const eMinutes = document.getElementById('minutes');
-		const eSeconds = document.getElementById('seconds');
+    const minutes = String(
+      Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+    ).padStart(2, "0");
+    const seconds = String(
+      Math.floor((distance % (1000 * 60)) / 1000)
+    ).padStart(2, "0");
 
-		if (eMinutes && eSeconds) {
-			(eMinutes.innerHTML = minutes), (eSeconds.innerHTML = seconds);
-		}
+    const eday = document.getElementById("days");
+    const eHours = document.getElementById("hours");
+    const eMinutes = document.getElementById("minutes");
+    const eSeconds = document.getElementById("seconds");
 
-		if (distance < 0) {
-			clearInterval(x);
+    if (eventDate) {
+      document.getElementById("horas").classList.remove("hidden");
+      document.getElementById("dias").classList.remove("hidden");
+      document.getElementById("minutos").classList.remove("hidden");
+      document.getElementById("segundos").classList.remove("hidden");
+      document.getElementById("event").classList.remove("hidden");
+      document.getElementById("event2").classList.remove("hidden");
+    } else {
+      document.getElementById("minutos").classList.remove("hidden");
+      document.getElementById("segundos").classList.remove("hidden");
+    }
 
-			const element = document.getElementById('demo');
+    if (eMinutes && eSeconds) {
+      (eday.innerHTML = days),
+        (eHours.innerHTML = hours),
+        (eMinutes.innerHTML = minutes),
+        (eSeconds.innerHTML = seconds);
+    }
 
-			if (element) {
-				element.innerHTML = 'Tu tiempo de registro expiro';
-				element.classList.add('text-red-600', 'text-2xl');
-			}
-		}
-	}, 1000);
+    if (distance < 0) {
+      clearInterval(x);
+
+      const element = document.getElementById("demo");
+
+      if (element) {
+        element.innerHTML = "Tu tiempo de registro expiro";
+        element.classList.add("text-red-600", "text-2xl");
+      }
+    }
+  }, 1000);
 </script>
