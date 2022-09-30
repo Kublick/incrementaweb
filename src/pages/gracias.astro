@@ -5,15 +5,18 @@ import Layout from '../layouts/Layout.astro';
 
 <script>
 	import { getRegistro } from '../hooks/getRegistro';
+	import JSConfetti from 'js-confetti';
 	const whatsappUrl = await getRegistro();
-
-	// const whatsappUrl = 'https://chat.whatsapp.com/HPGVBPMRGMg43Q2UiiRiiy';
+	const jsConfetti = new JSConfetti();
 
 	const button = document.getElementById('groupbutton');
 
 	if (button)
 		button.addEventListener('click', () => {
-			window.open(whatsappUrl, '_blank');
+			jsConfetti.addConfetti();
+			setTimeout(() => {
+				window.open(whatsappUrl, '_blank');
+			}, 1200);
 		});
 </script>
 

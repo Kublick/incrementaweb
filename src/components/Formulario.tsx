@@ -4,9 +4,11 @@ import { ErrorResult, validateForm } from '../utils/utils';
 
 const User = z.object({
 	fullname: z
-		.string({ required_error: 'Fullname is required' })
-		.min(3, { message: 'Minimum 3 characters' }),
-	email: z.string({ required_error: 'Invalid Email' }).email(),
+		.string({ required_error: 'El Nombre es requerido' })
+		.min(3, { message: 'Ingrese al menos 3 caracteres' }),
+	email: z
+		.string({ required_error: 'El Email es requerido' })
+		.email({ message: 'El email no es valido' }),
 });
 
 type FormInput = z.infer<typeof User>;
