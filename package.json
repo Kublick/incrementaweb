@@ -11,7 +11,7 @@
 	},
 	"type": "module",
 	"devDependencies": {
-		"@astrojs/image": "^0.3.6",
+		"@astrojs/image": "^0.8.1",
 		"@astrojs/react": "^1.1.2",
 		"@astrojs/tailwind": "^1.0.0",
 		"@types/react": "^18.0.17",
