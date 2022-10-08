@@ -1,0 +1,68 @@
+---
+import { programaData } from './ventaData';
+---
+
+<section>
+	<img
+		src={'/venta/centro.webp'}
+		alt={`centro`}
+		class="mx-auto"
+		height={725}
+		width={1426}
+	/>
+
+	<div class="bg-secondary py-1 w-1/2 my-2 shadow-lg rounded-md mx-auto"></div>
+
+	<h1
+		class="font-coolvetica text-xl md:text-3xl text-ventaBlue text-center md:my-8 my-4"
+	>
+		Incrementa tu consulta incluye:
+	</h1>
+	<div class="grid md:gap-16 md:w-1/2 mx-auto">
+		{
+			programaData.map((programa) => {
+				return programa.id % 2 ? (
+					<div class="grid md:grid-cols-2 items-center md:gap-24 gap-4">
+						<img
+							src={programa.image}
+							alt={`Imagen programa ${programa.id}`}
+							height={229}
+							width={233}
+							class="place-self-center mt-8 md:mt-0 "
+						/>
+						<div class="mx-4">
+							<h2 class="font-coolvetica text-2xl text-ventaBlue">
+								{programa.title}
+							</h2>
+							<p class="font-inter text-sm">{programa.description}</p>
+
+							<h2 class="font-coolvetica text-2xl text-ventaBlue my-4 md:my-0">
+								{programa.value}
+							</h2>
+						</div>
+					</div>
+				) : (
+					<div class="grid md:grid-cols-2 items-center md:gap-24 gap-4">
+						<div class="mx-4">
+							<h2 class="font-coolvetica text-2xl text-ventaBlue">
+								{programa.title}
+							</h2>
+							<p class="font-inter text-sm">{programa.description}</p>
+
+							<h2 class="font-coolvetica text-2xl text-ventaBlue my-4 md:my-0">
+								{programa.value}
+							</h2>
+						</div>
+						<img
+							src={programa.image}
+							alt={`Imagen programa ${programa.id}`}
+							height={229}
+							width={233}
+							class="place-self-center order-first md:order-last mt-4 md:mt-0"
+						/>
+					</div>
+				);
+			})
+		}
+	</div>
+</section>
