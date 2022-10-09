@@ -1,12 +1,12 @@
 ---
 import Videoplayer from '../Videoplayer.astro';
-import CTAVentaButtons from './CTAVentaButtons.astro';
+import CTAVenta from './CTAVenta.astro';
 import { bonosData, programaData } from './ventaData';
 ---
 
 <section>
 	<div
-		class="bg-gray-500 text-4xl md:text-8xl font-black font-inter flex justify-center items-center py-8"
+		class="bg-gray-500 text-4xl md:text-8xl font-black font-inter md:flex md:justify-center md:items-center py-8"
 	>
 		<img src="/venta/garantia.png" alt="sello de garantia" />
 
@@ -15,12 +15,12 @@ import { bonosData, programaData } from './ventaData';
 			<h2>de Garantía</h2>
 		</div>
 	</div>
-	<div class="grid grid-cols-2">
+	<div class="grid md:grid-cols-2">
 		<div class="bg-mango">
 			<img src="/venta/bereniceventa.png" alt="Berenice Bastidas" />
 		</div>
-		<div class="bg-secondary text-white flex items-center">
-			<div class="w-1/2 mx-auto">
+		<div class="bg-secondary text-white flex items-center py-4">
+			<div class="md:w-1/2 md:mx-auto mx-10 mt-4 md:mt-0">
 				<h1 class="text-5xl font-bold font-inter text-center">
 					Hola, soy Berenice
 				</h1>
@@ -39,7 +39,9 @@ import { bonosData, programaData } from './ventaData';
 			</div>
 		</div>
 	</div>
-	<div class="font-inter text-5xl text-ventaBlue text-center font-bold my-20">
+	<div
+		class="font-inter text-3xl md:text-5xl text-ventaBlue text-center font-bold my-20 mx-4"
+	>
 		<h1>Testimonio: Triplicó su retorno de inversión</h1>
 		<h1>antes de concluir el entrenamiento</h1>
 	</div>
@@ -47,40 +49,42 @@ import { bonosData, programaData } from './ventaData';
 		<div
 			class="md:w-[650px] w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
 		>
-			<Videoplayer source="BZCgpqnTqZw" />
+			<Videoplayer source="vSyVhKV4n-s" />
 		</div>
 	</div>
-	<div class="bg-mango py-64">
-		<h1 class="text-white text-center text-4xl font-bold">
-			Mira las historias inspiradoras, los casos de éxito
-		</h1>
-		<h1 class="text-white text-center text-4xl font-bold">
-			que ya tomaron acción. <span class="text-ventaBlue font-extrabold"
-				>¿Serás el próximo?</span
-			>
-		</h1>
+	<div class="bg-mango md:py-64 pt-44 pb-12">
+		<div class="mx-4 md:mx-0">
+			<h1 class="text-white text-center text-2xl md:text-4xl font-bold">
+				Mira las historias inspiradoras, los casos de éxito
+			</h1>
+			<h1 class="text-white text-center text-2xl md:text-4xl font-bold">
+				que ya tomaron acción. <span class="text-ventaBlue font-extrabold"
+					>¿Serás el próximo?</span
+				>
+			</h1>
+		</div>
 	</div>
 	<div class="relative">
 		<div
-			class="w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+			class="w-full md:absolute md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 bg-ventaBlue pb-8 md:bg-transparent"
 		>
-			<div class="grid grid-cols-3 mx-12 gap-12">
+			<div class="grid md:grid-cols-3 mx-12 gap-12">
 				<div>
-					<Videoplayer source="BZCgpqnTqZw" />
+					<Videoplayer source="eGORT3A48l0" />
 				</div>
 
 				<div>
-					<Videoplayer source="BZCgpqnTqZw" />
+					<Videoplayer source="DUTbbtn9vJs" />
 				</div>
 
 				<div>
-					<Videoplayer source="BZCgpqnTqZw" />
+					<Videoplayer source="Ci3fpm-wsMo" />
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="bg-ventaBlue py-28"></div>
-	<div class="mt-24">
+	<div class="bg-ventaBlue md:py-28 hidden md:block"></div>
+	<div class="md:mt-24 mt-12">
 		<img
 			src={'/venta/centro.webp'}
 			alt={`centro`}
@@ -88,14 +92,16 @@ import { bonosData, programaData } from './ventaData';
 			height={725}
 			width={1426}
 		/>
-		<h1 class="text-center text-4xl text-ventaBlue font-inter font-bold my-8">
+		<h1
+			class="text-center text-2xl md:text-4xl text-ventaBlue font-inter font-bold my-8"
+		>
 			Todo lo que recibirás:
 		</h1>
 		<div class="md:mx-36 mx-4">
 			{
 				programaData.map((programa) => (
-					<div class="flex justify-between md:mx-12 font-inter text-2xl">
-						<p>{programa.title}</p>
+					<div class="flex justify-between md:mx-12 font-inter md:text-2xl items-center">
+						<p class="w-52 md:w-auto">{programa.title}</p>
 						<span class="short" />
 						<p>{programa.value}</p>
 					</div>
@@ -104,7 +110,7 @@ import { bonosData, programaData } from './ventaData';
 		</div>
 
 		<h1
-			class="text-center text-4xl text-ventaBlue font-inter font-bold my-8 uppercase"
+			class="text-center text-2xl md:text-4xl text-ventaBlue font-inter font-bold my-8 uppercase"
 		>
 			BONOS DE REGALO
 		</h1>
@@ -112,8 +118,8 @@ import { bonosData, programaData } from './ventaData';
 		<div class="md:mx-36 mx-4">
 			{
 				bonosData.map((bono) => (
-					<div class="flex justify-between md:mx-12 font-inter text-2xl">
-						<p>{bono.title}</p>
+					<div class="flex justify-between md:mx-12 font-inter md:text-2xl items-center">
+						<p class="w-52 md:w-auto">{bono.title}</p>
 						<span class="short" />
 						<p>{bono.value}</p>
 					</div>
@@ -122,23 +128,29 @@ import { bonosData, programaData } from './ventaData';
 		</div>
 
 		<h1
-			class="text-center text-4xl text-ventaBlue font-inter font-bold my-8 uppercase"
+			class="text-center text-2xl md:text-4xl text-ventaBlue font-inter font-bold my-8 uppercase"
 		>
 			BONOS DE ACCIÓN RÁPIDA
 		</h1>
 
 		<div class="md:mx-36 mx-4">
-			<div class="flex justify-between md:mx-12 font-inter text-2xl">
+			<div
+				class="flex justify-between md:mx-12 font-inter md:text-2xl items-center"
+			>
 				<p>Mentoría 1 a 1</p>
 				<span class="short"></span>
 				<p>Valor $300 USD</p>
 			</div>
-			<div class="flex justify-between md:mx-12 font-inter text-2xl">
+			<div
+				class="flex justify-between md:mx-12 font-inter md:text-2xl items-center"
+			>
 				<p>Vende fuera de tus fronteras</p>
 				<span class="short"></span>
 				<p>Valor $197 USD.</p>
 			</div>
-			<div class="flex justify-between md:mx-12 font-inter text-2xl">
+			<div
+				class="flex justify-between md:mx-12 font-inter md:text-2xl items-center"
+			>
 				<p>Crea anuncios potentes</p>
 				<span class="short"></span>
 				<p>Valor $500 USD</p>
@@ -146,7 +158,7 @@ import { bonosData, programaData } from './ventaData';
 		</div>
 
 		<div class="my-24">
-			<CTAVentaButtons />
+			<CTAVenta />
 		</div>
 	</div>
 </section>

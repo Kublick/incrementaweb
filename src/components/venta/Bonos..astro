@@ -1,6 +1,6 @@
 ---
 import { bonosData } from './ventaData';
-import CTAVentaButtons from '../venta/CTAVentaButtons.astro';
+import CTAVenta from './CTAVenta.astro';
 ---
 
 <style>
@@ -61,7 +61,7 @@ import CTAVentaButtons from '../venta/CTAVentaButtons.astro';
 								alt={`Imagen programa ${bono.id}`}
 								height={229}
 								width={233}
-								class="place-self-start order-first md:order-last mt-4 md:mt-0"
+								class="md:place-self-start place-selft-center  mt-4 md:mt-0 order-first md:order-last mx-auto md:m-0"
 							/>
 						</div>
 					) : (
@@ -71,7 +71,7 @@ import CTAVentaButtons from '../venta/CTAVentaButtons.astro';
 								alt={`Imagen programa ${bono.id}`}
 								height={229}
 								width={233}
-								class="place-self-end mt-8 md:mt-0 "
+								class="place-self-end mt-8 md:m-0 mx-auto  "
 							/>
 							<div class="mx-4">
 								<h2 class="font-inter font-bold text-2xl text-ventaBlue">
@@ -125,7 +125,7 @@ import CTAVentaButtons from '../venta/CTAVentaButtons.astro';
 				alt="Imagen Mentoria"
 				width="79"
 				height="79"
-				class="mx-auto"
+				class="mx-auto pt-8 md:pt-0"
 			/>
 			<h3 class="font-coolvetica text-2xl text-center text-ventaBlue">
 				Mentoria 1 a 1
@@ -170,7 +170,7 @@ import CTAVentaButtons from '../venta/CTAVentaButtons.astro';
 				alt="Imagen Anuncios Potentes"
 				width="79"
 				height="79"
-				class="mx-auto my-4"
+				class="mx-auto my-4 md:pt-0"
 			/>
 			<h3 class="font-coolvetica text-2xl text-center text-ventaBlue">
 				Mentoria 1 a 1
@@ -190,7 +190,7 @@ import CTAVentaButtons from '../venta/CTAVentaButtons.astro';
 		</div>
 	</div>
 
-	<div>
+	<div class="mx-4 md:mx-0">
 		<h2 class="text-4xl text-ventaBlue text-center uppercase font-extrabold">
 			3 bonos de regalo valorados en
 		</h2>
@@ -212,6 +212,6 @@ import CTAVentaButtons from '../venta/CTAVentaButtons.astro';
 	</div>
 
 	<div class="mb-24">
-		<CTAVentaButtons />
+		<CTAVenta />
 	</div>
 </section>
