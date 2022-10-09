@@ -1,0 +1,45 @@
+<script>
+	const hotmart = document.getElementsByName('hotmart');
+
+	hotmart.forEach((element) => {
+		element.addEventListener('click', () => {
+			window.open(
+				'https://pay.hotmart.com/W42168207B?off=5kj23v80&checkoutMode=10',
+				'_blank',
+			);
+		});
+	});
+
+	const whats = document.getElementsByName('whats');
+
+	whats.forEach((element) => {
+		element.addEventListener('click', () => {
+			window.open('https://wa.me/message/LD54V7JCH3TXD1', '_blank');
+		});
+	});
+</script>
+
+<div>
+	<h2 class="text-redVenta line-through text-6xl text-center font-bold py-4">
+		$4.523 USD
+	</h2>
+	<h2 class="text-[#5DD80E] text-8xl text-center font-black">$497 USD</h2>
+	<h2 class="text-4xl text-center font-bold py-4">89% de descuento</h2>
+
+	<div class="flex items-center flex-col mt-4 md:gap-10 gap-4">
+		<button
+			name="hotmart"
+			class="bg-redVenta font-coolvetica md:text-3xl text-xl text-white text-center rounded-2xl shadow-[10px_10px_2px_0px_rgba(0,0,0,0.07)] px-24 py-3 hover:bg-red-700"
+		>
+			QUIERO MI CUPO YA
+		</button>
+
+		<button
+			name="whats"
+			class="bg-[#0bd100] font-coolvetica md:text-lg text-base text-white text-center rounded-2xl shadow-[10px_10px_2px_0px_rgba(0,0,0,0.07)] px-24 py-3 flex gap-4 items-center hover:bg-green-500"
+		>
+			<img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
+			¿Necesitas ayuda?
+		</button>
+	</div>
+</div>

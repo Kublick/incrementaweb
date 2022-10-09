@@ -106,3 +106,47 @@ export const programaData = [
 		value: 'Invaluable',
 	},
 ];
+
+export const bonosData = [
+	{
+		id: 1,
+		image: '/venta/bono1.png',
+		title: 'Masterclass para posicionarte en redes sociales creando contenido.',
+		description:
+			'Conecta con tu comunidad y posiciónate como un experto. Te enseñaré cómo generar imágenes, videos, reels y más en 			Instagram y Facebook sin necesidad de darte mala vida. Te	llevaré de la mano, clic por clic, para que conozcas las mejores herramientas del mercado y empieces a diseñar tu propio contenido. También te daré las estrategias para aplicar 	cada vez que sientas que te quedas sin ideas',
+		value: 'Valor 297 USD.',
+	},
+	{
+		id: 2,
+		image: '/venta/bono2.png',
+		title: 'Genera ingresos pasivos con tu producto digital.',
+		description:
+			'Aprenderás a diseñar, crear, producir y posicionar un producto digital con un método ya probado. Lograrás generar dinero de forma automática y recurrente.',
+		value: 'Valor 47 USD.',
+	},
+	{
+		id: 3,
+		image: '/venta/bono3.png',
+		title: 'Crea tu programa de high ticket.',
+		description:
+			'Sé que eres experto en un área, sé que tienes estudios y experiencias. Es momento de compartir ese conocimiento y recibir ingresos constantemente. Aprenderás a crear tu curso online de una manera muy sencilla. PD: Una vez lo ubliques, empezarás a ganar dinero más rápido de lo que imaginas',
+		value: 'Valor 600 USD.',
+	},
+	{
+		id: 4,
+		image: '/venta/bono4.png',
+		title: 'Habla frente a la cámara con seguridad.',
+		description:
+			'Lograrás transmitir de forma asertiva tus servicios de consulta, perdiendo el miedo y la vergüenza al hacer videos, te sentirás en confianza total al hablar en redes sociales.',
+		value: 'Valor 247 USD.',
+	},
+	{
+		id: 5,
+		image: '/venta/bono5.png',
+		title:
+			'Las herramientas digitales que me han	permitido factura xxx dólares.',
+		description:
+			'Te mostraré todo lo que mis estudiantes y yo utilizamos para generar resultados a diario. ¿Sabes qué es lo mejor? Muchas de las que verás en el catálogo tienen versiones gratuitas que funcionan a la perfección.',
+		value: 'Valor 47 USD.',
+	},
+];
