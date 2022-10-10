@@ -70,7 +70,7 @@ export const programaData = [
 		title: '8 módulos de trabajo con lecciones de video en HD.',
 		description:
 			'Tendrás acceso a todo el programa para que puedas consumirlo de forma ordenada y enfocada. Podrás ir a tu ritmo, elige tus propios horarios para ver las lecciones pregrabadas y tomar apuntes. Conéctate desde la comunidad de tu casa, oficina o  consultorio en tu computador o celular',
-		value: 'Valor XXX USD.',
+		value: 'Valor 1600 USD.',
 	},
 
 	{
@@ -87,7 +87,7 @@ export const programaData = [
 		title: 'Acelerador de resultados.',
 		description:
 			'Para lograr resultados cada semana debes tener metas específicas, alcanzables y medibles. Aquí conocerás cómo multiplicar tus resultados para que nada quede en teoría, cada lección te llevará a la acción con ejercicios detallados para que apliques en tu negocio y comiences a ver los frutos de tu esfuerzo.',
-		value: 'Valor XXX USD.',
+		value: 'Valor 297 USD.',
 	},
 	{
 		id: 6,
