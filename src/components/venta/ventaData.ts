@@ -144,7 +144,7 @@ export const bonosData = [
 		id: 5,
 		image: '/venta/bono5.png',
 		title:
-			'Las herramientas digitales que me han	permitido factura xxx dólares.',
+			'Las herramientas digitales que me han	permitido factura $25,000 dólares.',
 		description:
 			'Te mostraré todo lo que mis estudiantes y yo utilizamos para generar resultados a diario. ¿Sabes qué es lo mejor? Muchas de las que verás en el catálogo tienen versiones gratuitas que funcionan a la perfección.',
 		value: 'Valor 47 USD.',
