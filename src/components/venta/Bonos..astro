@@ -1,6 +1,7 @@
 ---
 import { bonosData } from './ventaData';
 import CTAVenta from './CTAVenta.astro';
+import { FlipCD } from '../FlipCountdown';
 ---
 
 <style>
@@ -208,7 +209,7 @@ import CTAVenta from './CTAVenta.astro';
 	</div>
 
 	<div class="my-12">
-		<p>Timer</p>
+		<FlipCD date={'2022-10-21 04:30:0'} client:only="react" />
 	</div>
 
 	<div class="mb-24">

@@ -1,19 +1,19 @@
 <script>
-	const fb = document.getElementById('facebook');
+	document
+		.getElementById('facebook')
+		?.addEventListener('click', () =>
+			window.open(
+				'http://www.facebook.com/Psic%C3%B3loga-Berenice-Bastidas-Incrementa-tu-consulta-365202393876165/',
+			),
+		);
 
-	fb?.addEventListener('click', () =>
-		window.open(
-			'http://www.facebook.com/Psic%C3%B3loga-Berenice-Bastidas-Incrementa-tu-consulta-365202393876165/',
-		),
-	);
+	document
+		.getElementById('yt')
+		?.addEventListener('click', () =>
+			window.open('https://www.youtube.com/channel/UCoiQ74yUzLm6ZRUcB_rhPIQ'),
+		);
 
-	const yt = document.getElementById('yt');
-
-	yt?.addEventListener('click', () =>
-		window.open('https://www.youtube.com/channel/UCoiQ74yUzLm6ZRUcB_rhPIQ'),
-	);
-
-	const insta = document
+	document
 		.getElementById('insta')
 		?.addEventListener('click', () =>
 			window.open('https://www.instagram.com/psicologaberenice/'),
