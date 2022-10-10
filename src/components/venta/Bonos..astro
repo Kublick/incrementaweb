@@ -2,6 +2,7 @@
 import { bonosData } from './ventaData';
 import CTAVenta from './CTAVenta.astro';
 import { FlipCD } from '../FlipCountdown';
+import { Image } from '@astrojs/image/components';
 ---
 
 <style>
@@ -18,7 +19,14 @@ import { FlipCD } from '../FlipCountdown';
 </style>
 
 <section>
-	<img src="./venta/layeredimage.png" alt="image" />
+	<svg viewBox="0 0 1200 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path
+			fill-rule="evenodd"
+			clip-rule="evenodd"
+			d="M0 144L67 120C133 96 267 48 400 36C533 24 667 48 800 48C933 48 1067 24 1133 12L1200 0V180H1133C1067 180 933 180 800 180C667 180 533 180 400 180C267 180 133 180 67 180H0V144Z"
+			fill="#FF8840"></path>
+	</svg>
+
 	<div class="bg-[#ff8840] py-4">
 		<h2 class="font-coolvetica text-base md:text-2xl text-white text-center">
 			También obtendrás estos 5
