@@ -1,225 +1,212 @@
 ---
-import { bonosData } from './ventaData';
-import CTAVenta from './CTAVenta.astro';
-import { FlipCD } from '../FlipCountdown';
-import { Image } from '@astrojs/image/components';
+import { bonosData } from "./ventaData";
+import CTAVenta from "./CTAVenta.astro";
+import { FlipCD } from "../FlipCountdown";
 ---
 
-<style>
-	.spacer {
-		width: 100%;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover;
-	}
-
-	.layer1 {
-		background-image: url('./venta/layeredimage.png');
-	}
-</style>
-
 <section>
-	<svg viewBox="0 0 1200 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<path
-			fill-rule="evenodd"
-			clip-rule="evenodd"
-			d="M0 144L67 120C133 96 267 48 400 36C533 24 667 48 800 48C933 48 1067 24 1133 12L1200 0V180H1133C1067 180 933 180 800 180C667 180 533 180 400 180C267 180 133 180 67 180H0V144Z"
-			fill="#FF8840"></path>
-	</svg>
+  <div class="spacer layer1"></div>
+  <svg viewBox="0 0 1200 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M0 144L67 120C133 96 267 48 400 36C533 24 667 48 800 48C933 48 1067 24 1133 12L1200 0V180H1133C1067 180 933 180 800 180C667 180 533 180 400 180C267 180 133 180 67 180H0V144Z"
+      fill="#FF8840"></path>
+  </svg>
 
-	<div class="bg-[#ff8840] py-4">
-		<h2 class="font-coolvetica text-base md:text-2xl text-white text-center">
-			También obtendrás estos 5
-		</h2>
-		<h1
-			class="font-black font-inter text-3xl md:text-6xl text-white text-center mt-2 md:mt-4"
-		>
-			BONOS DE REGALO
-		</h1>
-	</div>
-	<div class="bg-gradient-to-b from-[#ff8840] via-white to-white">
-		<div class="grid md:gap-16 md:w-3/4 mx-auto py-4">
-			{
-				bonosData.map((bono) => {
-					return bono.id % 2 ? (
-						<div class="grid md:grid-cols-2 items-center md:gap-24 gap-4">
-							<div class="mx-4">
-								<h2 class="font-inter font-bold text-2xl text-ventaBlue text-right">
-									{bono.title}
-								</h2>
+  <div class="bg-[#ff8840] py-4">
+    <h2 class="font-coolvetica text-base md:text-2xl text-white text-center">
+      También obtendrás estos 5
+    </h2>
+    <h1
+      class="font-black font-inter text-3xl md:text-6xl text-white text-center mt-2 md:mt-4"
+    >
+      BONOS DE REGALO
+    </h1>
+  </div>
+  <div class="bg-gradient-to-b from-[#ff8840] to-white">
+    <div class="grid md:gap-16 md:w-3/4 mx-auto py-4">
+      {
+        bonosData.map((bono) => {
+          return bono.id % 2 ? (
+            <div class="grid md:grid-cols-2 items-center md:gap-24 gap-4">
+              <div class="mx-4">
+                <h2 class="font-inter font-bold text-2xl text-ventaBlue text-center md:text-right pb-4">
+                  {bono.title}
+                </h2>
 
-								<p
-									class={`${
-										bono.id < 3
-											? 'font-inter text-sm text-white text-right'
-											: 'font-inter text-sm text-black text-right'
-									}`}
-								>
-									{bono.description}
-								</p>
+                <p
+                  class={`${
+                    bono.id < 3
+                      ? "font-inter text-sm text-white md:text-right"
+                      : "font-inter text-sm text-black md:text-right"
+                  } `}
+                >
+                  {bono.description}
+                </p>
 
-								<div class="flex justify-end">
-									<h2 class="font-coolvetica text-2xl text-redVenta my-4 text-right bg-white p-2 line-through">
-										{bono.value}
-									</h2>
-								</div>
-							</div>
-							<img
-								src={bono.image}
-								alt={`Imagen programa ${bono.id}`}
-								height={229}
-								width={233}
-								class="md:place-self-start place-selft-center  mt-4 md:mt-0 order-first md:order-last mx-auto md:m-0"
-							/>
-						</div>
-					) : (
-						<div class="grid md:grid-cols-2 items-center md:gap-24 gap-4">
-							<img
-								src={bono.image}
-								alt={`Imagen programa ${bono.id}`}
-								height={229}
-								width={233}
-								class="place-self-end mt-8 md:m-0 mx-auto  "
-							/>
-							<div class="mx-4">
-								<h2 class="font-inter font-bold text-2xl text-ventaBlue">
-									{bono.title}
-								</h2>
-								<p
-									class={`${
-										bono.id < 3
-											? 'font-inter text-sm text-white'
-											: 'font-inter text-sm text-black'
-									}`}
-								>
-									{bono.description}
-								</p>
-								<div class="flex justify-start">
-									<h2 class="font-coolvetica text-2xl text-redVenta my-4 text-right bg-white p-2 line-through">
-										{bono.value}
-									</h2>
-								</div>
-							</div>
-						</div>
-					);
-				})
-			}
-		</div>
-		<div class="font-inter font-bold mt-8">
-			<h2 class="text-4xl text-ventaBlue text-center">
-				5 bonos de regalo valorados en
-			</h2>
-			<h1 class="text-4xl text-ventaBlue text-center">
-				<span class="text-redVenta line-through text-6xl"> $1,288 dólares</span>
-				completamente GRATIS
-			</h1>
-		</div>
-		<div class="bg-secondary py-1 w-1/2 shadow-lg rounded-md mx-auto my-20">
-		</div>
-	</div>
+                <div class="flex justify-end">
+                  <h2 class="font-coolvetica text-2xl text-redVenta my-4 text-right bg-white p-2 line-through">
+                    {bono.value}
+                  </h2>
+                </div>
+              </div>
+              <img
+                src={bono.image}
+                alt={`Imagen programa ${bono.id}`}
+                height={229}
+                width={233}
+                class="md:place-self-start place-selft-center  mt-4 md:mt-0 order-first md:order-last mx-auto md:m-0"
+              />
+            </div>
+          ) : (
+            <div class="grid md:grid-cols-2 items-center md:gap-24 gap-4">
+              <img
+                src={bono.image}
+                alt={`Imagen programa ${bono.id}`}
+                height={229}
+                width={233}
+                class="place-self-end mt-8 md:m-0 mx-auto  "
+              />
+              <div class="mx-4">
+                <h2 class="font-inter font-bold text-2xl text-ventaBlue">
+                  {bono.title}
+                </h2>
+                <p
+                  class={`${
+                    bono.id < 3
+                      ? "font-inter text-sm text-white"
+                      : "font-inter text-sm text-black"
+                  }`}
+                >
+                  {bono.description}
+                </p>
+                <div class="flex justify-start">
+                  <h2 class="font-coolvetica text-2xl text-redVenta my-4 text-right bg-white p-2 line-through">
+                    {bono.value}
+                  </h2>
+                </div>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+    <div class="font-inter font-bold mt-8">
+      <h2 class="text-4xl text-ventaBlue text-center">
+        5 bonos de regalo valorados en
+      </h2>
+      <h1 class="text-4xl text-ventaBlue text-center">
+        <span class="text-redVenta line-through text-6xl"> $1,288 dólares</span>
+        completamente GRATIS
+      </h1>
+    </div>
+    <div class="bg-secondary py-1 w-1/2 shadow-lg rounded-md mx-auto my-20">
+    </div>
+  </div>
 
-	<h2 class="text-4xl text-ventaBlue text-center uppercase font-extrabold">
-		BONOS DE ACCIÓN RÁPIDA
-	</h2>
-	<h2
-		class="text-xl text-ventaBlue text-center uppercase font-extrabold animate-pulse mt-2"
-	>
-		(Solo tenemos 20 cupos disponibles)
-	</h2>
-	<div class="grid md:grid-cols-3 gap-2 md:mx-48 mx-4 my-20">
-		<div class="bg-gray-300 flex flex-col justify-around">
-			<img
-				src="/venta/card1.png"
-				alt="Imagen Mentoria"
-				width="79"
-				height="79"
-				class="mx-auto pt-8 md:pt-0"
-			/>
-			<h3 class="font-coolvetica text-2xl text-center text-ventaBlue">
-				Mentoria 1 a 1
-			</h3>
-			<p class="mx-10 mt-4 text-justify">
-				Sesión privada con la psicóloga Berenice Bastidas de 45 minutos para
-				hablar de tu negocio y proyecto profesional. Se enfocarán en lo que
-				estás haciendo, verán estrategias personalizadas y, al finalizar,
-				tendrás una ruta clara de qué pasos tienes que seguir para generar los
-				resultados que sueñas.
-			</p>
+  <h2 class="text-4xl text-ventaBlue text-center uppercase font-extrabold">
+    BONOS DE ACCIÓN RÁPIDA
+  </h2>
+  <h2
+    class="text-xl text-ventaBlue text-center uppercase font-extrabold animate-pulse mt-2"
+  >
+    (Solo tenemos 20 cupos disponibles)
+  </h2>
+  <div class="grid md:grid-cols-3 gap-2 md:mx-48 mx-4 my-20">
+    <div class="bg-gray-300 flex flex-col justify-around">
+      <img
+        src="/venta/card1.png"
+        alt="Imagen Mentoria"
+        width="79"
+        height="79"
+        class="mx-auto pt-8 md:pt-0"
+      />
+      <h3 class="font-coolvetica text-2xl text-center text-ventaBlue">
+        Mentoria 1 a 1
+      </h3>
+      <p class="mx-10 mt-4 text-justify">
+        Sesión privada con la psicóloga Berenice Bastidas de 45 minutos para
+        hablar de tu negocio y proyecto profesional. Se enfocarán en lo que
+        estás haciendo, verán estrategias personalizadas y, al finalizar,
+        tendrás una ruta clara de qué pasos tienes que seguir para generar los
+        resultados que sueñas.
+      </p>
 
-			<p class="text-redVenta line-through text-3xl text-center font-bold py-8">
-				USD $300
-			</p>
-		</div>
-		<div class="flex flex-col gap-4 justify-around">
-			<img
-				src="/venta/card2.png"
-				alt="Imagen Mundo"
-				width="79"
-				height="79"
-				class="mx-auto my-4"
-			/>
-			<h3 class="font-coolvetica text-2xl text-center text-ventaBlue">
-				Vende fuera de tus fronteras
-			</h3>
-			<p class="mx-10 mt-4 text-justify">
-				Aprenderás el método para vender tus consultas a un alto precio y fuera
-				de tu país. Te explicaremos el cómo tener más pacientes en línea y cómo
-				generar ingresos en dólares y hasta euros.
-			</p>
-			<p
-				class="text-redVenta line-through text-3xl text-center font-bold mt-20 py-8"
-			>
-				USD $197
-			</p>
-		</div>
-		<div class="bg-gray-300 flex flex-col justify-around">
-			<img
-				src="/venta/card3.png"
-				alt="Imagen Anuncios Potentes"
-				width="79"
-				height="79"
-				class="mx-auto my-4 md:pt-0"
-			/>
-			<h3 class="font-coolvetica text-2xl text-center text-ventaBlue">
-				Crea anuncios potentes
-			</h3>
-			<p class="mx-10 my-4 text-justify">
-				Conocerás la estrategia que usan grandes empresas para conseguir más
-				pacientes a la semana y llenar sus agendas utilizando Facebook e
-				Instagram ADS. Verás desde las bases: cómo configurar tu cuenta
-				publicitaria, hasta cómo posicionar anuncios que atraigan a tus clientes
-				soñados. Es más, te ahorrarás los miles de dólares que te cobraría una
-				agencia de marketing por hacerte esto, porque lo sabrás hacer tú mismo.
-			</p>
+      <p class="text-redVenta line-through text-3xl text-center font-bold py-8">
+        USD $300
+      </p>
+    </div>
+    <div class="flex flex-col gap-4 justify-around">
+      <img
+        src="/venta/card2.png"
+        alt="Imagen Mundo"
+        width="79"
+        height="79"
+        class="mx-auto my-4"
+      />
+      <h3 class="font-coolvetica text-2xl text-center text-ventaBlue">
+        Vende fuera de tus fronteras
+      </h3>
+      <p class="mx-10 mt-4 text-justify">
+        Aprenderás el método para vender tus consultas a un alto precio y fuera
+        de tu país. Te explicaremos el cómo tener más pacientes en línea y cómo
+        generar ingresos en dólares y hasta euros.
+      </p>
+      <p
+        class="text-redVenta line-through text-3xl text-center font-bold mt-20 py-8"
+      >
+        USD $197
+      </p>
+    </div>
+    <div class="bg-gray-300 flex flex-col justify-around">
+      <img
+        src="/venta/card3.png"
+        alt="Imagen Anuncios Potentes"
+        width="79"
+        height="79"
+        class="mx-auto my-4 md:pt-0"
+      />
+      <h3 class="font-coolvetica text-2xl text-center text-ventaBlue">
+        Crea anuncios potentes
+      </h3>
+      <p class="mx-10 my-4 text-justify">
+        Conocerás la estrategia que usan grandes empresas para conseguir más
+        pacientes a la semana y llenar sus agendas utilizando Facebook e
+        Instagram ADS. Verás desde las bases: cómo configurar tu cuenta
+        publicitaria, hasta cómo posicionar anuncios que atraigan a tus clientes
+        soñados. Es más, te ahorrarás los miles de dólares que te cobraría una
+        agencia de marketing por hacerte esto, porque lo sabrás hacer tú mismo.
+      </p>
 
-			<p class="text-redVenta line-through text-3xl text-center font-bold py-8">
-				USD $500
-			</p>
-		</div>
-	</div>
+      <p class="text-redVenta line-through text-3xl text-center font-bold py-8">
+        USD $500
+      </p>
+    </div>
+  </div>
 
-	<div class="mx-4 md:mx-0">
-		<h2 class="text-4xl text-ventaBlue text-center uppercase font-extrabold">
-			3 bonos de regalo valorados en
-		</h2>
-		<h1 class="text-4xl text-ventaBlue text-center font-extrabold">
-			<span class="text-redVenta line-through text-5xl"> $997</span>
-			<span class="text-redVenta text-5xl">dólares</span>
-			completamente GRATIS
-		</h1>
-		<div class="bg-secondary py-1 w-1/2 shadow-lg rounded-md mx-auto my-20">
-		</div>
+  <div class="mx-4 md:mx-0">
+    <h2 class="text-4xl text-ventaBlue text-center uppercase font-extrabold">
+      3 bonos de regalo valorados en
+    </h2>
+    <h1 class="text-4xl text-ventaBlue text-center font-extrabold">
+      <span class="text-redVenta line-through text-5xl"> $997</span>
+      <span class="text-redVenta text-5xl">dólares</span>
+      completamente GRATIS
+    </h1>
+    <div class="bg-secondary py-1 w-1/2 shadow-lg rounded-md mx-auto my-20">
+    </div>
 
-		<h2 class="text-4xl text-ventaBlue text-center font-extrabold">
-			Los bonos de acción rápida desaparecen en:
-		</h2>
-	</div>
+    <h2 class="text-4xl text-ventaBlue text-center font-extrabold">
+      Los bonos de acción rápida desaparecen en:
+    </h2>
+  </div>
 
-	<div class="my-12">
-		<FlipCD date={'2022-10-21 04:30:0'} client:only="react" />
-	</div>
+  <div class="my-12">
+    <FlipCD date={"2022-10-21"} client:only="react" />
+  </div>
 
-	<div class="mb-24">
-		<CTAVenta />
-	</div>
+  <div class="mb-24">
+    <CTAVenta />
+  </div>
 </section>

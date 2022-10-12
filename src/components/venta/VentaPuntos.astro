@@ -1,52 +1,45 @@
 ---
-import { puntos } from './ventaData';
+import { puntos } from "./ventaData";
 ---
 
 <section class="">
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 240"
-		><path
-			fill="#21409A"
-			fill-opacity="1"
-			d="M0,192L34.3,197.3C68.6,203,137,213,206,213.3C274.3,213,343,203,411,186.7C480,171,549,149,617,149.3C685.7,149,754,171,823,186.7C891.4,203,960,213,1029,197.3C1097.1,181,1166,139,1234,138.7C1302.9,139,1371,181,1406,202.7L1440,224L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"
-		></path>
-	</svg>
+  <img src="/venta/bluetoplayer.svg" alt="wave" />
+  <div class="bg-primary md:pt-0 pt-4">
+    <h1 class="text-center font-coolvetica text-2xl md:text-4xl text-white">
+      Lo que viene para ti
+    </h1>
 
-	<div class="bg-primary md:pt-0 pt-4">
-		<h1 class="text-center font-coolvetica text-2xl md:text-4xl text-white">
-			Lo que viene para ti
-		</h1>
+    <div class="grid md:grid-cols-4 md:mt-12 gap-12 mx-12">
+      {
+        puntos.map((punto) => (
+          <div class="grid items-baseline md:mx-12 mx-6">
+            <img
+              src={punto.image}
+              alt={`Imagen ${punto.id}`}
+              class="mx-auto place-self-start "
+            />
+            <p class="text-white text-center font-inter pt-4 place-self-start text-sm ">
+              {punto.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+    <div class="md:relative">
+      <h1
+        class="font-coolvetica text-center mt-4 text-2xl md:text-4xl text-white md:mt-12 md:absolute md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2"
+      >
+        Y mucho más…
+      </h1>
+    </div>
+  </div>
 
-		<div class="grid md:grid-cols-4 md:mt-12 gap-12 mx-12">
-			{
-				puntos.map((punto) => (
-					<div class="grid items-baseline md:mx-12 mx-6">
-						<img
-							src={punto.image}
-							alt={`Imagen ${punto.id}`}
-							class="mx-auto place-self-start "
-						/>
-						<p class="text-white text-center font-inter pt-4 place-self-start text-sm ">
-							{punto.description}
-						</p>
-					</div>
-				))
-			}
-		</div>
-		<div class="md:relative">
-			<h1
-				class="font-coolvetica text-center mt-4 text-2xl md:text-4xl text-white md:mt-12 md:absolute md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2"
-			>
-				Y mucho más…
-			</h1>
-		</div>
-	</div>
-
-	<svg viewBox="0 0 1440 213" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<path
-			d="M0 159L34.3 153.7C68.6 148 137 138 206 137.7C274.3 138 343 148 411 164.3C480 180 549 202 617 201.7C685.7 202 754 180 823 164.3C891.4 148 960 138 1029 153.7C1097.1 170 1166 212 1234 212.3C1302.9 212 1371 170 1406 148.3L1440 127V31H1405.7C1371.4 31 1303 31 1234 31C1165.7 31 1097 31 1029 31C960 31 891 31 823 31C754.3 31 686 31 617 31C548.6 31 480 31 411 31C342.9 31 274 31 206 31C137.1 31 69 31 34 31H0V159Z"
-			fill="#FF4840"></path>
-		<path
-			d="M0 128L34.3 122.7C68.6 117 137 107 206 106.7C274.3 107 343 117 411 133.3C480 149 549 171 617 170.7C685.7 171 754 149 823 133.3C891.4 117 960 107 1029 122.7C1097.1 139 1166 181 1234 181.3C1302.9 181 1371 139 1406 117.3L1440 96V0H1405.7C1371.4 0 1303 0 1234 0C1165.7 0 1097 0 1029 0C960 0 891 0 823 0C754.3 0 686 0 617 0C548.6 0 480 0 411 0C342.9 0 274 0 206 0C137.1 0 69 0 34 0H0V128Z"
-			fill="#21409A"></path>
-	</svg>
+  <svg viewBox="0 0 1440 213" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M0 159L34.3 153.7C68.6 148 137 138 206 137.7C274.3 138 343 148 411 164.3C480 180 549 202 617 201.7C685.7 202 754 180 823 164.3C891.4 148 960 138 1029 153.7C1097.1 170 1166 212 1234 212.3C1302.9 212 1371 170 1406 148.3L1440 127V31H1405.7C1371.4 31 1303 31 1234 31C1165.7 31 1097 31 1029 31C960 31 891 31 823 31C754.3 31 686 31 617 31C548.6 31 480 31 411 31C342.9 31 274 31 206 31C137.1 31 69 31 34 31H0V159Z"
+      fill="#FF4840"></path>
+    <path
+      d="M0 128L34.3 122.7C68.6 117 137 107 206 106.7C274.3 107 343 117 411 133.3C480 149 549 171 617 170.7C685.7 171 754 149 823 133.3C891.4 117 960 107 1029 122.7C1097.1 139 1166 181 1234 181.3C1302.9 181 1371 139 1406 117.3L1440 96V0H1405.7C1371.4 0 1303 0 1234 0C1165.7 0 1097 0 1029 0C960 0 891 0 823 0C754.3 0 686 0 617 0C548.6 0 480 0 411 0C342.9 0 274 0 206 0C137.1 0 69 0 34 0H0V128Z"
+      fill="#21409A"></path>
+  </svg>
 </section>
