@@ -1,2 +1,2 @@
 export const ebook =
-  "https://incrementafiles.s3.us-west-1.amazonaws.com/eBook+-+Agenda+Llena+de+Pacientes.pdf";
+  "https://incrementafiles.s3.us-west-1.amazonaws.com/Manual+Taller+17+al+20+Octubre.pdf";
