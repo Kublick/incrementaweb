@@ -1,8 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
 import CountdownTimer from "./CountdownTimer";
-
-import IncrementaLateral from "../assets/Incrementa_lateral.png";
 
 type Props = {
   bgcolor: string;
@@ -19,12 +16,12 @@ const eventdate = new Date(date);
     <div class="flex justify-center">
       <div class="w-48 px-6 pb-6 bg-white rounded-b-lg shadow-xl lg:w-64 h-3/4">
         <div>
-          <Image
-            src={IncrementaLateral}
+          <img
+            src={"/Incrementa_lateral.png"}
             alt="Logo Incrementatuconsulta"
             width={400}
             height={100}
-            format="webp"
+            class="mt-4"
           />
         </div>
       </div>

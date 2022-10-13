@@ -1,50 +1,90 @@
 ---
-import CountdownTimer from '../components/CountdownTimer';
-import Layout from '../layouts/Layout.astro';
-import FormularioVip from '../components/FormularioVip';
-import AstroTimer from '../components/AstroTimer.astro';
-const targetDate = new Date('October 20 2022 11:59').getTime();
+import Layout from "../layouts/Layout.astro";
+import FormularioVip from "../components/FormularioVip";
+import AstroTimer from "../components/AstroTimer.astro";
+const targetDate = "October 20 2022 11:59";
 ---
 
 <Layout title="Grupo VIP Incrementa Tu Consulta">
-	<div class="bg-red-800 p-6 text-white flex flex-col items-center">
-		<h1 class="text-xl md:text-3xl uppercase font-bold">
-			este grupo estara activo hasta
-		</h1>
+  <div class="bg-red-800 p-6 text-white flex flex-col items-center">
+    <h1 class="text-xl md:text-3xl uppercase font-bold">
+      este grupo estara activo hasta
+    </h1>
 
-		<AstroTimer />
-	</div>
+    <AstroTimer eventDate={targetDate} />
+  </div>
 
-	<div class="mt-8">
-		<h1 class="text-lg md:text-2xl text-center uppercase font-bold">
-			bienvenido al grupo vip de
-		</h1>
-		<h1
-			class="text-3xl md:text-5xl text-center uppercase font-bold text-primary py-8"
-		>
-			incrementa tu consulta
-		</h1>
-		<h2 class="text-xl md:text-2xl text-center py-2">
-			Una comunidad exclusiva hecha para quienes conectar con su propósito y
-			transformar sus resultados
-		</h2>
-		<h2 class="text-xl md:text-2xl text-center uppercase">
-			ingresa ya mismo al grupo vip de <span class="font-semibold text-primary"
-				>incrementa tu consulta</span
-			>
-		</h2>
-	</div>
-	<div class="max-w-3xl mx-auto">
-		<FormularioVip client:only="react" />
-	</div>
+  <div class="mt-8">
+    <h1 class="text-lg md:text-2xl text-center uppercase font-bold">
+      bienvenido al grupo vip de
+    </h1>
+    <h1
+      class="text-3xl md:text-5xl text-center uppercase font-bold text-primary py-8"
+    >
+      incrementa tu consulta
+    </h1>
+    <h2 class="text-xl md:text-2xl text-center py-2">
+      Una comunidad exclusiva hecha para quienes conectar con su propósito y
+      transformar sus resultados
+    </h2>
+    <h2 class="text-xl md:text-2xl text-center uppercase">
+      ingresa ya mismo al grupo vip de <span class="font-semibold text-primary"
+        >incrementa tu consulta</span
+      >
+    </h2>
+  </div>
+  <div class="max-w-3xl mx-auto">
+    <FormularioVip client:only="react" />
+  </div>
 
-	<section class="mt-10 bg-black py-10">
-		<h1 class="text-white text-xl md:text-2xl font-bold text-center">
-			¿PARA QUIÉN ES ESTE GRUPO VIP?
-		</h1>
+  <section class="mx-auto">
+    <h1
+      class="text-white text-xl md:text-2xl font-bold text-center mt-10 bg-red-800 py-10"
+    >
+      ¿PARA QUIÉN ES ESTE GRUPO VIP?
+    </h1>
+    <ul class="md:mx-24 mx-4 md:text-3xl text-xl md:mt-8 mt-8">
+      <li class="my-4">
+        Para personas que desean cambiar su vida incrementado su número de
+        pacientes.
+      </li>
+      <li>
+        Para quienes incluso empiezan desde cero y no saben como promocionar sus
+        servicios de consulta.
+      </li>
+      <li class="mt-4">
+        Para quien cree en sí mismo y está dispuesto a invertir en sí, para
+        conseguir resultados diferentes.
+      </li>
+    </ul>
 
-		<h1 class="text-white text-xl md:text-2xl font-bold text-center">
-			¿QUÉ BENEFICIOS TIENE ESTE GRUPO VIP?
-		</h1>
-	</section>
+    <h1
+      class="mt-8 text-white text-xl md:text-2xl font-bold text-center bg-red-800 py-10"
+    >
+      ¿QUÉ BENEFICIOS TIENE ESTE GRUPO VIP?
+    </h1>
+
+    <ul class="md:mx-24 mx-4 md:text-3xl text-xl md:mt-8 mt-8">
+      <li class="my-4">
+        1.- Mentoria grupal privada vía zoom con Psicóloga Berenice Bastidas,
+        previo a la clase número 4
+      </li>
+      <li>
+        2.- Benefios exclusivos y prioridad para entrar al entrenamiento
+        Avanzado Incrementa Tu Consulta
+      </li>
+    </ul>
+  </section>
 </Layout>
+
+<!-- 
+Para personas que desean cambiar su vida incrementado su número de pacientes.
+Para quienes incluso empiezan desde cero y no saben como promocionar sus servicios de consulta.
+Para quien cree en sí mismo y está dispuesto a invertir en sí, para conseguir resultados diferentes.  
+
+
+
+1- Mentoria grupal privada vía zoom con Psicóloga Berenice Bastidas, previo a la clase número 4
+2-Benefios exclusivos y prioridad para entrar al entrenamiento Avanzado Incrementa Tu Consulta
+
+ -->
