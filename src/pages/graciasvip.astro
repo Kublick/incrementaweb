@@ -1,0 +1,59 @@
+---
+import Videoplayer from "../components/Videoplayer.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<script>
+  import JSConfetti from "js-confetti";
+  import { getLead } from "../hooks/getLead";
+  const jsConfetti = new JSConfetti();
+  const whatsappUrl = "https://chat.whatsapp.com/DU3ingqTetq9B0sZeb5Fu7";
+
+  const button = document.getElementById("groupbutton");
+
+  button?.addEventListener("click", () => {
+    jsConfetti.addConfetti();
+    setTimeout(() => {
+      window.open(whatsappUrl, "_blank");
+    }, 1200);
+  });
+</script>
+
+<Layout title="Gracias Vip">
+  <section id="mycanvas">
+    <div class="bg-red-600 py-8">
+      <h1
+        class="text-2xl md:text-5xl text-white text-center px-4 md:px-20 md:mt-4 font-bold"
+      >
+        ¡Gracias! Ahora solo debes hacer click al botón
+      </h1>
+    </div>
+
+    <h1 class="px-20 md:text-3xl text-center md:my-10 my-4">
+      Ingresa ahora pulsando abajo 👇
+    </h1>
+
+    <div class="flex flex-col items-center px-4 pb-8">
+      <button
+        id="groupbutton"
+        class="flex bg-green-600 py-4 px-8 items-center rounded-full gap-4 md:text-2xl text-white font-bold shadow-lg"
+      >
+        <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
+        Pulsa el botón para unirte al grupo VIP de WhatsApp
+      </button>
+      <!-- 
+      <button
+        id="groupbutton"
+        class="px-5 py-2.5 relative rounded group overflow-hidden bg-white inline-block text-xl md:text-2xl font-semibold border-whats border-4"
+      >
+        <span
+          class="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 bg-whats group-hover:h-full opacity-90"
+        ></span>
+        <span class="relative group-hover:text-white flex gap-2 items-center">
+          <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
+          Pulsa el botón para unirte al grupo VIP de WhatsApp
+        </span>
+      </button> -->
+    </div>
+  </section>
+</Layout>

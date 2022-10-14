@@ -41,8 +41,8 @@ function FormularioVip() {
     const formData = new FormData(e.target);
     const { errors } = validateForm<typeof User>(formData, User);
 
-    const field1 = formData.get("pregunta");
-    const field2 = formData.get("preguntados");
+    const field2 = formData.get("pregunta");
+    const field3 = formData.get("preguntados");
 
     if (errors) {
       setHasError(true);
@@ -57,8 +57,8 @@ function FormularioVip() {
     }
     setHasError(false);
 
-    formData.append("field[1]", field1!);
-    formData.append("field[2]", field2!);
+    formData.append("field[1]", field2!);
+    formData.append("field[2]", field3!);
 
     formData.delete("pregunta");
     formData.delete("preguntados");
@@ -174,7 +174,7 @@ function FormularioVip() {
           </label>
           <select
             id="countries"
-            name="countries"
+            name="field[1]"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             defaultValue={"MX"}
           >
