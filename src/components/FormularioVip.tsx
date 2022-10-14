@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { z } from "zod";
 import { countries } from "../data/countries";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
 import { ErrorResult, validateForm } from "../utils/utils";
 import type * as React from "react";
 
@@ -13,20 +11,23 @@ const User = z.object({
   email: z
     .string({ required_error: "El Email es requerido" })
     .email({ message: "El email no es valido" }),
-  whatsapp: z
-    .string({ required_error: "Este campo es requerido" })
-    .min(12, { message: "Ingrese un numero de 12 digitos sin simbolos" }),
-  countries: z.string({ required_error: "Este campo es requerido" }),
-  pais: z.string({ required_error: "Este campo es requerido" }),
+  phone: z.string({ required_error: "Este campo es requerido" }).min(12, {
+    message:
+      "Ingrese un numero de 12 digitos con el codigo de pais y sin simbolos",
+  }),
+
   pregunta: z
     .string({ required_error: "Este campo es requerido" })
-    .min(12, { message: "Ingrese una sentencia en este campo" }),
+    .min(6, { message: "Ingrese una sentencia en este campo" }),
   preguntados: z
     .string({ required_error: "Este campo es requerido" })
-    .min(12, { message: "Ingrese una sentencia en este campo" }),
+    .min(6, { message: "Ingrese una sentencia en este campo" }),
 });
 
-type IUser = z.infer<typeof User>;
+type User = z.infer<typeof User>;
+
+const formNumber = "49";
+const formId = "e5e27720c608848b1c84feecf9f68ed6";
 
 function FormularioVip() {
   const [errorMessage, setErrorMessage] = useState({} as ErrorResult);
@@ -39,7 +40,9 @@ function FormularioVip() {
 
     const formData = new FormData(e.target);
     const { errors } = validateForm<typeof User>(formData, User);
-    console.log(errors);
+
+    const field1 = formData.get("pregunta");
+    const field2 = formData.get("preguntados");
 
     if (errors) {
       setHasError(true);
@@ -48,33 +51,48 @@ function FormularioVip() {
       setTimeout(() => {
         setHasError(false);
         setIsSending(false);
-      }, 2000);
+      }, 3000);
 
       return;
     }
     setHasError(false);
 
-    // const url = "https://psicologaberenicebastidas.activehosted.com/proc.php";
-    // fetch(url, {
-    //   method: "POST",
-    //   body: formData,
-    //   mode: "no-cors",
-    // })
-    //   .then((response) => {
-    //     if (response.status === 200) {
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
-    // setTimeout(() => {
-    //   window.location.href = "/gracias";
-    // }, 2000);
+    formData.append("field[1]", field1!);
+    formData.append("field[2]", field2!);
+
+    formData.delete("pregunta");
+    formData.delete("preguntados");
+
+    const url = "https://psicologaberenicebastidas.activehosted.com/proc.php";
+    fetch(url, {
+      method: "POST",
+      body: formData,
+      mode: "no-cors",
+    })
+      .then((response) => {
+        if (response.status === 200) {
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    setTimeout(() => {
+      window.location.href = "/gracias";
+    }, 2000);
   };
 
   return (
     <div className="bg-secondary p-4 rounded-lg my-4">
       <form onSubmit={handleSubmit}>
+        <input type="hidden" name="u" value={formNumber} />
+        <input type="hidden" name="f" value={formNumber} />
+        <input type="hidden" name="s" />
+        <input type="hidden" name="c" value="0" />
+        <input type="hidden" name="m" value="0" />
+        <input type="hidden" name="act" value="sub" />
+        <input type="hidden" name="v" value="2" />
+        <input type="hidden" name="or" value={formId} />
+
         <div className="mt-2 ">
           <label className="block mb-2 text-sm font-medium text-white">
             Nombre:
@@ -99,6 +117,7 @@ function FormularioVip() {
             <input
               type="text"
               id="fullname"
+              name="fullname"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5"
               placeholder="Nombre"
             />
@@ -131,6 +150,8 @@ function FormularioVip() {
             </div>
             <input
               type="text"
+              id="email"
+              name="email"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5"
               placeholder="Correo"
             />
@@ -153,7 +174,9 @@ function FormularioVip() {
           </label>
           <select
             id="countries"
+            name="countries"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            defaultValue={"MX"}
           >
             {countries.map((country) => (
               <option key={country.value} value={country.value}>
@@ -162,14 +185,6 @@ function FormularioVip() {
             ))}
           </select>
         </div>
-
-        {hasError ? (
-          <div className="mt-4 mx-4">
-            <p className=" bg-white text-red-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">
-              {errorMessage.countries}
-            </p>
-          </div>
-        ) : null}
 
         <div className="mt-2">
           <label
@@ -191,7 +206,8 @@ function FormularioVip() {
             </div>
             <input
               type="text"
-              id="whatsapp"
+              name="phone"
+              id="phone"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  "
               placeholder="Numero Whatsapp"
             />
@@ -199,7 +215,7 @@ function FormularioVip() {
           {hasError ? (
             <div className="mt-4 mx-4">
               <p className=" bg-white text-red-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">
-                {errorMessage.whatsapp}
+                {errorMessage.phone}
               </p>
             </div>
           ) : null}
@@ -214,7 +230,7 @@ function FormularioVip() {
           <div className="relative">
             <input
               type="text"
-              id="pregunta"
+              name="pregunta"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  "
               placeholder="Escribe aquí"
             />
@@ -239,6 +255,7 @@ function FormularioVip() {
           <div className="relative">
             <input
               type="text"
+              name="preguntados"
               id="preguntados"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  "
               placeholder="Escribe aquí"
