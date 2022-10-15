@@ -5,6 +5,55 @@ import NewFooter from './NewFooter.astro';
 import { bonosData, programaData } from './ventaData';
 ---
 
+<style>
+	span.short::after {
+		content: ' ';
+		flex: 1;
+		border-bottom: 2px dotted #000;
+		margin: 0 1rem;
+	}
+	span.short {
+		font-size: 0.8rem;
+		font-style: italic;
+		flex: 1;
+		display: flex;
+	}
+
+	.stuff {
+		opacity: 0;
+		filter: blur(5px);
+		/* transform: translateX(-100%); */
+		transition: all 1.25s;
+	}
+
+	@media (prefers-reduced-motion) {
+		.stuff {
+			transition: none;
+		}
+	}
+	.show {
+		opacity: 1;
+		filter: blur(0);
+		transform: translateX(0);
+	}
+</style>
+
+<script>
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('show');
+			} else {
+				entry.target.classList.remove('show');
+			}
+		});
+	});
+
+	const hiddenElements = document.querySelectorAll('.stuff');
+
+	hiddenElements.forEach((el) => observer.observe(el));
+</script>
+
 <section>
 	<div
 		class="bg-gray-500 text-4xl md:text-8xl font-black font-inter md:flex md:justify-center md:items-center py-8"
@@ -101,7 +150,7 @@ import { bonosData, programaData } from './ventaData';
 		<div class="md:mx-36 mx-4">
 			{
 				programaData.map((programa) => (
-					<div class="flex justify-between md:mx-12 font-inter md:text-2xl items-center">
+					<div class="flex justify-between md:mx-12 font-inter md:text-2xl items-center stuff show">
 						<p class="w-52 md:w-auto">{programa.title}</p>
 						<span class="short" />
 						<p>{programa.value}</p>
@@ -119,7 +168,7 @@ import { bonosData, programaData } from './ventaData';
 		<div class="md:mx-36 mx-4">
 			{
 				bonosData.map((bono) => (
-					<div class="flex justify-between md:mx-12 font-inter md:text-2xl items-center">
+					<div class="flex justify-between md:mx-12 font-inter md:text-2xl items-center stuff show">
 						<p class="w-52 md:w-auto">{bono.title}</p>
 						<span class="short" />
 						<p>{bono.value}</p>
@@ -136,21 +185,21 @@ import { bonosData, programaData } from './ventaData';
 
 		<div class="md:mx-36 mx-4">
 			<div
-				class="flex justify-between md:mx-12 font-inter md:text-2xl items-center"
+				class="flex justify-between md:mx-12 font-inter md:text-2xl items-center stuff show"
 			>
 				<p>Mentoría 1 a 1</p>
 				<span class="short"></span>
 				<p>Valor $300 USD</p>
 			</div>
 			<div
-				class="flex justify-between md:mx-12 font-inter md:text-2xl items-center"
+				class="flex justify-between md:mx-12 font-inter md:text-2xl items-center stuff show"
 			>
 				<p>Vende fuera de tus fronteras</p>
 				<span class="short"></span>
 				<p>Valor $197 USD.</p>
 			</div>
 			<div
-				class="flex justify-between md:mx-12 font-inter md:text-2xl items-center"
+				class="flex justify-between md:mx-12 font-inter md:text-2xl items-center stuff show"
 			>
 				<p>Crea anuncios potentes</p>
 				<span class="short"></span>
@@ -164,18 +213,3 @@ import { bonosData, programaData } from './ventaData';
 	</div>
 	<NewFooter />
 </section>
-
-<style>
-	span.short::after {
-		content: ' ';
-		flex: 1;
-		border-bottom: 2px dotted #000;
-		margin: 0 1rem;
-	}
-	span.short {
-		font-size: 0.8rem;
-		font-style: italic;
-		flex: 1;
-		display: flex;
-	}
-</style>
