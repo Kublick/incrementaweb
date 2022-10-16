@@ -56,27 +56,31 @@ import { bonosData, programaData } from './ventaData';
 
 <section>
 	<div
-		class="bg-gray-500 text-4xl md:text-8xl font-black font-inter md:flex md:justify-center md:items-center py-8"
+		class="bg-gray-500 text-4xl lg:text-8xl font-black font-inter lg:flex lg:justify-center lg:items-center py-8"
 	>
-		<img src="/venta/garantia.png" alt="sello de garantia" />
+		<img
+			src="/venta/garantia.png"
+			alt="sello de garantia"
+			class="mx-auto lg:mx-0"
+		/>
 
 		<div class="text-center">
 			<h2>15 días</h2>
 			<h2>de Garantía</h2>
 		</div>
 	</div>
-	<div class="grid md:grid-cols-2">
-		<div class="bg-mango">
+	<div class="grid lg:grid-cols-2 items-center bg-mango">
+		<div class="">
 			<img src="/venta/bereniceventa.png" alt="Berenice Bastidas" class="" />
 		</div>
 		<div class="bg-secondary text-white flex items-center py-4">
 			<div class="md:w-3/4 md:mx-auto mx-10 mt-4 md:mt-0">
-				<h1 class="text-5xl font-bold font-inter text-center">
+				<h1 class="lg:text-5xl text-3xl font-bold font-inter text-center">
 					Hola, soy Berenice
 				</h1>
 
 				<div class="p-0.5 bg-white my-8 mx-4"></div>
-				<p class="sm:text-lg md:text-2xl">
+				<p class="md:text-2xl">
 					Soy Psicóloga Berenice Bastidas y descifré como llenar mi agenda medio
 					tiempo, de pacientes durante 3 años seguidos y esto fue antes de
 					dedicarme a ayudar a Nutriólogos, Psicólogos, Terapeutas,
@@ -147,10 +151,10 @@ import { bonosData, programaData } from './ventaData';
 		>
 			Todo lo que recibirás:
 		</h1>
-		<div class="md:mx-36 mx-4">
+		<div class="md:mx-14 lg:mx-36 mx-4">
 			{
 				programaData.map((programa) => (
-					<div class="flex justify-between md:mx-12 font-inter md:text-2xl items-center stuff show">
+					<div class="flex justify-between lg:mx-12 font-inter lg:text-2xl items-center stuff show">
 						<p class="w-52 md:w-auto">{programa.title}</p>
 						<span class="short" />
 						<p>{programa.value}</p>
@@ -165,10 +169,10 @@ import { bonosData, programaData } from './ventaData';
 			BONOS DE REGALO
 		</h1>
 
-		<div class="md:mx-36 mx-4">
+		<div class="md:mx-14 lg:mx-36 mx-4">
 			{
 				bonosData.map((bono) => (
-					<div class="flex justify-between md:mx-12 font-inter md:text-2xl items-center stuff show">
+					<div class="flex justify-between lg:mx-12 font-inter lg:text-2xl items-center stuff show">
 						<p class="w-52 md:w-auto">{bono.title}</p>
 						<span class="short" />
 						<p>{bono.value}</p>
@@ -183,23 +187,23 @@ import { bonosData, programaData } from './ventaData';
 			BONOS DE ACCIÓN RÁPIDA
 		</h1>
 
-		<div class="md:mx-36 mx-4">
+		<div class="md:mx-14 lg:mx-36 mx-4">
 			<div
-				class="flex justify-between md:mx-12 font-inter md:text-2xl items-center stuff show"
+				class="flex justify-between lg:mx-12 font-inter lg:text-2xl items-center stuff show"
 			>
 				<p>Mentoría 1 a 1</p>
 				<span class="short"></span>
 				<p>Valor $300 USD</p>
 			</div>
 			<div
-				class="flex justify-between md:mx-12 font-inter md:text-2xl items-center stuff show"
+				class="flex justify-between lg:mx-12 font-inter lg:text-2xl items-center stuff show"
 			>
 				<p>Vende fuera de tus fronteras</p>
 				<span class="short"></span>
 				<p>Valor $197 USD.</p>
 			</div>
 			<div
-				class="flex justify-between md:mx-12 font-inter md:text-2xl items-center stuff show"
+				class="flex justify-between lg:mx-12 font-inter lg:text-2xl items-center stuff show"
 			>
 				<p>Crea anuncios potentes</p>
 				<span class="short"></span>
