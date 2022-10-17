@@ -1,5 +1,6 @@
 ---
 import CountdownTimer from "./CountdownTimer";
+import { DateTime } from "luxon";
 
 type Props = {
   bgcolor: string;
@@ -8,9 +9,13 @@ type Props = {
 
 const { bgcolor, date } = Astro.props as Props;
 
-const testDate = new Date(date);
+// const testDate = new Date(date);
 
-const eventdate = testDate.toLocaleString("en-US");
+// const eventdate = testDate.toLocaleString("en-US");
+
+const local = DateTime.fromISO(date);
+
+const eventdate = new Date(local.ts);
 ---
 
 <header>
