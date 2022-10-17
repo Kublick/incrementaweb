@@ -8,7 +8,13 @@ type Props = {
 
 const { bgcolor, date } = Astro.props as Props;
 
-const eventdate = new Date(date);
+const testDate = new Date(date);
+
+const eventdate = testDate.toLocaleString("en-US", {
+  timeZone: "UTC",
+});
+
+console.log(eventdate);
 ---
 
 <header>
