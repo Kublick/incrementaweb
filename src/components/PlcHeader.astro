@@ -11,7 +11,7 @@ const { bgcolor, date } = Astro.props as Props;
 const testDate = new Date(date);
 
 const eventdate = testDate.toLocaleString("en-US", {
-  timeZone: "America/Los_Angeles",
+  timeZone: "UTC",
 });
 ---
 
