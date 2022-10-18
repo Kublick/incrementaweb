@@ -11,11 +11,7 @@ const User = z.object({
   email: z
     .string({ required_error: "El Email es requerido" })
     .email({ message: "El email no es valido" }),
-  phone: z.string({ required_error: "Este campo es requerido" }).min(12, {
-    message:
-      "Ingrese un numero de 12 digitos con el codigo de pais y sin simbolos",
-  }),
-
+  phone: z.string({ required_error: "Este campo es requerido" }),
   pregunta: z
     .string({ required_error: "Este campo es requerido" })
     .min(6, { message: "Ingrese una sentencia en este campo" }),
@@ -57,8 +53,8 @@ function FormularioVip() {
     }
     setHasError(false);
 
-    formData.append("field[1]", field2!);
-    formData.append("field[2]", field3!);
+    formData.append("field[2]", field2!);
+    formData.append("field[3]", field3!);
 
     formData.delete("pregunta");
     formData.delete("preguntados");
@@ -77,7 +73,7 @@ function FormularioVip() {
         console.log(error);
       });
     setTimeout(() => {
-      window.location.href = "/gracias";
+      window.location.href = "/graciasvip";
     }, 2000);
   };
 
