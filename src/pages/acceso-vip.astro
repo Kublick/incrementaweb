@@ -2,77 +2,172 @@
 import Layout from "../layouts/Layout.astro";
 import FormularioVip from "../components/FormularioVip";
 import AstroTimer from "../components/AstroTimer.astro";
+import { FlipCD } from "../components/FlipCountdown";
 const targetDate = "October 20 2022 11:59";
 ---
 
+<style>
+  .curved {
+    background: #e7407b;
+    height: 80px;
+    border-top-left-radius: 75% 100%;
+    border-top-right-radius: 75% 100%;
+  }
+</style>
+
 <Layout title="Grupo VIP Incrementa Tu Consulta">
-  <div class="bg-red-800 p-6 text-white flex flex-col items-center">
-    <h1 class="text-xl md:text-3xl uppercase font-bold">
+  <img
+    src="incrementa_lateral.png"
+    alt="Imagen Incrementa Tu Consulta"
+    class="mt-4 mx-auto"
+  />
+
+  <div class="p-6 text-primary font-coolvetica flex flex-col items-center mx-4">
+    <h1 class="text-lg md:text-3xl uppercase font-bold">
       este grupo estara activo hasta
     </h1>
-
-    <AstroTimer eventDate={targetDate} />
+    <div class="mt-6">
+      <FlipCD date={targetDate} client:only="react" />
+    </div>
   </div>
 
-  <div class="mt-8">
-    <h1 class="text-lg md:text-2xl text-center uppercase font-bold">
+  <div class="mt-8 curved">
+    <h1
+      class="text-lg md:text-4xl text-center font-bold pt-8 text-white uppercase"
+    >
       bienvenido al grupo vip de
     </h1>
-    <h1
-      class="text-3xl md:text-5xl text-center uppercase font-bold text-primary py-8"
-    >
-      incrementa tu consulta
-    </h1>
-    <h2 class="text-xl md:text-2xl text-center py-2">
-      Una comunidad exclusiva hecha para quienes conectar con su propósito y
-      transformar sus resultados
-    </h2>
-    <h2 class="text-xl md:text-2xl text-center uppercase">
-      ingresa ya mismo al grupo vip de <span class="font-semibold text-primary"
-        >incrementa tu consulta</span
+  </div>
+  <div
+    class="bg-gradient-to-b from-secondary via-secondary-light to-white font-inter"
+  >
+    <div class="px-4 md:px-0">
+      <h1
+        class="text-3xl md:text-5xl text-center uppercase font-bold text-primary md:py-8"
       >
-    </h2>
-  </div>
-  <div class="max-w-3xl mx-auto">
-    <FormularioVip client:only="react" />
-  </div>
+        incrementa tu consulta
+      </h1>
+      <h2 class="text-xl md:text-2xl text-center py-2 text-white font-bold">
+        Una comunidad exclusiva hecha para quienes conectar con su propósito y
+        transformar sus resultados
+      </h2>
+      <h2
+        class="text-xl md:text-2xl text-center uppercase text-white font-bold"
+      >
+        ingresa ya mismo al grupo vip de <span class="font-bold"
+          >incrementa tu consulta</span
+        >
+      </h2>
+    </div>
 
-  <section class="">
+    <div class="max-w-3xl mx-auto">
+      <FormularioVip client:only="react" />
+    </div>
+
+    <div class="w-3/4 md:w-1/2 py-0.5 bg-mango mx-auto my-12"></div>
     <h1
-      class="text-white text-xl md:text-2xl font-bold text-center mt-10 bg-red-800 py-10"
+      class="text-primary text-xl lg:text-6xl md:text-4xl font-bold text-center mt-10 py-10 font-coolvetica mx-4"
     >
-      ¿PARA QUIÉN ES ESTE GRUPO VIP?
+      ¿Para quién es este grupo VIP?
     </h1>
-    <ul class="md:mx-24 mx-4 md:text-3xl text-xl md:mt-8 mt-8">
-      <li class="my-4">
-        Para personas que desean cambiar su vida incrementado su número de
-        pacientes.
+  </div>
+  <section class="">
+    <ul class="md:mx-48 mx-4 md:text-2xl md:mt-8 mt-8">
+      <li class="my-4 flex items-center gap-4 font-bold">
+        <div class="bg-green-600 p-2 rounded-full flex-start">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="3"
+            stroke="white"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.5 12.75l6 6 9-13.5"></path>
+          </svg>
+        </div>
+        Para personas que desean cambiar su vida incrementado su número de pacientes.
       </li>
-      <li>
+
+      <li class="my-4 flex items-center gap-4 font-bold">
+        <div class="bg-green-600 p-2 rounded-full">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="3"
+            stroke="white"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.5 12.75l6 6 9-13.5"></path>
+          </svg>
+        </div>
         Para quienes incluso empiezan desde cero y no saben como promocionar sus
         servicios de consulta.
       </li>
-      <li class="mt-4">
-        Para quien cree en sí mismo y está dispuesto a invertir en sí, para
-        conseguir resultados diferentes.
+      <li class="my-4 flex items-center gap-4 font-bold">
+        <div class="bg-green-600 p-2 rounded-full">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="3"
+            stroke="white"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.5 12.75l6 6 9-13.5"></path>
+          </svg>
+        </div>
+        Para quien cree en sí mismo y está dispuesto a invertir en sí, para conseguir
+        resultados diferentes.
       </li>
     </ul>
+    <div class="bg-mango mt-8 md:mt-24 pt-12 pb-24">
+      <h1
+        class="mt-8 text-white text-xl lg:text-6xl md:text-4xl font-bold text-center py-10 mx-4"
+      >
+        ¿Qué beneficios tiene este grupo VIP?
+      </h1>
 
-    <h1
-      class="mt-8 text-white text-xl md:text-2xl font-bold text-center bg-red-800 py-10"
-    >
-      ¿QUÉ BENEFICIOS TIENE ESTE GRUPO VIP?
-    </h1>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <img
+            src="/Mentoria_grupal.png"
+            alt="mentoria"
+            class="mx-auto w-24 md:w-36"
+          />
+          <p
+            class="md:mx-12 lg:mx-36 mx-4 lg:text-2xl md:text-xl text-lg md:mt-8 mt-8 text-white font-bold text-center"
+          >
+            Mentoria grupal privada vía zoom con Psicóloga Berenice Bastidas,
+            previo a la clase número 4
+          </p>
+        </div>
 
-    <ul class="md:mx-24 mx-4 md:text-3xl text-xl md:mt-8 mt-8">
-      <li class="my-4">
-        1.- Mentoria grupal privada vía zoom con Psicóloga Berenice Bastidas,
-        previo a la clase número 4
-      </li>
-      <li>
-        2.- Benefios exclusivos y prioridad para entrar al entrenamiento
-        Avanzado Incrementa Tu Consulta
-      </li>
-    </ul>
+        <div>
+          <img
+            src="/beneficios_exclusivos.png"
+            alt="Beneficios"
+            class="mx-auto md:w-36 w-24"
+          />
+
+          <p
+            class="md:mx-12 lg:mx-36 mx-4 lg:text-2xl md:text-xl text-lg md:mt-8 mt-8 text-white font-bold text-center"
+          >
+            Beneficios exclusivos y prioridad para entrar al entrenamiento
+            Avanzado Incrementa Tu Consulta
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
 </Layout>

@@ -82,7 +82,7 @@ function FormularioVip() {
   };
 
   return (
-    <div className="bg-secondary p-4 rounded-lg my-4">
+    <div className=" p-4 rounded-lg my-4">
       <form onSubmit={handleSubmit}>
         <input type="hidden" name="u" value={formNumber} />
         <input type="hidden" name="f" value={formNumber} />
@@ -94,9 +94,7 @@ function FormularioVip() {
         <input type="hidden" name="or" value={formId} />
 
         <div className="mt-2 ">
-          <label className="block mb-2 text-sm font-medium text-white">
-            Nombre:
-          </label>
+          <label className="block mb-2 text-sm font-medium ">Nombre:</label>
           <div className="relative">
             <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
               <svg
@@ -132,9 +130,7 @@ function FormularioVip() {
         )}
 
         <div className="mt-2">
-          <label className="block mb-2 text-sm font-medium text-white">
-            Correo
-          </label>
+          <label className="block mb-2 text-sm font-medium ">Correo</label>
           <div className="relative">
             <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
               <svg
@@ -168,7 +164,7 @@ function FormularioVip() {
         <div className="mt-2">
           <label
             htmlFor="countries"
-            className="block mb-2 text-sm font-medium text-white"
+            className="block mb-2 text-sm font-medium "
           >
             Selecciona un país
           </label>
@@ -189,7 +185,7 @@ function FormularioVip() {
         <div className="mt-2">
           <label
             htmlFor="email-address-icon"
-            className="block mb-2 text-sm font-medium text-white"
+            className="block mb-2 text-sm font-medium "
           >
             Whatsapp:
           </label>
@@ -223,7 +219,7 @@ function FormularioVip() {
         <div className="mt-2">
           <label
             htmlFor="email-address-icon"
-            className="block mb-2 text-sm font-medium text-white"
+            className="block mb-2 text-sm font-medium "
           >
             ¿Por qué quieres ser parte de Incrementa Tu Consulta?
           </label>
@@ -247,7 +243,7 @@ function FormularioVip() {
         <div className="mt-2">
           <label
             htmlFor="email-address-icon"
-            className="block mb-2 text-sm font-medium text-white"
+            className="block mb-2 text-sm font-medium "
           >
             ¿Estarías dispuesto a invertir en ti mismo, ya que es un programa
             que tiene un valor por encima de $1.000?
@@ -274,7 +270,7 @@ function FormularioVip() {
           {!isSending ? (
             <button
               type="submit"
-              className={`text-2xl bg-primary text-white px-8 py-4 mt-8 hover:bg-primary-dark`}
+              className={`text-2xl bg-green-600 text-white px-8 py-4 mt-8 hover:bg-green-500 font-coolvetica font-black rounded-lg md:text-4xl w-full`}
               disabled={isSending}
             >
               ¡ Quiero ser VIP !
@@ -282,7 +278,7 @@ function FormularioVip() {
           ) : (
             <button
               type="submit"
-              className={`text-2xl bg-green-600 text-white px-8 py-4 mt-8 rounded-lg flex gap-4`}
+              className={`text-2xl bg-green-600 text-white px-8 py-4 mt-8 rounded-lg flex gap-4 w-full justify-center`}
               disabled={isSending}
             >
               <span>Confirmando Registro</span>
