@@ -17,7 +17,7 @@ const User = z.object({
     .min(6, { message: "Ingrese una sentencia en este campo" }),
   preguntados: z
     .string({ required_error: "Este campo es requerido" })
-    .min(6, { message: "Ingrese una sentencia en este campo" }),
+    .min(1, { message: "Ingrese una sentencia en este campo" }),
 });
 
 type User = z.infer<typeof User>;
