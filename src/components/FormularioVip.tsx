@@ -242,7 +242,7 @@ function FormularioVip() {
             className="block mb-2 text-sm font-medium "
           >
             ¿Estarías dispuesto a invertir en ti mismo, ya que es un programa
-            que tiene un valor por encima de $1.000?
+            que tiene un valor por encima de $1,000 dólares?
           </label>
           <div className="relative">
             <input
