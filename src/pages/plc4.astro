@@ -1,8 +1,8 @@
 ---
-import Plc1Sidebar from "../components/plc/Plc1Sidebar.astro";
 import PlcRight from "../components/plc/PlcRight.astro";
 import PlcVideoPlayer from "../components/plc/PlcVideoPlayer.astro";
 import PlcHeader from "../components/PlcHeader.astro";
+import InscripcionCta from "../components/venta/InscripcionCta";
 import Layout from "../layouts/Layout.astro";
 
 const domain = "www.incrementatuconsulta.com";
@@ -13,8 +13,7 @@ const videoId = "S_ZU8KVIMo0";
   <PlcHeader bgcolor="bg-primary" date="2022-10-20T17:30:00-07:00" />
   <main>
     <div class="grid lg:grid-cols-4">
-      <div></div>
-      <div class="grid-cols-2 md:col-span-3">
+      <div class="grid-cols-2 md:col-span-4">
         <div class="grid lg:grid-cols-3">
           <div class="lg:col-span-2">
             <PlcVideoPlayer
@@ -31,7 +30,10 @@ const videoId = "S_ZU8KVIMo0";
             ></iframe>
           </div>
         </div>
-        <div class="my-4">
+        <div class="lg:col-span-4">
+          <InscripcionCta client:only="react" />
+        </div>
+        <div class="my-2 md:my-4">
           <PlcRight sesiones={[2, 3, 4]} />
         </div>
       </div>
