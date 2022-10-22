@@ -1,0 +1,50 @@
+---
+import { FlipCD } from "../components/FlipCountdown";
+import Footer from "../components/Footer.astro";
+import Replay from "../components/Replay.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="All Access - Incrementa tu consulta">
+  <section class="">
+    <h1
+      class="text-white text-xl md:text-5xl font-coolvetica text-center bg-ventaBlue py-6 mb-4 md:mb-12 px-4 font-bold"
+    >
+      Mira todas las clases antes de que se detenga el reloj:
+    </h1>
+
+    <FlipCD date={"2022-10-23 23:59:00"} client:only="react" />
+
+    <div
+      class="font-inter text-xl md:text-6xl text-center mt-4 md:mt-8 text-secondary mx-4 font-bold"
+    >
+      <h2>Llena tu agenda de pacientes en 60 dias o menos</h2>
+      <h2>multiplica tus ingresos</h2>
+    </div>
+
+    <Replay
+      clase="1"
+      titulo="Como ofrecer o vender tu consulta online"
+      source={"Qf1XHli2ukE"}
+    />
+
+    <Replay
+      clase="2"
+      titulo="Las top 7 formas de tener dinero online y los 5 errores de novato"
+      source={"SOtJuKh37sc"}
+    />
+
+    <Replay
+      clase="3"
+      titulo="Como ofrecer o vender tu consulta online"
+      source={"3G-KqR15vyo"}
+    />
+
+    <Replay
+      clase="4"
+      titulo="La estrategia para hacer crecer tu lista de pacientes"
+      source={"S_ZU8KVIMo0"}
+    />
+  </section>
+  <Footer />
+</Layout>
