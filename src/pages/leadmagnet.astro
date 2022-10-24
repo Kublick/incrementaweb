@@ -1,92 +1,98 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import FormularioLeadMagnet from '../components/FormularioLeadMagnet';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import FormularioLeadMagnet from "../components/FormularioLeadMagnet";
+import Footer from "../components/Footer.astro";
 ---
 
 <script>
-	const getButton = document.getElementById('getButton');
+  const getButton = document.getElementById("getButton");
 
-	getButton?.addEventListener('click', () => {
-		const getMeTo = document.getElementById('form');
-		getMeTo?.scrollIntoView({ behavior: 'smooth' });
-	});
+  getButton?.addEventListener("click", () => {
+    const getMeTo = document.getElementById("form");
+    getMeTo?.scrollIntoView({ behavior: "smooth" });
+  });
+
+  window.onload = function () {
+    window.location.replace(
+      "https://www.incrementatuconsulta.com/inscripciones-abiertas"
+    );
+  };
 </script>
 
 <Layout title="Ebook | Incrementa tu consulta">
-	<header>
-		<div class="bg-primary p-4 text-white text-center" id="form">
-			<h1 class="text-2xl md:w-3/4 mx-auto">
-				Psicóloga especialista en la atracción de clientes revela en su nuevo
-				ebook:
-			</h1>
-		</div>
-		<div class="mt-4">
-			<h1 class="text-center text-lg md:text-4xl w-3/4 mx-auto text-semibold">
-				Los 5 pasos infalibles posicionar tus servicios profesionales y llenar
-				tu agenda de pacientes todas las semanas
-			</h1>
-		</div>
-	</header>
-	<section class="grid md:grid-cols-2 md:py-12 py-2" id="form">
-		<div
-			class="mx-4 md:mx-10 order-last md:order-first md:block place-self-center mt-4 md:mt-0"
-		>
-			<img
-				src={'/eBook.webp'}
-				alt={'Ebook'}
-				width={360}
-				height={500}
-				loading="lazy"
-			/>
-		</div>
-		<div class="px-4 md:mx-10 place-self-center">
-			<h1 class="md:text-xl text-primary text-center">
-				Este ebook contiene toda la información que he recopilado en los últimos
-				años y que comparto con especialistas que desean abrirse paso en
-				Internet
-			</h1>
-			<h2 class="text-center mt-4 text-semibold">
-				Dime aquí abajo a qué correo te lo envío
-			</h2>
-			<FormularioLeadMagnet client:load />
+  <header>
+    <div class="bg-primary p-4 text-white text-center" id="form">
+      <h1 class="text-2xl md:w-3/4 mx-auto">
+        Psicóloga especialista en la atracción de clientes revela en su nuevo
+        ebook:
+      </h1>
+    </div>
+    <div class="mt-4">
+      <h1 class="text-center text-lg md:text-4xl w-3/4 mx-auto text-semibold">
+        Los 5 pasos infalibles posicionar tus servicios profesionales y llenar
+        tu agenda de pacientes todas las semanas
+      </h1>
+    </div>
+  </header>
+  <section class="grid md:grid-cols-2 md:py-12 py-2" id="form">
+    <div
+      class="mx-4 md:mx-10 order-last md:order-first md:block place-self-center mt-4 md:mt-0"
+    >
+      <img
+        src={"/eBook.webp"}
+        alt={"Ebook"}
+        width={360}
+        height={500}
+        loading="lazy"
+      />
+    </div>
+    <div class="px-4 md:mx-10 place-self-center">
+      <h1 class="md:text-xl text-primary text-center">
+        Este ebook contiene toda la información que he recopilado en los últimos
+        años y que comparto con especialistas que desean abrirse paso en
+        Internet
+      </h1>
+      <h2 class="text-center mt-4 text-semibold">
+        Dime aquí abajo a qué correo te lo envío
+      </h2>
+      <FormularioLeadMagnet client:load />
 
-			<p class="font-semibold text-center mt-8">
-				El ebook es gratuito, pero las copias son limitadas
-			</p>
-		</div>
-	</section>
-	<section>
-		<div class="flex flex-col items-center gap-2 mb-10">
-			<img
-				src={'/agenda.webp'}
-				alt={'agenda'}
-				width={470}
-				height={394}
-				loading="lazy"
-			/>
-			<h1 class="px-4 text-xl md:text-3xl text-center">
-				¿Te imaginas cómo estaría tu consultorio si aplicaras estos 5 pasos?
-			</h1>
-			<div class="mt-8 flex items-center flex-col px-4">
-				<div class="relative group">
-					<div
-						class="animate-pulse absolute bg-primary rounded-lg blur -inset-0.5 opacity-90 group-hover:opacity-100"
-					>
-					</div>
+      <p class="font-semibold text-center mt-8">
+        El ebook es gratuito, pero las copias son limitadas
+      </p>
+    </div>
+  </section>
+  <section>
+    <div class="flex flex-col items-center gap-2 mb-10">
+      <img
+        src={"/agenda.webp"}
+        alt={"agenda"}
+        width={470}
+        height={394}
+        loading="lazy"
+      />
+      <h1 class="px-4 text-xl md:text-3xl text-center">
+        ¿Te imaginas cómo estaría tu consultorio si aplicaras estos 5 pasos?
+      </h1>
+      <div class="mt-8 flex items-center flex-col px-4">
+        <div class="relative group">
+          <div
+            class="animate-pulse absolute bg-primary rounded-lg blur -inset-0.5 opacity-90 group-hover:opacity-100"
+          >
+          </div>
 
-					<button
-						id="getButton"
-						class={`relative px-7 py-4 rounded-lg leading-none bg-secondary text-white hover:font-semibold`}
-						type="submit"
-					>
-						<span class="text-xl lg:text-2xl"
-							>¡Quiero descargar el ebook ahora!</span
-						>
-					</button>
-				</div>
-			</div>
-		</div>
-	</section>
-	<Footer />
+          <button
+            id="getButton"
+            class={`relative px-7 py-4 rounded-lg leading-none bg-secondary text-white hover:font-semibold`}
+            type="submit"
+          >
+            <span class="text-xl lg:text-2xl"
+              >¡Quiero descargar el ebook ahora!</span
+            >
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <Footer />
 </Layout>
