@@ -1,52 +1,50 @@
 ---
-import PlcRight from "../components/plc/PlcRight.astro";
-import PlcVideoPlayer from "../components/plc/PlcVideoPlayer.astro";
-import PlcHeader from "../components/PlcHeader.astro";
-import InscripcionCta from "../components/venta/InscripcionCta";
-import Layout from "../layouts/Layout.astro";
+import PlcRight from '../components/plc/PlcRight.astro';
+import PlcVideoPlayer from '../components/plc/PlcVideoPlayer.astro';
+import PlcHeader from '../components/PlcHeader.astro';
+import InscripcionCta from '../components/venta/InscripcionCta';
+import Layout from '../layouts/Layout.astro';
 
-const domain = "www.incrementatuconsulta.com";
-const videoId = "S_ZU8KVIMo0";
+const domain = 'www.incrementatuconsulta.com';
+const videoId = 'S_ZU8KVIMo0';
 ---
 
 <script>
-  window.onload = function () {
-    window.location.replace(
-      "https://www.incrementatuconsulta.com/inscripciones-abiertas"
-    );
-  };
+	window.onload = function () {
+		window.location.replace('https://www.incrementatuconsulta.com/cerrado');
+	};
 </script>
 
 <Layout title="Clase 4 | Incrementa tu Consulta">
-  <div class="hidden">
-    <PlcHeader bgcolor="bg-primary" date="2022-10-20T17:30:00-07:00" />
-    <main>
-      <div class="grid lg:grid-cols-4">
-        <div class="grid-cols-2 md:col-span-4">
-          <div class="grid lg:grid-cols-3">
-            <div class="lg:col-span-2">
-              <PlcVideoPlayer
-                titulo="La estrategia para hacer crecer tu lista de pacientes"
-                videoId={videoId}
-                clase="4"
-              />
-            </div>
-            <div class="place-self-center">
-              <iframe
-                width="360"
-                height="500"
-                src={`https://www.youtube.com/live_chat?v=${videoId}&embed_domain=${domain}`}
-              ></iframe>
-            </div>
-          </div>
-          <div class="lg:col-span-4">
-            <InscripcionCta client:only="react" />
-          </div>
-          <div class="my-2 md:my-4">
-            <PlcRight sesiones={[2, 3, 4]} />
-          </div>
-        </div>
-      </div>
-    </main>
-  </div>
+	<div class="hidden">
+		<PlcHeader bgcolor="bg-primary" date="2022-10-20T17:30:00-07:00" />
+		<main>
+			<div class="grid lg:grid-cols-4">
+				<div class="grid-cols-2 md:col-span-4">
+					<div class="grid lg:grid-cols-3">
+						<div class="lg:col-span-2">
+							<PlcVideoPlayer
+								titulo="La estrategia para hacer crecer tu lista de pacientes"
+								videoId={videoId}
+								clase="4"
+							/>
+						</div>
+						<div class="place-self-center">
+							<iframe
+								width="360"
+								height="500"
+								src={`https://www.youtube.com/live_chat?v=${videoId}&embed_domain=${domain}`}
+							></iframe>
+						</div>
+					</div>
+					<div class="lg:col-span-4">
+						<InscripcionCta client:only="react" />
+					</div>
+					<div class="my-2 md:my-4">
+						<PlcRight sesiones={[2, 3, 4]} />
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
 </Layout>

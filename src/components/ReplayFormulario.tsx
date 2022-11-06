@@ -10,10 +10,7 @@ const User = z.object({
 	email: z
 		.string({ required_error: 'El Email es requerido' })
 		.email({ message: 'El email no es valido' }),
-	phone: z
-		.string()
-		.min(12, { message: 'Ingrese un numero de 12 digitos sin simbolos' }),
-	'field[1]': z.string(),
+	phone: z.string(),
 });
 
 type IUser = z.infer<typeof User>;
@@ -60,7 +57,6 @@ function ReplayFormulario() {
 			});
 		setTimeout(() => {
 			setIsSending(false);
-			window.location.href = '/gracias';
 		}, 2000);
 	};
 
@@ -80,9 +76,7 @@ function ReplayFormulario() {
 				<input type="hidden" name="or" value={formId} />
 
 				<div className="mt-2">
-					<label className="block mb-2 text-sm font-medium text-white">
-						Nombre:
-					</label>
+					<label className="block mb-2 text-sm font-medium">Nombre:</label>
 					<div className="relative">
 						<div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
 							<svg
@@ -117,9 +111,7 @@ function ReplayFormulario() {
 				)}
 
 				<div className="mt-2">
-					<label className="block mb-2 text-sm font-medium text-white">
-						Correo
-					</label>
+					<label className="block mb-2 text-sm font-medium">Correo</label>
 					<div className="relative">
 						<div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
 							<svg
@@ -147,10 +139,7 @@ function ReplayFormulario() {
 					) : null}
 				</div>
 				<div className="mt-2">
-					<label
-						htmlFor="countries"
-						className="block mb-2 text-sm font-medium text-white"
-					>
+					<label htmlFor="countries" className="block mb-2 text-sm font-medium">
 						Selecciona un país
 					</label>
 					<select
@@ -170,7 +159,7 @@ function ReplayFormulario() {
 				<div className="mt-2">
 					<label
 						htmlFor="email-address-icon"
-						className="block mb-2 text-sm font-medium text-white"
+						className="block mb-2 text-sm font-medium"
 					>
 						Whatsapp:
 					</label>
@@ -205,7 +194,7 @@ function ReplayFormulario() {
 							type="submit"
 							className={`text-2xl bg-primary text-white px-8 py-4 mt-8 hover:bg-primary-dark`}
 						>
-							Confirmar mi asistencia ahora
+							Apúntame a la lista de espera
 						</button>
 					) : (
 						<button

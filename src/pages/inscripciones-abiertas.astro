@@ -1,67 +1,73 @@
 ---
-import VentaPuntos from "../components/venta/VentaPuntos.astro";
-import Layout from "../layouts/Layout.astro";
-import Programa from "../components/venta/Programa.astro";
-import Bonos from "../components/venta/Bonos..astro";
-import VentaFooter from "../components/venta/VentaFooter.astro";
-import CTAVenta from "../components/venta/CTAVenta.astro";
-import { FlipCD } from "../components/FlipCountdown";
+import VentaPuntos from '../components/venta/VentaPuntos.astro';
+import Layout from '../layouts/Layout.astro';
+import Programa from '../components/venta/Programa.astro';
+import Bonos from '../components/venta/Bonos..astro';
+import VentaFooter from '../components/venta/VentaFooter.astro';
+import CTAVenta from '../components/venta/CTAVenta.astro';
+import { FlipCD } from '../components/FlipCountdown';
 ---
 
+<script>
+	window.onload = function () {
+		window.location.replace('https://www.incrementatuconsulta.com/cerrado');
+	};
+</script>
+
 <script
-  type="module"
-  async
-  src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.4.0/lite-youtube.js"
+	type="module"
+	async
+	src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.4.0/lite-youtube.js"
 ></script>
 
 <Layout title="Inscripciones | Incrementa tu consulta">
-  <div class="bg-mango md:h-[424px] h-[380px]">
-    <img src="/whiteLogo.svg" alt="whiteLogo" class="mx-auto py-2" />
-    <div class="mx-2">
-      <h1
-        class="font-coolvetica text-ventaBlue text-4xl md:text-5xl text-center"
-      >
-        Llena tu agenda de pacientes
-      </h1>
-      <h1
-        class="font-coolvetica text-ventaBlue text-4xl md:text-5xl text-center"
-      >
-        En menos de 60 días
-      </h1>
+	<div class="bg-mango md:h-[424px] h-[380px]">
+		<img src="/whiteLogo.svg" alt="whiteLogo" class="mx-auto py-2" />
+		<div class="mx-2">
+			<h1
+				class="font-coolvetica text-ventaBlue text-4xl md:text-5xl text-center"
+			>
+				Llena tu agenda de pacientes
+			</h1>
+			<h1
+				class="font-coolvetica text-ventaBlue text-4xl md:text-5xl text-center"
+			>
+				En menos de 60 días
+			</h1>
 
-      <h2 class="font-coolvetica text-white md:text-2xl text-center mt-2">
-        Y multiplica tus ingresos
-      </h2>
-    </div>
-  </div>
+			<h2 class="font-coolvetica text-white md:text-2xl text-center mt-2">
+				Y multiplica tus ingresos
+			</h2>
+		</div>
+	</div>
 
-  <div class="relative">
-    <div
-      class="md:w-[650px] w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-    >
-      <lite-youtube videoid={"bQNQ_jaN-2s"} class="rounded-lg shadow-lg" />
-    </div>
-  </div>
+	<div class="relative">
+		<div
+			class="md:w-[650px] w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+		>
+			<lite-youtube videoid={'bQNQ_jaN-2s'} class="rounded-lg shadow-lg" />
+		</div>
+	</div>
 
-  <div class="mx-2">
-    <h2
-      class="font-inter font-bold text-center text-2xl text-primary md:mt-56 mt-36"
-    >
-      Sólo 20 cupos disponibles para los bonos de acción rápida
-    </h2>
-    <div class="my-4">
-      <CTAVenta />
-    </div>
+	<div class="mx-2">
+		<h2
+			class="font-inter font-bold text-center text-2xl text-primary md:mt-56 mt-36"
+		>
+			Sólo 20 cupos disponibles para los bonos de acción rápida
+		</h2>
+		<div class="my-4">
+			<CTAVenta />
+		</div>
 
-    <h2 class="font-inter text-2xl text-center mt-12">
-      El programa cerrará sus puertas en:
-    </h2>
-    <div class="flex justify-center mt-8">
-      <FlipCD date={"2022-10-25 22:00:00"} client:only="react" />
-    </div>
-  </div>
-  <VentaPuntos />
-  <Programa />
-  <Bonos />
-  <VentaFooter />
+		<h2 class="font-inter text-2xl text-center mt-12">
+			El programa cerrará sus puertas en:
+		</h2>
+		<div class="flex justify-center mt-8">
+			<FlipCD date={'2022-10-25 22:00:00'} client:only="react" />
+		</div>
+	</div>
+	<VentaPuntos />
+	<Programa />
+	<Bonos />
+	<VentaFooter />
 </Layout>
