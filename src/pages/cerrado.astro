@@ -1,6 +1,4 @@
 ---
-import { Image } from '@astrojs/image/components';
-
 import IncrementaLateral from '../assets/Incrementa_lateral.png';
 import ReplayFormulario from '../components/ReplayFormulario';
 import Videoplayer from '../components/Videoplayer.astro';
@@ -32,12 +30,11 @@ const videos = [
 			class="mx-auto mb-4 w-48 rounded-b-lg bg-white px-6 pb-6 shadow-lg lg:w-64"
 		>
 			<a href="/">
-				<Image
-					src={IncrementaLateral}
+				<img
+					src={'/Incrementa_lateral.png'}
 					alt="Logo Incrementatuconsulta"
 					width={400}
 					height={100}
-					format="webp"
 					class="pt-2"
 				/>
 			</a>
