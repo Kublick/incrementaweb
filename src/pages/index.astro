@@ -1,25 +1,19 @@
 ---
-import Entrenamiento from '../components/Entrenamiento.astro';
-import Footer from '../components/Footer.astro';
-import Hero from '../components/Hero.astro';
-import Quien from '../components/Quien.astro';
-import Testimonios from '../components/Testimonios.astro';
-import Layout from '../layouts/Layout.astro';
+import Entrenamiento from "../components/Entrenamiento.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
+import Quien from "../components/Quien.astro";
+import Testimonios from "../components/Testimonios.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<script>
-	window.onload = function () {
-		window.location.replace('https://www.incrementatuconsulta.com/cerrado');
-	};
-</script>
-
 <Layout title="Incrementa tu Consulta">
-	<main class="bg-gray-100">
-		<Hero />
-		<Entrenamiento />
-		<Quien />
-		<Testimonios />
-	</main>
+  <main class="bg-gray-100">
+    <Hero />
+    <Entrenamiento />
+    <Quien />
+    <Testimonios />
+  </main>
 
-	<Footer />
+  <Footer />
 </Layout>
