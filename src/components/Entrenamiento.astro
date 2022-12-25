@@ -1,80 +1,79 @@
 ---
-import { entrenamiento } from '../data/entrenamientoData';
+import { entrenamiento } from "../data/entrenamientoData";
 const date = Date.now();
 ---
 
 <style>
-	.stuff {
-		opacity: 0;
-		filter: blur(5px);
-		transform: translateX(-100%);
-		transition: all 1.25s;
-	}
+  .stuff {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1.25s;
+  }
 
-	@media (prefers-reduced-motion) {
-		.stuff {
-			transition: none;
-		}
-	}
-	.show {
-		opacity: 1;
-		filter: blur(0);
-		transform: translateX(0);
-	}
-	.logo {
-		background-color: transparent;
-	}
+  @media (prefers-reduced-motion) {
+    .stuff {
+      transition: none;
+    }
+  }
+  .show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+  .logo {
+    background-color: transparent;
+  }
 </style>
 
 <script>
-	const observer = new IntersectionObserver((entries) => {
-		entries.forEach((entry) => {
-			if (entry.isIntersecting) {
-				entry.target.classList.add('show');
-			} else {
-				entry.target.classList.remove('show');
-			}
-		});
-	});
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  });
 
-	const hiddenElements = document.querySelectorAll('.stuff');
+  const hiddenElements = document.querySelectorAll(".stuff");
 
-	hiddenElements.forEach((el) => observer.observe(el));
+  hiddenElements.forEach((el) => observer.observe(el));
 </script>
 
 <section class="bg-white">
-	<div class="bg-primary py-8">
-		<h1 class="text-2xl md:text-4xl text-center text-white">
-			¿Qué aprenderás en este entrenamiento?
-		</h1>
-	</div>
-	<ul class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 py-8">
-		{
-			entrenamiento.map((e) => (
-				<div>
-					{date <= e.openDate ? (
-						<img
-							src={e.img}
-							alt={e.alt}
-							class="mx-auto mb-8 w-[300px] stuff logo"
-							loading="lazy"
-						/>
-					) : (
-						<div>
-							<img
-								src={e.activeImg}
-								alt={e.alt}
-								class="mx-auto mb-8 w-[300px] "
-								loading="lazy"
-							/>
-						</div>
-					)}
-
-					<p class="px-4 lg:px-12 text-lg lg:text-2xl leading-tight">
-						{e.contents}
-					</p>
-				</div>
-			))
-		}
-	</ul>
+  <h1 class="pt-8 text-center text-2xl font-bold md:text-4xl">
+    ¿Qué aprenderás en este entrenamiento?
+  </h1>
+  <div class="container mx-auto grid md:gap-8 md:px-24">
+    {
+      entrenamiento.map((et) => {
+        return et.id % 2 ? (
+          <div class="grid items-center justify-items-center gap-4 md:grid-cols-2 md:gap-8 lg:mx-0 lg:grid-cols-2">
+            <img src={et.img} alt={et.alt} width={458} class="" />
+            <div class="mx-4">
+              <h2 class="font-coolvetica text-3xl ">{et.title}</h2>
+              <div class="my-4 h-[2px] w-full bg-black" />
+              <p class="font-inter w-96 text-xl">{et.contents}</p>
+            </div>
+          </div>
+        ) : (
+          <div class="grid items-center gap-4 md:mx-12 md:grid-cols-2 md:gap-8 lg:mx-0 lg:grid-cols-2 lg:gap-24">
+            <div class="mx-4">
+              <h2 class="font-coolvetica  text-3xl">{et.title}</h2>
+              <div class="my-4 h-[2px] w-full bg-black" />
+              <p class="font-inter w-96 text-xl">{et.contents}</p>
+            </div>
+            <img
+              src={et.img}
+              alt={et.alt}
+              width={458}
+              class="order-first mt-4 place-self-center md:order-last md:mt-0"
+            />
+          </div>
+        );
+      })
+    }
+  </div>
 </section>
