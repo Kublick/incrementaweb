@@ -1,104 +1,104 @@
 ---
-import { programaData } from './ventaData';
+import { programaData } from "./ventaData";
 ---
 
 <script>
-	const observer = new IntersectionObserver((entries) => {
-		entries.forEach((entry) => {
-			if (entry.isIntersecting) {
-				entry.target.classList.add('show');
-			} else {
-				entry.target.classList.remove('show');
-			}
-		});
-	});
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  });
 
-	const hiddenElements = document.querySelectorAll('.stuff');
+  const hiddenElements = document.querySelectorAll(".stuff");
 
-	hiddenElements.forEach((el) => observer.observe(el));
+  hiddenElements.forEach((el) => observer.observe(el));
 </script>
 
 <style>
-	.stuff {
-		opacity: 0;
-		filter: blur(5px);
-		/* transform: translateX(-100%); */
-		transition: all 1.2s;
-	}
+  .stuff {
+    opacity: 0;
+    filter: blur(5px);
+    /* transform: translateX(-100%); */
+    transition: all 1.2s;
+  }
 
-	@media (prefers-reduced-motion) {
-		.stuff {
-			transition: none;
-		}
-	}
-	.show {
-		opacity: 1;
-		filter: blur(0);
-		transform: translateX(0);
-	}
+  @media (prefers-reduced-motion) {
+    .stuff {
+      transition: none;
+    }
+  }
+  .show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
 </style>
 
 <section class="mt-8 md:mt-16">
-	<img
-		src={'/venta/centro.webp'}
-		alt={`centro`}
-		class="mx-auto"
-		height={725}
-		width={1426}
-	/>
+  <img
+    src={"/venta/centro.webp"}
+    alt={`centro`}
+    class="mx-auto"
+    height={725}
+    width={1426}
+  />
 
-	<div class="bg-secondary py-1 w-1/2 my-2 shadow-lg rounded-md mx-auto"></div>
+  <div class="my-2 mx-auto w-1/2 rounded-md bg-secondary py-1 shadow-lg"></div>
 
-	<h1
-		class="font-coolvetica text-xl md:text-3xl text-ventaBlue text-center md:my-8 my-4"
-	>
-		Incrementa tu consulta incluye:
-	</h1>
-	<div class="grid md:gap-8 lg:gap-16 lg:w-1/2 mx-auto">
-		{
-			programaData.map((programa) => {
-				return programa.id % 2 ? (
-					<div class="grid md:grid-cols-2 md:gap-8 lg:grid-cols-2 items-center lg:gap-24 gap-4 stuff show md:mx-12 lg:mx-0">
-						<img
-							src={programa.image}
-							alt={`Imagen programa ${programa.id}`}
-							height={229}
-							width={233}
-							class="place-self-center mt-8 md:mt-0 "
-						/>
-						<div class="mx-4">
-							<h2 class="font-coolvetica text-2xl text-ventaBlue">
-								{programa.title}
-							</h2>
-							<p class="font-inter text-sm">{programa.description}</p>
+  <h1
+    class="my-4 text-center font-coolvetica text-xl text-ventaBlue md:my-8 md:text-3xl"
+  >
+    Incrementa tu consulta incluye:
+  </h1>
+  <div class="mx-auto grid md:gap-8 lg:w-1/2 lg:gap-16">
+    {
+      programaData.map((programa) => {
+        return programa.id % 2 ? (
+          <div class="stuff show mt-4 grid items-center gap-4  md:mx-12 md:grid-cols-2 md:gap-8 lg:mx-0 lg:grid-cols-2 lg:gap-24">
+            <img
+              src={programa.image}
+              alt={`Imagen programa ${programa.id}`}
+              height={229}
+              width={233}
+              class=" mt-8 place-self-center p-1 md:mt-0"
+            />
+            <div class="mx-4">
+              <h2 class="font-coolvetica text-ventaBlue text-2xl">
+                {programa.title}
+              </h2>
+              <p class="font-inter text-sm">{programa.description}</p>
 
-							<h2 class="font-coolvetica text-2xl text-ventaBlue my-4 ">
-								{programa.value}
-							</h2>
-						</div>
-					</div>
-				) : (
-					<div class="grid md:grid-cols-2 md:gap-8 lg:grid-cols-2 items-center lg:gap-24 gap-4 stuff show md:mx-12 lg:mx-0">
-						<div class="mx-4">
-							<h2 class="font-coolvetica text-2xl text-ventaBlue">
-								{programa.title}
-							</h2>
-							<p class="font-inter text-sm">{programa.description}</p>
+              <h2 class="font-coolvetica text-ventaBlue my-4 text-2xl ">
+                {programa.value}
+              </h2>
+            </div>
+          </div>
+        ) : (
+          <div class="stuff show grid items-center gap-4 md:mx-12 md:grid-cols-2 md:gap-8 lg:mx-0 lg:grid-cols-2 lg:gap-24">
+            <div class="mx-4">
+              <h2 class="font-coolvetica text-ventaBlue text-2xl">
+                {programa.title}
+              </h2>
+              <p class="font-inter text-sm">{programa.description}</p>
 
-							<h2 class="font-coolvetica text-2xl text-ventaBlue my-4 ">
-								{programa.value}
-							</h2>
-						</div>
-						<img
-							src={programa.image}
-							alt={`Imagen programa ${programa.id}`}
-							height={229}
-							width={233}
-							class="place-self-center order-first md:order-last mt-4 md:mt-0"
-						/>
-					</div>
-				);
-			})
-		}
-	</div>
+              <h2 class="font-coolvetica text-ventaBlue my-4 text-2xl ">
+                {programa.value}
+              </h2>
+            </div>
+            <img
+              src={programa.image}
+              alt={`Imagen programa ${programa.id}`}
+              height={229}
+              width={233}
+              class="order-first mt-4 place-self-center p-1 md:order-last md:mt-0"
+            />
+          </div>
+        );
+      })
+    }
+  </div>
 </section>

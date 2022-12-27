@@ -78,7 +78,7 @@ function FormularioVip() {
   };
 
   return (
-    <div className=" p-4 rounded-lg my-4">
+    <div className=" my-4 rounded-lg p-4">
       <form onSubmit={handleSubmit}>
         <input type="hidden" name="u" value={formNumber} />
         <input type="hidden" name="f" value={formNumber} />
@@ -90,16 +90,16 @@ function FormularioVip() {
         <input type="hidden" name="or" value={formId} />
 
         <div className="mt-2 ">
-          <label className="block mb-2 text-sm font-medium ">Nombre:</label>
+          <label className="mb-2 block text-sm font-medium ">Nombre:</label>
           <div className="relative">
-            <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 20 20"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="w-5 h-5 text-gray-500 dark:text-gray-400"
+                className="h-5 w-5 text-gray-500 dark:text-gray-400"
               >
                 <path
                   strokeLinecap="round"
@@ -112,26 +112,26 @@ function FormularioVip() {
               type="text"
               id="fullname"
               name="fullname"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5"
+              className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pl-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
               placeholder="Nombre"
             />
           </div>
         </div>
         {hasError && (
-          <div className="mt-4 mx-4">
-            <p className=" bg-white text-red-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">
+          <div className="mx-4 mt-4">
+            <p className=" mr-2 rounded bg-white px-2.5 py-0.5 text-sm font-semibold text-red-800 dark:bg-red-200 dark:text-red-900">
               {errorMessage.fullname}
             </p>
           </div>
         )}
 
         <div className="mt-2">
-          <label className="block mb-2 text-sm font-medium ">Correo</label>
+          <label className="mb-2 block text-sm font-medium ">Correo</label>
           <div className="relative">
-            <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
               <svg
                 aria-hidden="true"
-                className="w-5 h-5 text-gray-500 dark:text-gray-400"
+                className="h-5 w-5 text-gray-500 dark:text-gray-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -144,14 +144,14 @@ function FormularioVip() {
               type="text"
               id="email"
               name="email"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5"
+              className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pl-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
               placeholder="Correo"
             />
           </div>
 
           {hasError ? (
-            <div className="mt-4 mx-4">
-              <p className=" bg-white text-red-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">
+            <div className="mx-4 mt-4">
+              <p className=" mr-2 rounded bg-white px-2.5 py-0.5 text-sm font-semibold text-red-800 dark:bg-red-200 dark:text-red-900">
                 {errorMessage.email}
               </p>
             </div>
@@ -160,14 +160,14 @@ function FormularioVip() {
         <div className="mt-2">
           <label
             htmlFor="countries"
-            className="block mb-2 text-sm font-medium "
+            className="mb-2 block text-sm font-medium "
           >
             Selecciona un país
           </label>
           <select
             id="countries"
             name="field[1]"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
             defaultValue={"MX"}
           >
             {countries.map((country) => (
@@ -181,15 +181,15 @@ function FormularioVip() {
         <div className="mt-2">
           <label
             htmlFor="email-address-icon"
-            className="block mb-2 text-sm font-medium "
+            className="mb-2 block text-sm font-medium "
           >
             Whatsapp:
           </label>
           <div className="relative">
-            <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
               <svg
                 fill="#6b7280"
-                className="w-5 h-5 text-gray-500 dark:text-gray-400"
+                className="h-5 w-5 text-gray-500 dark:text-gray-400"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
               >
@@ -200,13 +200,13 @@ function FormularioVip() {
               type="text"
               name="phone"
               id="phone"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  "
+              className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pl-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500  "
               placeholder="Numero Whatsapp"
             />
           </div>
           {hasError ? (
-            <div className="mt-4 mx-4">
-              <p className=" bg-white text-red-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">
+            <div className="mx-4 mt-4">
+              <p className=" mr-2 rounded bg-white px-2.5 py-0.5 text-sm font-semibold text-red-800 dark:bg-red-200 dark:text-red-900">
                 {errorMessage.phone}
               </p>
             </div>
@@ -215,7 +215,7 @@ function FormularioVip() {
         <div className="mt-2">
           <label
             htmlFor="email-address-icon"
-            className="block mb-2 text-sm font-medium "
+            className="mb-2 block text-sm font-medium "
           >
             ¿Por qué quieres ser parte de Incrementa Tu Consulta?
           </label>
@@ -223,13 +223,13 @@ function FormularioVip() {
             <input
               type="text"
               name="pregunta"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  "
+              className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pl-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500  "
               placeholder="Escribe aquí"
             />
           </div>
           {hasError ? (
-            <div className="mt-4 mx-4">
-              <p className=" bg-white text-red-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">
+            <div className="mx-4 mt-4">
+              <p className=" mr-2 rounded bg-white px-2.5 py-0.5 text-sm font-semibold text-red-800 dark:bg-red-200 dark:text-red-900">
                 {errorMessage.pregunta}
               </p>
             </div>
@@ -239,7 +239,7 @@ function FormularioVip() {
         <div className="mt-2">
           <label
             htmlFor="email-address-icon"
-            className="block mb-2 text-sm font-medium "
+            className="mb-2 block text-sm font-medium "
           >
             ¿Estarías dispuesto a invertir en ti mismo, ya que es un programa
             que tiene un valor por encima de $1,000 dólares?
@@ -249,13 +249,13 @@ function FormularioVip() {
               type="text"
               name="preguntados"
               id="preguntados"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  "
+              className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pl-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500  "
               placeholder="Escribe aquí"
             />
           </div>
           {hasError ? (
-            <div className="mt-4 mx-4">
-              <p className=" bg-white text-red-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">
+            <div className="mx-4 mt-4">
+              <p className=" mr-2 rounded bg-white px-2.5 py-0.5 text-sm font-semibold text-red-800 dark:bg-red-200 dark:text-red-900">
                 {errorMessage.preguntados}
               </p>
             </div>
@@ -266,7 +266,7 @@ function FormularioVip() {
           {!isSending ? (
             <button
               type="submit"
-              className={`text-2xl bg-green-600 text-white px-8 py-4 mt-8 hover:bg-green-500 font-coolvetica font-black rounded-lg md:text-4xl w-full`}
+              className={`mt-8 w-full rounded-lg bg-green-600 px-8 py-4 font-coolvetica text-2xl font-black text-white hover:bg-green-500 md:text-4xl`}
               disabled={isSending}
             >
               ¡ Quiero ser VIP !
@@ -274,13 +274,13 @@ function FormularioVip() {
           ) : (
             <button
               type="submit"
-              className={`text-2xl bg-green-600 text-white px-8 py-4 mt-8 rounded-lg flex gap-4 w-full justify-center`}
+              className={`mt-8 flex w-full justify-center gap-4 rounded-lg bg-green-600 px-8 py-4 text-2xl text-white`}
               disabled={isSending}
             >
               <span>Confirmando Registro</span>
               <svg
                 aria-hidden="true"
-                className="mr-2 w-8 h-8 text-gray-200 animate-spin  fill-green-800"
+                className="mr-2 h-8 w-8 animate-spin fill-green-800  text-gray-200"
                 viewBox="0 0 100 101"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
