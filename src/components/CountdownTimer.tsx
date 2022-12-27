@@ -6,7 +6,7 @@ const targetDate = new Date().getTime() + 15 * 60 * 1000;
 const ExpiredNotice = () => {
   return (
     <div className="">
-      <p className="text-white text-2xl">00 : 00 : 00 : 00</p>
+      <p className="text-2xl text-white">00 : 00 : 00 : 00</p>
     </div>
   );
 };

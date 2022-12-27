@@ -32,6 +32,7 @@ module.exports = {
         },
         ventaBlue: "#2749A8",
         redVenta: "#ff1212",
+        buttonRed: "rgba(216, 2, 0, 1)",
       },
     },
   },

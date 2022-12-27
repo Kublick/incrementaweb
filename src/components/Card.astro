@@ -1,36 +1,32 @@
 ---
-import Hearth from './Hearth.astro';
-import Stars from './Stars.astro';
+import Hearth from "./Hearth.astro";
+import Stars from "./Stars.astro";
 
 const { nombre, img, contenido, titulo } = Astro.props;
 ---
 
 <div
-	class="rounded-xl shadow-xl border-2 border-secondary p-6 bg-secondary flex flex-col justify-around my-4 flex-wrap mx-12 min-w-[300px]"
+  class="my-4 mx-12 flex min-w-[300px] flex-col flex-wrap justify-around rounded-xl border-2 border-secondary bg-secondary p-6"
 >
-	<div class="text-white h-[320px]">
-		<div class="flex gap-2 items-center">
-			<img src={img} alt={nombre} loading="lazy" width="110" />
-			<div>
-				<p class="text-xl md:text-xl flex-wrap">{titulo}</p>
-				<p class="text-xl md:text-xl flex-wrap">{nombre}</p>
-			</div>
-		</div>
+  <div class="h-[320px] text-white">
+    <div class="flex items-center gap-2">
+      <img src={img} alt={nombre} loading="lazy" width="110" />
+      <div>
+        <p class="flex-wrap text-xl md:text-xl">{titulo}</p>
+        <p class="flex-wrap text-xl md:text-xl">{nombre}</p>
+      </div>
+    </div>
 
-		<div class="flex gap-2 my-2">
-			<Stars />
-			<Stars />
-			<Stars />
-			<Stars />
-			<Stars />
-		</div>
+    <div class="my-2 flex gap-2">
+      <Stars />
+      <Stars />
+      <Stars />
+      <Stars />
+      <Stars />
+    </div>
 
-		<p class="flex-wrap">
-			{contenido}
-		</p>
-	</div>
-
-	<div class="flex justify-end text-white">
-		<Hearth />
-	</div>
+    <p class="flex-wrap">
+      {contenido}
+    </p>
+  </div>
 </div>
