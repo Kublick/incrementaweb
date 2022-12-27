@@ -55,11 +55,11 @@ import "animate.css";
       entrenamiento.map((et) => {
         return et.id % 2 ? (
           <div class="grid items-center justify-items-center gap-4 md:grid-cols-2 md:gap-8 lg:mx-0 lg:grid-cols-2 ">
-            <img src={et.img} alt={et.alt} width={458} class="animate" />
+            <img src={et.img} alt={et.alt} width={458} class="animate px-2" />
             <div class="mx-4">
               <h2 class="font-coolvetica text-3xl ">{et.title}</h2>
               <div class="my-4 h-[2px] w-full bg-black" />
-              <p class="font-inter w-96 text-xl">{et.contents}</p>
+              <p class="font-inter md:w-96 md:text-xl">{et.contents}</p>
             </div>
           </div>
         ) : (
@@ -67,13 +67,13 @@ import "animate.css";
             <div class="mx-4">
               <h2 class="font-coolvetica  text-3xl">{et.title}</h2>
               <div class="my-4 h-[2px] w-full bg-black" />
-              <p class="font-inter w-96 text-xl">{et.contents}</p>
+              <p class="font-inter md:w-96 md:text-xl">{et.contents}</p>
             </div>
             <img
               src={et.img}
               alt={et.alt}
               width={458}
-              class="animate order-first mt-4 place-self-center md:order-last md:mt-0"
+              class="animate order-first mt-4 place-self-center px-2 md:order-last md:mt-0"
             />
           </div>
         );
