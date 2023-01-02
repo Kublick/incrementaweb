@@ -1,17 +1,35 @@
 export const getRegistro = async () => {
-	const id = '7YXamvsw6hSppoy-s2ggg';
-	const aws = 'https://6u4nv7easg.execute-api.us-west-1.amazonaws.com/url/';
+  const id = "7YXamvsw6hSppoy-s2ggg";
+  const aws = "https://6u4nv7easg.execute-api.us-west-1.amazonaws.com/url/";
 
-	try {
-		const response = await fetch(`${aws}/${id}`, {
-			method: 'GET',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-		});
-		const data = await response.json();
-		return data.body.link;
-	} catch (error) {
-		console.log(error);
-	}
+  try {
+    const response = await fetch(`${aws}/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    return data.body.link;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getRegistroYT = async () => {
+  const id = "7YXamvsw6hSppoy-s2gyt";
+  const aws = "https://6u4nv7easg.execute-api.us-west-1.amazonaws.com/url/";
+
+  try {
+    const response = await fetch(`${aws}/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    return data.body.link;
+  } catch (error) {
+    console.log(error);
+  }
 };
