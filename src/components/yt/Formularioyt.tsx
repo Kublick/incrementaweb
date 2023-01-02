@@ -55,7 +55,7 @@ export default function Formularioyt() {
         console.log(error);
       });
     setTimeout(() => {
-      window.location.href = "/gracias";
+      window.location.href = "/graciasyt";
     }, 2000);
   };
 
