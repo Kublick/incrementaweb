@@ -1,0 +1,96 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { ChinneseCountDown } from "../components/pqina";
+
+const plc1 = "wIZcwPMFjus";
+const plc2 = "orNpWwIspkY";
+const plc3 = "0L7euyc274g";
+const plc4 = "Nq5NNH2_cE0";
+---
+
+<script
+  type="module"
+  async
+  src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.4.0/lite-youtube.js"
+></script>
+
+<Layout title="Clases | Incrementa tu consulta">
+  <div class="bg-mango py-4 md:py-12">
+    <img src="/whiteLogo.svg" alt="whiteLogo" class="mx-auto py-2" />
+    <div class="mx-2">
+      <h1
+        class="text-center font-coolvetica text-4xl text-ventaBlue md:text-5xl"
+      >
+        Las clases desapareceran en:
+      </h1>
+      <div class="my-4 flex justify-center">
+        <ChinneseCountDown client:load date={"January 30 2023 12:00"} />
+      </div>
+
+      <h2
+        class="mt-2 px-4 text-center font-coolvetica text-white md:px-24 md:text-2xl"
+      >
+        conoce el método para multiplicar por 2 tu número de consultas aplicando
+        estrategias comprobadas por decenas de expertos de 14 paises diferentes
+        sin tener que publicar en redes todos los días
+      </h2>
+    </div>
+  </div>
+
+  <div class="mt-2 px-2">
+    <div>
+      <h2 class="py-8 text-center text-3xl font-bold text-primary">Clase 1</h2>
+      <div class="mx-auto md:w-[650px]">
+        <lite-youtube videoid={plc1} class="rounded-lg shadow-lg" />
+      </div>
+      <div class="flex flex-col items-center px-4 pb-8">
+        <button
+          id="groupbutton"
+          class="mt-8 flex items-center gap-4 rounded-full bg-green-600 py-2 px-8 font-bold text-white shadow-lg md:text-2xl"
+        >
+          <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
+          Pulsa el botón para unirte al grupo VIP
+        </button>
+      </div>
+    </div>
+    <div>
+      <h2 class="py-8 text-center text-3xl font-bold text-primary">Clase 2</h2>
+      <div class="mx-auto md:w-[650px]">
+        <lite-youtube videoid={plc2} class="rounded-lg shadow-lg" />
+      </div>
+      <div class="flex flex-col items-center px-4 pb-8">
+        <button
+          id="groupbutton"
+          class="mt-8 flex items-center gap-4 rounded-full bg-green-600 py-2 px-8 font-bold text-white shadow-lg md:text-2xl"
+        >
+          <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
+          Pulsa el botón para unirte al grupo VIP
+        </button>
+      </div>
+    </div>
+    <div>
+      <h2 class="py-8 text-center text-3xl font-bold text-primary">Clase 3</h2>
+      <div class="mx-auto md:w-[650px]">
+        <lite-youtube videoid={plc3} class="rounded-lg shadow-lg" />
+      </div>
+      <div class="flex flex-col items-center px-4 pb-8">
+        <button
+          id="groupbutton"
+          class="mt-8 flex items-center gap-4 rounded-full bg-green-600 py-2 px-8 font-bold text-white shadow-lg md:text-2xl"
+        >
+          <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
+          Pulsa el botón para unirte al grupo VIP
+        </button>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="py-8 text-center text-3xl font-bold text-primary">
+        Clase 4 Proximamente
+      </h2>
+      <div class="mx-auto md:w-[650px]">
+        <lite-youtube videoid={plc4} class="rounded-lg shadow-lg" />
+      </div>
+    </div>
+  </div>
+</Layout>
