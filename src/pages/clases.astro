@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { ChinneseCountDown } from "../components/pqina";
-
+import { Image } from "@astrojs/image/components";
 const plc1 = "wIZcwPMFjus";
 const plc2 = "orNpWwIspkY";
 const plc3 = "0L7euyc274g";
@@ -92,13 +92,18 @@ const plc4 = "Nq5NNH2_cE0";
       </div>
     </div>
 
-    <div>
+    <div class="pb-10">
       <h2 class="py-8 text-center text-3xl font-bold text-primary">
         Clase 4 Proximamente
       </h2>
-      <div class="mx-auto md:w-[650px]">
-        <lite-youtube videoid={plc4} class="rounded-lg shadow-lg" />
-      </div>
+      <Image
+        src="/Mini_clase4.png"
+        alt="clase 4 mini"
+        width={650}
+        aspectRatio="16:9"
+        format="webp"
+        class="mx-auto rounded-xl"
+      />
     </div>
   </div>
 </Layout>
