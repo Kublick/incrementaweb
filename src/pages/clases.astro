@@ -15,11 +15,18 @@ const plc4 = "Nq5NNH2_cE0";
 ></script>
 
 <script>
+  import { getRegistro } from "../hooks/getRegistro";
+
+  const whatsappUrl = await getRegistro();
   const button = document.getElementById("groupbutton");
 
   button?.addEventListener("click", () => {
-    window.location.replace("https://www.incrementatuconsulta.com/acceso-vip");
+    window.open(whatsappUrl, "_blank");
   });
+
+  // button?.addEventListener("click", () => {
+  //   window.location.replace("https://www.incrementatuconsulta.com/acceso-vip");
+  // });
 </script>
 
 <Layout title="Clases | Incrementa tu consulta">
@@ -57,11 +64,11 @@ const plc4 = "Nq5NNH2_cE0";
           class="mt-8 flex items-center gap-4 rounded-full bg-green-600 py-2 px-8 font-bold text-white shadow-lg md:text-2xl"
         >
           <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
-          Pulsa el botón para unirte al grupo VIP
+          Pulsa el botón para unirte al grupo
         </button>
       </div>
     </div>
-    <div>
+    <!-- <div>
       <h2 class="py-8 text-center text-3xl font-bold text-primary">Clase 2</h2>
       <div class="mx-auto md:w-[650px]">
         <lite-youtube videoid={plc2} class="rounded-lg shadow-lg" />
@@ -72,11 +79,11 @@ const plc4 = "Nq5NNH2_cE0";
           class="mt-8 flex items-center gap-4 rounded-full bg-green-600 py-2 px-8 font-bold text-white shadow-lg md:text-2xl"
         >
           <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
-          Pulsa el botón para unirte al grupo VIP
+          Pulsa el botón para unirte al grupo
         </button>
       </div>
-    </div>
-    <div>
+    </div> -->
+    <!-- <div>
       <h2 class="py-8 text-center text-3xl font-bold text-primary">Clase 3</h2>
       <div class="mx-auto md:w-[650px]">
         <lite-youtube videoid={plc3} class="rounded-lg shadow-lg" />
@@ -87,12 +94,12 @@ const plc4 = "Nq5NNH2_cE0";
           class="mt-8 flex items-center gap-4 rounded-full bg-green-600 py-2 px-8 font-bold text-white shadow-lg md:text-2xl"
         >
           <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
-          Pulsa el botón para unirte al grupo VIP
+          Pulsa el botón para unirte al grupo
         </button>
       </div>
-    </div>
+    </div> -->
 
-    <div class="pb-10">
+    <!-- <div class="pb-10">
       <h2 class="py-8 text-center text-3xl font-bold text-primary">
         Clase 4 Proximamente
       </h2>
@@ -104,6 +111,6 @@ const plc4 = "Nq5NNH2_cE0";
         format="webp"
         class="mx-auto rounded-xl"
       />
-    </div>
+    </div> -->
   </div>
 </Layout>
