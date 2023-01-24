@@ -5,7 +5,7 @@ import Programa from "../components/venta/Programa.astro";
 import Bonos from "../components/venta/Bonos..astro";
 import VentaFooter from "../components/venta/VentaFooter.astro";
 import CTAVenta from "../components/venta/CTAVenta.astro";
-import { FlipCD } from "../components/FlipCountdown";
+import { ChinneseCountDown } from "../components/pqina";
 ---
 
 <script
@@ -15,21 +15,21 @@ import { FlipCD } from "../components/FlipCountdown";
 ></script>
 
 <Layout title="Inscripciones | Incrementa tu consulta">
-  <div class="bg-mango md:h-[424px] h-[380px]">
+  <div class="h-[380px] bg-mango md:h-[424px]">
     <img src="/whiteLogo.svg" alt="whiteLogo" class="mx-auto py-2" />
     <div class="mx-2">
       <h1
-        class="font-coolvetica text-ventaBlue text-4xl md:text-5xl text-center"
+        class="text-center font-coolvetica text-4xl text-ventaBlue md:text-5xl"
       >
         Llena tu agenda de pacientes
       </h1>
       <h1
-        class="font-coolvetica text-ventaBlue text-4xl md:text-5xl text-center"
+        class="text-center font-coolvetica text-4xl text-ventaBlue md:text-5xl"
       >
         En menos de 60 días
       </h1>
 
-      <h2 class="font-coolvetica text-white md:text-2xl text-center mt-2">
+      <h2 class="mt-2 text-center font-coolvetica text-white md:text-2xl">
         Y multiplica tus ingresos
       </h2>
     </div>
@@ -37,15 +37,15 @@ import { FlipCD } from "../components/FlipCountdown";
 
   <div class="relative">
     <div
-      class="md:w-[650px] w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+      class="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 transform md:w-[650px]"
     >
-      <lite-youtube videoid={"bQNQ_jaN-2s"} class="rounded-lg shadow-lg" />
+      <lite-youtube videoid={"Nq5NNH2_cE0"} class="rounded-lg shadow-lg" />
     </div>
   </div>
 
   <div class="mx-2">
     <h2
-      class="font-inter font-bold text-center text-2xl text-primary md:mt-56 mt-36"
+      class="mt-36 text-center font-inter text-2xl font-bold text-primary md:mt-56"
     >
       Sólo 20 cupos disponibles para los bonos de acción rápida
     </h2>
@@ -53,11 +53,11 @@ import { FlipCD } from "../components/FlipCountdown";
       <CTAVenta />
     </div>
 
-    <h2 class="font-inter text-2xl text-center mt-12">
+    <h2 class="mt-12 text-center font-inter text-2xl">
       El programa cerrará sus puertas en:
     </h2>
-    <div class="flex justify-center mt-8">
-      <FlipCD date={"2022-10-25 22:00:00"} client:only="react" />
+    <div class="mt-8 flex justify-center">
+      <ChinneseCountDown client:load date={"2023-02-03 23:59"} color={false} />
     </div>
   </div>
   <VentaPuntos />

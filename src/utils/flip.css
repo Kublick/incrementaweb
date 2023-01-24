@@ -12,3 +12,16 @@
   --fcc-separator-size: 6px; /* size of colon */
   --fcc-separator-color: white; /* color of colon */
 }
+
+.flip-clock-black {
+  --fcc-flip-duration: 0.5s; /* transition duration when flip card */
+  --fcc-digit-block-width: 36px; /* width of digit card */
+  --fcc-digit-block-height: 56px; /* height of digit card, highly recommend in even number */
+  /* --fcc-digit-font-size: 30px; font size of digit */
+  --fcc-digit-color: white; /* color of digit */
+  --fcc-label-font-size: 10px; /* font size of label */
+  --fcc-divider-color: black;
+  --fcc-divider-height: 0px; /* height of divider */
+  --fcc-separator-size: 6px; /* size of colon */
+  --fcc-separator-color: black; /* color of colon */
+}
