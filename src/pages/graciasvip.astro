@@ -13,7 +13,7 @@ import Layout from "../layouts/Layout.astro";
   button?.addEventListener("click", () => {
     jsConfetti.addConfetti();
     setTimeout(() => {
-      window.open(whatsappUrl, "_blank");
+      window.window.location.replace(whatsappUrl);
     }, 1200);
   });
 </script>
