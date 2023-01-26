@@ -19,8 +19,14 @@ const plc4 = "Nq5NNH2_cE0";
 
   const whatsappUrl = await getRegistro();
   const button = document.getElementById("groupbutton");
+  const button2 = document.getElementById("groupbutton2");
 
   button?.addEventListener("click", () => {
+    console.log("clicked");
+    window.open(whatsappUrl, "_blank");
+  });
+
+  button2?.addEventListener("click", () => {
     window.open(whatsappUrl, "_blank");
   });
 
@@ -83,7 +89,7 @@ const plc4 = "Nq5NNH2_cE0";
       </div>
       <div class="flex flex-col items-center px-4 pb-8">
         <button
-          id="groupbutton"
+          id="groupbutton2"
           class="mt-8 flex items-center gap-4 rounded-full bg-green-600 py-2 px-8 font-bold text-white shadow-lg md:text-2xl"
         >
           <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
