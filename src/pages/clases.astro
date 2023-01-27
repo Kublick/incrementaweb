@@ -15,19 +15,21 @@ const plc4 = "Nq5NNH2_cE0";
 ></script>
 
 <script>
-  import { getRegistro } from "../hooks/getRegistro";
-
-  const whatsappUrl = await getRegistro();
+  const whatsappUrl = "https://chat.whatsapp.com/HgFC6iUMp3V9ibZKAvVe1r";
   const button = document.getElementById("groupbutton");
   const button2 = document.getElementById("groupbutton2");
+  const button3 = document.getElementById("groupbutton3");
 
   button?.addEventListener("click", () => {
-    console.log("clicked");
-    window.open(whatsappUrl, "_blank");
+    window.location.replace("https://www.incrementatuconsulta.com/acceso-vip");
   });
 
   button2?.addEventListener("click", () => {
-    window.open(whatsappUrl, "_blank");
+    window.location.replace("https://www.incrementatuconsulta.com/acceso-vip");
+  });
+
+  button3?.addEventListener("click", () => {
+    window.location.replace("https://www.incrementatuconsulta.com/acceso-vip");
   });
 
   // button?.addEventListener("click", () => {
@@ -74,7 +76,7 @@ const plc4 = "Nq5NNH2_cE0";
           class="mt-8 flex items-center gap-4 rounded-full bg-green-600 py-2 px-8 font-bold text-white shadow-lg md:text-2xl"
         >
           <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
-          Pulsa el botón para unirte al grupo
+          Pulsa el botón para unirte al grupo VIP
         </button>
       </div>
     </div>
@@ -89,29 +91,29 @@ const plc4 = "Nq5NNH2_cE0";
       </div>
       <div class="flex flex-col items-center px-4 pb-8">
         <button
-          id="groupbutton2"
+          id="groupbutton"
           class="mt-8 flex items-center gap-4 rounded-full bg-green-600 py-2 px-8 font-bold text-white shadow-lg md:text-2xl"
         >
           <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
-          Pulsa el botón para unirte al grupo
+          Pulsa el botón para unirte al grupo VIP
         </button>
       </div>
     </div>
-    <!-- <div>
+    <div>
       <h2 class="py-8 text-center text-3xl font-bold text-primary">Clase 3</h2>
       <div class="mx-auto md:w-[650px]">
         <lite-youtube videoid={plc3} class="rounded-lg shadow-lg" />
       </div>
       <div class="flex flex-col items-center px-4 pb-8">
         <button
-          id="groupbutton"
+          id="groupbutton3"
           class="mt-8 flex items-center gap-4 rounded-full bg-green-600 py-2 px-8 font-bold text-white shadow-lg md:text-2xl"
         >
           <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
-          Pulsa el botón para unirte al grupo
+          Pulsa el botón para unirte al grupo VIP
         </button>
       </div>
-    </div> -->
+    </div>
 
     <!-- <div class="pb-10">
       <h2 class="py-8 text-center text-3xl font-bold text-primary">
