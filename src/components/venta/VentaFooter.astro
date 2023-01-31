@@ -1,219 +1,220 @@
 ---
-import Videoplayer from '../Videoplayer.astro';
-import CTAVenta from './CTAVenta.astro';
-import NewFooter from './NewFooter.astro';
-import { bonosData, programaData } from './ventaData';
+import Videoplayer from "../Videoplayer.astro";
+import CTAVenta from "./CTAVenta.astro";
+import NewFooter from "./NewFooter.astro";
+import { bonosData, programaData } from "./ventaData";
 ---
 
 <style>
-	span.short::after {
-		content: ' ';
-		flex: 1;
-		border-bottom: 2px dotted #000;
-		margin: 0 1rem;
-	}
-	span.short {
-		font-size: 0.8rem;
-		font-style: italic;
-		flex: 1;
-		display: flex;
-	}
+  span.short::after {
+    content: " ";
+    flex: 1;
+    border-bottom: 2px dotted #000;
+    margin: 0 1rem;
+  }
+  span.short {
+    font-size: 0.8rem;
+    font-style: italic;
+    flex: 1;
+    display: flex;
+  }
 
-	.stuff {
-		opacity: 0;
-		filter: blur(5px);
-		/* transform: translateX(-100%); */
-		transition: all 1.25s;
-	}
+  .stuff {
+    opacity: 0;
+    filter: blur(5px);
+    /* transform: translateX(-100%); */
+    transition: all 1.25s;
+  }
 
-	@media (prefers-reduced-motion) {
-		.stuff {
-			transition: none;
-		}
-	}
-	.show {
-		opacity: 1;
-		filter: blur(0);
-		transform: translateX(0);
-	}
+  @media (prefers-reduced-motion) {
+    .stuff {
+      transition: none;
+    }
+  }
+  .show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
 </style>
 
 <script>
-	const observer = new IntersectionObserver((entries) => {
-		entries.forEach((entry) => {
-			if (entry.isIntersecting) {
-				entry.target.classList.add('show');
-			} else {
-				entry.target.classList.remove('show');
-			}
-		});
-	});
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  });
 
-	const hiddenElements = document.querySelectorAll('.stuff');
+  const hiddenElements = document.querySelectorAll(".stuff");
 
-	hiddenElements.forEach((el) => observer.observe(el));
+  hiddenElements.forEach((el) => observer.observe(el));
 </script>
 
 <section>
-	<div
-		class="bg-gray-500 text-4xl lg:text-8xl font-black font-inter lg:flex lg:justify-center lg:items-center py-8"
-	>
-		<img
-			src="/venta/garantia.png"
-			alt="sello de garantia"
-			class="mx-auto lg:mx-0"
-		/>
+  <div
+    class="bg-gray-500 py-8 font-inter text-4xl font-black lg:flex lg:items-center lg:justify-center lg:text-8xl"
+  >
+    <img
+      src="/venta/garantia.png"
+      alt="sello de garantia"
+      class="mx-auto lg:mx-0"
+    />
 
-		<div class="text-center">
-			<h2>15 días</h2>
-			<h2>de Garantía</h2>
-		</div>
-	</div>
-	<div class="grid lg:grid-cols-2 items-center bg-mango">
-		<div class="">
-			<img src="/venta/bereniceventa.png" alt="Berenice Bastidas" class="" />
-		</div>
-		<div class="bg-secondary text-white flex items-center py-4">
-			<div class="md:w-3/4 md:mx-auto mx-10 mt-4 md:mt-0">
-				<h1 class="lg:text-5xl text-3xl font-bold font-inter text-center">
-					Hola, soy Berenice
-				</h1>
+    <div class="text-center">
+      <h2>15 días</h2>
+      <h2>de Garantía</h2>
+    </div>
+  </div>
+  <div class="inline-grid items-center bg-mango lg:grid-cols-2">
+    <div class="">
+      <img src="/venta/bereniceventa.png" alt="Berenice Bastidas" class="" />
+    </div>
+    <div class="bg-secondary py-4 text-white">
+      <div class="mx-10 mt-4 md:mx-auto md:mt-0 md:w-3/4">
+        <h1 class="text-center font-inter text-3xl font-bold lg:text-5xl">
+          Hola, soy Berenice
+        </h1>
 
-				<div class="p-0.5 bg-white my-8 mx-4"></div>
-				<p class="md:text-2xl">
-					Soy Psicóloga Berenice Bastidas y descifré como llenar mi agenda medio
-					tiempo, de pacientes durante 3 años seguidos y esto fue antes de
-					dedicarme a ayudar a Nutriólogos, Psicólogos, Terapeutas,
-					Psicoterapeutas y Profesionales de la Salud a poder hacerlo para ellos
-					mismos multiplicando sus ingresos e incrementando su número de
-					pacientes y cuando empiezan desde cero con lo que aprenden en el
-					Entrenamiento Incrementa Tu Consulta, logran su primera venta de
-					consulta en 40 días o menos.
-				</p>
-			</div>
-		</div>
-	</div>
-	<div
-		class="font-inter text-3xl md:text-5xl text-ventaBlue text-center font-bold my-20 mx-4"
-	>
-		<h1>Testimonio: Triplicó su retorno de inversión</h1>
-		<h1>antes de concluir el entrenamiento</h1>
-	</div>
-	<div class="relative mt-[220px]">
-		<div
-			class="md:w-[650px] w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-		>
-			<Videoplayer source="z9CsFqeleUo" />
-		</div>
-	</div>
-	<div class="bg-mango md:py-64 pt-44 pb-12">
-		<div class="mx-4 md:mx-0">
-			<h1 class="text-white text-center text-2xl md:text-4xl font-bold">
-				Mira las historias inspiradoras, los casos de éxito
-			</h1>
-			<h1 class="text-white text-center text-2xl md:text-4xl font-bold">
-				que ya tomaron acción. <span class="text-ventaBlue font-extrabold"
-					>¿Serás el próximo?</span
-				>
-			</h1>
-		</div>
-	</div>
-	<div class="relative">
-		<div
-			class="w-full md:absolute md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 bg-ventaBlue pb-8 md:bg-transparent"
-		>
-			<div class="grid md:grid-cols-3 mx-12 gap-12">
-				<div>
-					<Videoplayer source="eGORT3A48l0" />
-				</div>
+        <div class="my-8 mx-4 bg-white p-0.5"></div>
+        <p class="md:text-2xl">
+          Soy Psicóloga Berenice Bastidas y descifré como llenar mi agenda medio
+          tiempo, de pacientes durante 3 años seguidos y esto fue antes de
+          dedicarme a ayudar a Nutriólogos, Psicólogos, Terapeutas,
+          Psicoterapeutas y Profesionales de la Salud a poder hacerlo para ellos
+          mismos multiplicando sus ingresos e incrementando su número de
+          pacientes y cuando empiezan desde cero con lo que aprenden en el
+          Entrenamiento Incrementa Tu Consulta, logran su primera venta de
+          consulta en 40 días o menos.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    class="my-20 mx-4 text-center font-inter text-3xl font-bold text-ventaBlue md:text-5xl"
+  >
+    <h1>Testimonio: Triplicó su retorno de inversión</h1>
+    <h1>antes de concluir el entrenamiento</h1>
+  </div>
+  <div class="relative mt-[220px]">
+    <div
+      class="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 transform md:w-[650px]"
+    >
+      <Videoplayer source="z9CsFqeleUo" />
+    </div>
+  </div>
+  <div class="bg-mango pt-44 pb-12 md:py-64">
+    <div class="mx-4 md:mx-0">
+      <h1 class="text-center text-2xl font-bold text-white md:text-4xl">
+        Mira las historias inspiradoras, los casos de éxito
+      </h1>
+      <h1 class="text-center text-2xl font-bold text-white md:text-4xl">
+        que ya tomaron acción. <span class="font-extrabold text-ventaBlue"
+          >¿Serás el próximo?</span
+        >
+      </h1>
+    </div>
+  </div>
+  <div class="relative">
+    <div
+      class="w-full bg-ventaBlue pb-8 md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:transform md:bg-transparent"
+    >
+      <div class="mx-12 grid gap-12 md:grid-cols-3">
+        <div>
+          <Videoplayer source="eGORT3A48l0" />
+        </div>
 
-				<div>
-					<Videoplayer source="DUTbbtn9vJs" />
-				</div>
+        <div>
+          <Videoplayer source="DUTbbtn9vJs" />
+        </div>
 
-				<div>
-					<Videoplayer source="Ci3fpm-wsMo" />
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="bg-ventaBlue md:py-28 hidden md:block"></div>
-	<div class="md:mt-24 mt-12">
-		<img
-			src={'/venta/centro.webp'}
-			alt={`centro`}
-			class="mx-auto"
-			height={725}
-			width={1426}
-		/>
-		<h1
-			class="text-center text-2xl md:text-4xl text-ventaBlue font-inter font-bold my-8"
-		>
-			Todo lo que recibirás:
-		</h1>
-		<div class="md:mx-14 lg:mx-36 mx-4">
-			{
-				programaData.map((programa) => (
-					<div class="flex justify-between lg:mx-12 font-inter lg:text-2xl items-center stuff show">
-						<p class="w-52 md:w-auto">{programa.title}</p>
-						<span class="short" />
-						<p>{programa.value}</p>
-					</div>
-				))
-			}
-		</div>
+        <div>
+          <Videoplayer source="Ci3fpm-wsMo" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hidden bg-ventaBlue md:block md:py-28"></div>
+  <div class="mt-12 md:mt-24">
+    <img
+      src={"/venta/centro.webp"}
+      alt={`centro`}
+      class="mx-auto"
+      height={725}
+      width={1426}
+    />
+    <h1
+      class="my-8 text-center font-inter text-2xl font-bold text-ventaBlue md:text-4xl"
+    >
+      Todo lo que recibirás:
+    </h1>
+    <div class="mx-4 md:mx-14 lg:mx-36">
+      {
+        programaData.map((programa) => (
+          <div class="stuff show font-inter flex items-center justify-between lg:mx-12 lg:text-2xl">
+            <p class="w-52 md:w-auto">{programa.title}</p>
+            <span class="short" />
+            <p>{programa.value}</p>
+          </div>
+        ))
+      }
+    </div>
 
-		<h1
-			class="text-center text-2xl md:text-4xl text-ventaBlue font-inter font-bold my-8 uppercase"
-		>
-			BONOS DE REGALO
-		</h1>
+    <h1
+      class="my-8 text-center font-inter text-2xl font-bold uppercase text-ventaBlue md:text-4xl"
+    >
+      BONOS DE REGALO
+    </h1>
 
-		<div class="md:mx-14 lg:mx-36 mx-4">
-			{
-				bonosData.map((bono) => (
-					<div class="flex justify-between lg:mx-12 font-inter lg:text-2xl items-center stuff show">
-						<p class="w-52 md:w-auto">{bono.title}</p>
-						<span class="short" />
-						<p>{bono.value}</p>
-					</div>
-				))
-			}
-		</div>
+    <div class="mx-4 md:mx-14 lg:mx-36">
+      {
+        bonosData.map((bono) => (
+          <div class="stuff show font-inter flex items-center justify-between lg:mx-12 lg:text-2xl">
+            <p class="w-52 md:w-auto">{bono.title}</p>
+            <span class="short" />
+            <p>{bono.value}</p>
+          </div>
+        ))
+      }
+    </div>
+    <!-- <div>
+      <h1
+        class="my-8 text-center font-inter text-2xl font-bold uppercase text-ventaBlue md:text-4xl"
+      >
+        BONOS DE ACCIÓN RÁPIDA
+      </h1>
 
-		<h1
-			class="text-center text-2xl md:text-4xl text-ventaBlue font-inter font-bold my-8 uppercase"
-		>
-			BONOS DE ACCIÓN RÁPIDA
-		</h1>
+      <div class="mx-4 md:mx-14 lg:mx-36">
+        <div
+          class="stuff show flex items-center justify-between font-inter lg:mx-12 lg:text-2xl"
+        >
+          <p>Mentoría 1 a 1</p>
+          <span class="short"></span>
+          <p>Valor $300 USD</p>
+        </div>
+        <div
+          class="stuff show flex items-center justify-between font-inter lg:mx-12 lg:text-2xl"
+        >
+          <p>Vende fuera de tus fronteras</p>
+          <span class="short"></span>
+          <p>Valor $197 USD.</p>
+        </div>
+        <div
+          class="stuff show flex items-center justify-between font-inter lg:mx-12 lg:text-2xl"
+        >
+          <p>Crea anuncios potentes</p>
+          <span class="short"></span>
+          <p>Valor $500 USD</p>
+        </div>
+      </div>
+    </div> -->
 
-		<div class="md:mx-14 lg:mx-36 mx-4">
-			<div
-				class="flex justify-between lg:mx-12 font-inter lg:text-2xl items-center stuff show"
-			>
-				<p>Mentoría 1 a 1</p>
-				<span class="short"></span>
-				<p>Valor $300 USD</p>
-			</div>
-			<div
-				class="flex justify-between lg:mx-12 font-inter lg:text-2xl items-center stuff show"
-			>
-				<p>Vende fuera de tus fronteras</p>
-				<span class="short"></span>
-				<p>Valor $197 USD.</p>
-			</div>
-			<div
-				class="flex justify-between lg:mx-12 font-inter lg:text-2xl items-center stuff show"
-			>
-				<p>Crea anuncios potentes</p>
-				<span class="short"></span>
-				<p>Valor $500 USD</p>
-			</div>
-		</div>
-
-		<div class="my-24">
-			<CTAVenta />
-		</div>
-	</div>
-	<NewFooter />
+    <div class="my-24">
+      <CTAVenta />
+    </div>
+  </div>
+  <NewFooter />
 </section>
