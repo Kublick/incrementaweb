@@ -1,7 +1,5 @@
 ---
 import Videoplayer from "./Videoplayer.astro";
-import CTAReplay from "./CTAReplay";
-import AstroTimer from "./AstroTimer.astro";
 const { titulo, source, clase } = Astro.props;
 ---
 
@@ -11,21 +9,21 @@ const { titulo, source, clase } = Astro.props;
   const targetDate = timenow + fifteen;
 </script>
 
-<div class="mt-4 md:mt-12 pb-4">
-  <h1 class="text-3xl text-primary text-center md:text-7xl font-semibold">
+<div class="mt-4 pb-4 md:mt-12">
+  <h1 class="text-center text-3xl font-semibold text-primary md:text-7xl">
     Clase #{clase}
   </h1>
-  <p class="text-center text-xl md:text-3xl md:my-8 my-3 mx-4">
+  <p class="my-3 mx-4 text-center text-xl md:my-8 md:text-3xl">
     {titulo}
   </p>
-  <div class="md:w-1/2 md:mx-auto 56 mx-4">
+  <div class="56 mx-4 md:mx-auto md:w-1/2">
     <Videoplayer source={source} />
   </div>
 
-  <div class="flex justify-center py-6 w-3/4 mx-auto my-4 rounded lg:mt-12">
+  <div class="mx-auto my-4 flex w-3/4 justify-center rounded py-6 lg:mt-12">
     <a
       href="/inscripciones-abiertas"
-      class="flex bg-primary py-4 px-8 items-center rounded-full gap-4 md:text-2xl text-white font-bold shadow-lg hover:bg-green animate-none mx-4 text-center"
+      class="hover:bg-green mx-4 flex animate-none items-center gap-4 rounded-full bg-primary py-4 px-8 text-center font-bold text-white shadow-lg md:text-2xl"
     >
       Quiero Incrementar Mi Consulta
     </a>
