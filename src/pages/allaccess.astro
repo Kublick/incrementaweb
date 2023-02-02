@@ -1,6 +1,6 @@
 ---
-import { FlipCD } from "../components/FlipCountdown";
 import Footer from "../components/Footer.astro";
+import { ChinneseCountDown } from "../components/pqina";
 import Replay from "../components/Replay.astro";
 import Layout from "../layouts/Layout.astro";
 
@@ -24,8 +24,9 @@ const plc4 = "Nq5NNH2_cE0";
     >
       Mira todas las clases antes de que se detenga el reloj:
     </h1>
-
-    <FlipCD date={"2022-02-03 23:59:00"} client:only="react" />
+    <div class="flex justify-center">
+      <ChinneseCountDown client:load date={"2023-02-03 23:59"} color={false} />
+    </div>
 
     <div
       class="mx-4 mt-4 text-center font-inter text-xl font-bold text-secondary md:mt-8 md:text-6xl"
