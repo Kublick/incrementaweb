@@ -5,6 +5,12 @@ import Footer from "../components/Footer.astro";
 ---
 
 <script>
+  window.onload = function () {
+    window.location.replace("https://www.incrementatuconsulta.com/cerrado");
+  };
+</script>
+
+<script>
   const getButton = document.getElementById("getButton");
 
   getButton?.addEventListener("click", () => {
@@ -21,22 +27,22 @@ import Footer from "../components/Footer.astro";
 
 <Layout title="Ebook | Incrementa tu consulta">
   <header>
-    <div class="bg-primary p-4 text-white text-center" id="form">
-      <h1 class="text-2xl md:w-3/4 mx-auto">
+    <div class="bg-primary p-4 text-center text-white" id="form">
+      <h1 class="mx-auto text-2xl md:w-3/4">
         Psicóloga especialista en la atracción de clientes revela en su nuevo
         ebook:
       </h1>
     </div>
     <div class="mt-4">
-      <h1 class="text-center text-lg md:text-4xl w-3/4 mx-auto text-semibold">
+      <h1 class="text-semibold mx-auto w-3/4 text-center text-lg md:text-4xl">
         Los 5 pasos infalibles posicionar tus servicios profesionales y llenar
         tu agenda de pacientes todas las semanas
       </h1>
     </div>
   </header>
-  <section class="grid md:grid-cols-2 md:py-12 py-2" id="form">
+  <section class="grid py-2 md:grid-cols-2 md:py-12" id="form">
     <div
-      class="mx-4 md:mx-10 order-last md:order-first md:block place-self-center mt-4 md:mt-0"
+      class="order-last mx-4 mt-4 place-self-center md:order-first md:mx-10 md:mt-0 md:block"
     >
       <img
         src={"/eBook.webp"}
@@ -46,24 +52,24 @@ import Footer from "../components/Footer.astro";
         loading="lazy"
       />
     </div>
-    <div class="px-4 md:mx-10 place-self-center">
-      <h1 class="md:text-xl text-primary text-center">
+    <div class="place-self-center px-4 md:mx-10">
+      <h1 class="text-center text-primary md:text-xl">
         Este ebook contiene toda la información que he recopilado en los últimos
         años y que comparto con especialistas que desean abrirse paso en
         Internet
       </h1>
-      <h2 class="text-center mt-4 text-semibold">
+      <h2 class="text-semibold mt-4 text-center">
         Dime aquí abajo a qué correo te lo envío
       </h2>
       <FormularioLeadMagnet client:load />
 
-      <p class="font-semibold text-center mt-8">
+      <p class="mt-8 text-center font-semibold">
         El ebook es gratuito, pero las copias son limitadas
       </p>
     </div>
   </section>
   <section>
-    <div class="flex flex-col items-center gap-2 mb-10">
+    <div class="mb-10 flex flex-col items-center gap-2">
       <img
         src={"/agenda.webp"}
         alt={"agenda"}
@@ -71,13 +77,13 @@ import Footer from "../components/Footer.astro";
         height={394}
         loading="lazy"
       />
-      <h1 class="px-4 text-xl md:text-3xl text-center">
+      <h1 class="px-4 text-center text-xl md:text-3xl">
         ¿Te imaginas cómo estaría tu consultorio si aplicaras estos 5 pasos?
       </h1>
-      <div class="mt-8 flex items-center flex-col px-4">
-        <div class="relative group">
+      <div class="mt-8 flex flex-col items-center px-4">
+        <div class="group relative">
           <div
-            class="animate-pulse absolute bg-primary rounded-lg blur -inset-0.5 opacity-90 group-hover:opacity-100"
+            class="absolute -inset-0.5 animate-pulse rounded-lg bg-primary opacity-90 blur group-hover:opacity-100"
           >
           </div>
 

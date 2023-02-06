@@ -8,6 +8,12 @@ import CTAVenta from "../components/venta/CTAVenta.astro";
 import { ChinneseCountDown } from "../components/pqina";
 ---
 
+<script>
+  window.onload = function () {
+    window.location.replace("https://www.incrementatuconsulta.com/cerrado");
+  };
+</script>
+
 <script
   type="module"
   async
@@ -15,7 +21,7 @@ import { ChinneseCountDown } from "../components/pqina";
 ></script>
 
 <Layout title="Inscripciones | Incrementa tu consulta">
-  <div class="h-[380px] bg-mango md:h-[424px]">
+  <!-- <div class="h-[380px] bg-mango md:h-[424px]">
     <img src="/whiteLogo.svg" alt="whiteLogo" class="mx-auto py-2" />
     <div class="mx-2">
       <h1
@@ -67,5 +73,5 @@ import { ChinneseCountDown } from "../components/pqina";
   <VentaPuntos />
   <Programa />
   <Bonos />
-  <VentaFooter />
+  <VentaFooter /> -->
 </Layout>
