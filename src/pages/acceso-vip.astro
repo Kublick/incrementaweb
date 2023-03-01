@@ -1,7 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import FormularioVip from "../components/FormularioVip";
+// import FormularioVip from "../components/FormularioVip";
 import { ChinneseCountDown } from "../components/pqina";
+import FormularioGrupoVip from "../components/FormularioGrupoVip.astro";
 ---
 
 <style>
@@ -12,12 +13,12 @@ import { ChinneseCountDown } from "../components/pqina";
     border-top-right-radius: 75% 100%;
   }
 </style>
-
+<!--
 <script>
   window.onload = function () {
     window.location.replace("https://www.incrementatuconsulta.com/cerrado");
   };
-</script>
+</script> -->
 
 <Layout title="Grupo VIP Incrementa Tu Consulta">
   <div class="mt-4s">
@@ -160,7 +161,8 @@ import { ChinneseCountDown } from "../components/pqina";
     </div>
 
     <div class="mx-auto max-w-3xl">
-      <FormularioVip client:only="react" />
+      <FormularioGrupoVip />
+      <!-- <FormularioVip client:only="react" /> -->
     </div>
 
     <div class="mx-auto my-12 w-3/4 bg-mango py-0.5 md:w-1/2"></div>
