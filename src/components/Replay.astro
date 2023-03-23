@@ -4,9 +4,18 @@ const { titulo, source, clase } = Astro.props;
 ---
 
 <script>
-  const fifteen = 15 * 60 * 1000;
-  const timenow = new Date().getTime();
-  const targetDate = timenow + fifteen;
+  import { getRegistro } from "../hooks/getRegistro";
+  import JSConfetti from "js-confetti";
+  const whatsappUrl = await getRegistro();
+  const jsConfetti = new JSConfetti();
+
+  const button = document.getElementById("groupbutton");
+
+  button.addEventListener("click", () => {
+    setTimeout(() => {
+      window.window.location.replace(whatsappUrl);
+    }, 1200);
+  });
 </script>
 
 <div class="mt-4 pb-4 md:mt-12">
@@ -20,12 +29,13 @@ const { titulo, source, clase } = Astro.props;
     <Videoplayer source={source} />
   </div>
 
-  <!-- <div class="mx-auto my-4 flex w-3/4 justify-center rounded py-6 lg:mt-12">
-    <a
-      href="/inscripciones-abiertas"
-      class="hover:bg-green mx-4 flex animate-none items-center gap-4 rounded-full bg-primary py-4 px-8 text-center font-bold text-white shadow-lg md:text-2xl"
+  <div class="mx-auto my-2 flex w-3/4 justify-center rounded py-6 lg:mt-12">
+    <button
+      id="groupbutton"
+      class="mt-8 flex items-center gap-4 rounded-full bg-green-600 py-2 px-8 font-bold text-white shadow-lg md:text-2xl"
     >
-      Quiero Incrementar Mi Consulta
-    </a>
-  </div> -->
+      <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
+      Pulsa el botón para unirte al grupo
+    </button>
+  </div>
 </div>
