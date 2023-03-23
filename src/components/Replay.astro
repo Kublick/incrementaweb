@@ -9,12 +9,13 @@ const { titulo, source, clase } = Astro.props;
   const whatsappUrl = await getRegistro();
   const jsConfetti = new JSConfetti();
 
-  const button = document.getElementById("groupbutton");
-
-  button.addEventListener("click", () => {
-    setTimeout(() => {
-      window.window.location.replace(whatsappUrl);
-    }, 1200);
+  const button = document.querySelectorAll("#groupbutton").forEach((e) => {
+    e.addEventListener("click", () => {
+      jsConfetti.addConfetti();
+      setTimeout(() => {
+        window.window.location.replace(whatsappUrl);
+      }, 1200);
+    });
   });
 </script>
 
