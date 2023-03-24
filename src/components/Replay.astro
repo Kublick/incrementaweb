@@ -4,9 +4,10 @@ const { titulo, source, clase } = Astro.props;
 ---
 
 <script>
-  import { getRegistro } from "../hooks/getRegistro";
+  import { getLead } from "../hooks/getLead";
   import JSConfetti from "js-confetti";
-  const whatsappUrl = await getRegistro();
+
+  const whatsappUrl = await getLead();
   const jsConfetti = new JSConfetti();
 
   const button = document.querySelectorAll("#groupbutton").forEach((e) => {
@@ -36,7 +37,7 @@ const { titulo, source, clase } = Astro.props;
       class="mt-8 flex items-center gap-4 rounded-full bg-green-600 py-2 px-8 font-bold text-white shadow-lg md:text-2xl"
     >
       <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
-      Pulsa el botón para unirte al grupo
+      Pulsa el botón para unirte al grupo VIP
     </button>
   </div>
 </div>
