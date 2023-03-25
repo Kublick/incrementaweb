@@ -27,7 +27,12 @@ const { width = 560, height = 315, source } = Astro.props as Props;
 </style>
 
 <div class="video-responsive rounded-lg shadow-lg">
-  <lite-youtube videoid={source} params="enablejsapi=1" />
+  <lite-youtube
+    videoid={source}
+    params="enablejsapi=1"
+    loading="lazy"
+    autoload
+  />
 
   <iframe
     width="100%"

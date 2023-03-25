@@ -1,84 +1,87 @@
 ---
-import IncrementaLateral from '../assets/Incrementa_lateral.png';
-import ReplayFormulario from '../components/ReplayFormulario';
-import Videoplayer from '../components/Videoplayer.astro';
-import Layout from '../layouts/Layout.astro';
+import IncrementaLateral from "../assets/Incrementa_lateral.png";
+import ReplayFormulario from "../components/ReplayFormulario";
+import Videoplayer from "../components/Videoplayer.astro";
+import Layout from "../layouts/Layout.astro";
 
 const videos = [
-	'BZCgpqnTqZw',
-	'eGORT3A48l0',
-	'c1XGvy-ynZs',
-	'NmL3jxP9BB0',
-	'4G_j_Qk7Gvc',
-	'wXHrOaaJZoM',
-	'E_Vtjlfbke4',
-	'TFc8I4yWV6o',
-	'CQgBjXeLclM',
-	'QT1GhuH5WBI',
-	'_dj_e5Y2XEc',
-	'PtyxK0vTrPs',
-	'COftyA8rQUA',
-	'z6Ot5syx6n0',
-	'kEHTwr5Gyc8',
-	'gQuyYgoGIA8',
+  "kU8QkGrZqeM",
+  "RovCZO68eRA",
+  "T9bFZSCnWSo",
+  "BZCgpqnTqZw",
+  "eGORT3A48l0",
+  "c1XGvy-ynZs",
+  "NmL3jxP9BB0",
+  "4G_j_Qk7Gvc",
+  "wXHrOaaJZoM",
+  "E_Vtjlfbke4",
+  "TFc8I4yWV6o",
+  "CQgBjXeLclM",
+  "QT1GhuH5WBI",
+  "_dj_e5Y2XEc",
+  "PtyxK0vTrPs",
+  "COftyA8rQUA",
+  "z6Ot5syx6n0",
+  "kEHTwr5Gyc8",
+  "gQuyYgoGIA8",
 ];
 ---
 
 <Layout title="Incrementa tu Consulta | Testiomonios">
-	<div class="bg-primary pb-8">
-		<div
-			class="mx-auto mb-4 w-48 rounded-b-lg bg-white px-6 pb-6 shadow-lg lg:w-64"
-		>
-			<a href="/">
-				<img
-					src={'/Incrementa_lateral.png'}
-					alt="Logo Incrementatuconsulta"
-					width={400}
-					height={100}
-					class="pt-2"
-				/>
-			</a>
-		</div>
+  <div class="bg-primary pb-8">
+    <div
+      class="mx-auto mb-4 w-48 rounded-b-lg bg-white px-6 pb-6 shadow-lg lg:w-64"
+    >
+      <a href="/">
+        <img
+          src={"/Incrementa_lateral.png"}
+          alt="Logo Incrementatuconsulta"
+          width={400}
+          height={100}
+          class="pt-2"
+        />
+      </a>
+    </div>
 
-		<div class="mt-4 text-center text-3xl font-bold text-white">
-			<h1>!LLEGAS TARDE!</h1>
-			<h1>Incrementa tu consulta ha cerrado sus puertas</h1>
-		</div>
+    <div class="mt-4 text-center text-3xl font-bold text-white">
+      <h1>!LLEGAS TARDE!</h1>
+      <h1>Incrementa tu consulta ha cerrado sus puertas</h1>
+    </div>
 
-		<div class="mx-4 md:mx-14 mt-4">
-			<h1
-				class="mx-4 px-5 text-center font-semibold text-white lg:mx-10 lg:text-2xl"
-			>
-				Las inscripciones al programa están cerradas.
-			</h1>
-			<p class="py-4 text-lg text-white">
-				Si quieres recibir más información sobre el programa, conocer la fecha
-				de la próxima edición y acceder a contenidos para prepararte para hacer
-				crecer tu lista de pacientes, déjanos tu correo y te lo enviamos. <br />
-				AVISO: las personas registradas en esta lista tienen prioridad en el acceso
-				a la próxima edición. Si quieres ser el primero o primera en entrar en un
-				futuro, ¡apúntate!
-			</p>
-		</div>
-	</div>
+    <div class="mx-4 mt-4 md:mx-14">
+      <h1
+        class="mx-4 px-5 text-center font-semibold text-white lg:mx-10 lg:text-2xl"
+      >
+        Las inscripciones al programa están cerradas.
+      </h1>
+      <p class="py-4 text-lg text-white">
+        Si quieres recibir más información sobre el programa, conocer la fecha
+        de la próxima edición y acceder a contenidos para prepararte para hacer
+        crecer tu lista de pacientes, déjanos tu correo y te lo enviamos. <br />
+        AVISO: las personas registradas en esta lista tienen prioridad en el acceso
+        a la próxima edición. Si quieres ser el primero o primera en entrar en un
+        futuro, ¡apúntate!
+      </p>
+    </div>
+  </div>
 
-	<div class="md:w-1/2 mx-auto px-4 mb-8">
-		<ReplayFormulario client:only="react" />
-	</div>
+  <div class="mx-auto mb-8 px-4 md:w-1/2">
+    <ReplayFormulario client:only="react" />
+  </div>
 
-	<section>
-		<div class="md:p-20 mx-auto">
-			<Videoplayer source="z9CsFqeleUo" />
-		</div>
+  <section>
+    <div class="mx-auto md:p-20">
+      <Videoplayer source="dhcktckrBWg" />
+    </div>
 
-		<div class="grid gap-x-10 md:grid-cols-2 items-center">
-			{
-				videos.map((video) => (
-					<div class="md:my-5 my-2 p-3">
-						<Videoplayer source={video} />
-					</div>
-				))
-			}
-		</div>
-	</section>
+    <div class="grid items-center gap-x-10 md:grid-cols-2">
+      {
+        videos.map((video) => (
+          <div class="my-2 p-3 md:my-5">
+            <Videoplayer source={video} />
+          </div>
+        ))
+      }
+    </div>
+  </section>
 </Layout>
