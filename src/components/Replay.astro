@@ -4,13 +4,13 @@ const { titulo, source, clase } = Astro.props;
 ---
 
 <script>
-  import { getLead } from "../hooks/getLead";
+  // import { getLead } from "../hooks/getLead";
   import JSConfetti from "js-confetti";
 
-  const whatsappUrl = await getLead();
+  const whatsappUrl = "https://www.incrementatuconsulta.com/acceso-vip";
   const jsConfetti = new JSConfetti();
 
-  const button = document.querySelectorAll("#groupbutton").forEach((e) => {
+  document.querySelectorAll("#groupbutton").forEach((e) => {
     e.addEventListener("click", () => {
       jsConfetti.addConfetti();
       setTimeout(() => {
