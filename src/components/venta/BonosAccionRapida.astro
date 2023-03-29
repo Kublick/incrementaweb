@@ -1,0 +1,107 @@
+---
+import { FlipCD } from "../FlipCountdown";
+const date = "2023-03-28 21:59:00";
+---
+
+<div id="bonos">
+  <h2 class="text-center text-4xl font-extrabold uppercase text-ventaBlue">
+    BONOS DE ACCIÓN RÁPIDA
+  </h2>
+  <h2
+    class="mt-2 animate-pulse text-center text-xl font-extrabold uppercase text-ventaBlue"
+  >
+    (Solo tenemos 10 cupos disponibles)
+  </h2>
+  <div class="mx-4 my-20 grid gap-2 md:mx-48 lg:grid-cols-3">
+    <div class="flex flex-col justify-around bg-gray-300">
+      <img
+        src="/venta/card1.png"
+        alt="Imagen Mentoria"
+        width="79"
+        height="79"
+        class="mx-auto pt-8 md:pt-0"
+      />
+      <h3 class="text-center font-coolvetica text-2xl text-ventaBlue">
+        Mentoria 1 a 1
+      </h3>
+      <p class="mx-10 mt-4 text-justify">
+        Sesión privada con la psicóloga Berenice Bastidas de 45 minutos para
+        hablar de tu negocio y proyecto profesional. Se enfocarán en lo que
+        estás haciendo, verán estrategias personalizadas y, al finalizar,
+        tendrás una ruta clara de qué pasos tienes que seguir para generar los
+        resultados que sueñas.
+      </p>
+
+      <p class="py-8 text-center text-3xl font-bold text-redVenta line-through">
+        USD $300
+      </p>
+    </div>
+    <div class="flex flex-col justify-around gap-4">
+      <img
+        src="/venta/card2.png"
+        alt="Imagen Mundo"
+        width="79"
+        height="79"
+        class="mx-auto my-4"
+      />
+      <h3 class="text-center font-coolvetica text-2xl text-ventaBlue">
+        Vende fuera de tus fronteras
+      </h3>
+      <p class="mx-10 mt-4 text-justify">
+        Aprenderás el método para vender tus consultas a un alto precio y fuera
+        de tu país. Te explicaremos el cómo tener más pacientes en línea y cómo
+        generar ingresos en dólares y hasta euros.
+      </p>
+      <p
+        class="mt-20 py-8 text-center text-3xl font-bold text-redVenta line-through"
+      >
+        USD $197
+      </p>
+    </div>
+    <div class="flex flex-col justify-around bg-gray-300">
+      <img
+        src="/venta/card3.png"
+        alt="Imagen Anuncios Potentes"
+        width="79"
+        height="79"
+        class="mx-auto my-4 md:pt-0"
+      />
+      <h3 class="text-center font-coolvetica text-2xl text-ventaBlue">
+        Crea anuncios potentes
+      </h3>
+      <p class="mx-10 my-4 text-justify">
+        Conocerás la estrategia que usan grandes empresas para conseguir más
+        pacientes a la semana y llenar sus agendas utilizando Facebook e
+        Instagram ADS. Verás desde las bases: cómo configurar tu cuenta
+        publicitaria, hasta cómo posicionar anuncios que atraigan a tus clientes
+        soñados. Es más, te ahorrarás los miles de dólares que te cobraría una
+        agencia de marketing por hacerte esto, porque lo sabrás hacer tú mismo.
+      </p>
+
+      <p class="py-8 text-center text-3xl font-bold text-redVenta line-through">
+        USD $500
+      </p>
+    </div>
+  </div>
+
+  <div class="mx-4 md:mx-0">
+    <h2 class="text-center text-4xl font-extrabold uppercase text-ventaBlue">
+      3 bonos de regalo valorados en
+    </h2>
+    <h1 class="text-center text-4xl font-extrabold text-ventaBlue">
+      <span class="text-5xl text-redVenta line-through"> $997</span>
+      <span class="text-5xl text-redVenta">dólares</span>
+      completamente GRATIS
+    </h1>
+    <div class="mx-auto my-20 w-1/2 rounded-md bg-secondary py-1 shadow-lg">
+    </div>
+
+    <h2 class="text-center text-4xl font-extrabold text-ventaBlue">
+      Los bonos de acción rápida desaparecen en:
+    </h2>
+  </div>
+
+  <div class="my-12">
+    <FlipCD date={date} client:only="react" />
+  </div>
+</div>
