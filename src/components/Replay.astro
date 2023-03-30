@@ -7,7 +7,8 @@ const { titulo, source, clase } = Astro.props;
   // import { getLead } from "../hooks/getLead";
   import JSConfetti from "js-confetti";
 
-  const whatsappUrl = "https://www.incrementatuconsulta.com/acceso-vip";
+  const whatsappUrl =
+    "https://www.incrementatuconsulta.com/inscripciones-abiertas";
   const jsConfetti = new JSConfetti();
 
   document.querySelectorAll("#groupbutton").forEach((e) => {
@@ -27,17 +28,25 @@ const { titulo, source, clase } = Astro.props;
   <p class="my-3 mx-4 text-center text-xl md:my-8 md:text-3xl">
     {titulo}
   </p>
-  <div class="56 mx-4 md:mx-auto md:w-1/2">
+  <div class="mx-4 md:mx-auto md:w-1/2">
     <Videoplayer source={source} />
   </div>
 
   <div class="mx-auto my-2 flex w-3/4 justify-center rounded py-6 lg:mt-12">
+    <div class="mx-auto my-4 flex w-3/4 justify-center rounded py-6 lg:mt-12">
+      <button
+        class="hover:bg-green mx-4 flex animate-none items-center gap-4 rounded-full bg-primary py-4 px-8 text-center font-bold text-white shadow-lg md:text-2xl"
+      >
+        Quiero Incrementar Mi Consulta
+      </button>
+    </div>
+    <!--    
     <button
       id="groupbutton"
       class="mt-8 flex items-center gap-4 rounded-full bg-green-600 py-2 px-8 font-bold text-white shadow-lg md:text-2xl"
     >
       <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
       Pulsa el botón para unirte al grupo VIP
-    </button>
+    </button> -->
   </div>
 </div>
