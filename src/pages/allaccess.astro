@@ -15,6 +15,23 @@ const plc4 = "eYjRHgJErMc";
     window.location.replace("https://www.incrementatuconsulta.com/testimonios");
   };
 </script> -->
+<script>
+  // import { getLead } from "../hooks/getLead";
+  import JSConfetti from "js-confetti";
+
+  const whatsappUrl =
+    "https://www.incrementatuconsulta.com/inscripciones-abiertas";
+  const jsConfetti = new JSConfetti();
+
+  document.querySelectorAll("#groupbutton").forEach((e) => {
+    e.addEventListener("click", () => {
+      jsConfetti.addConfetti();
+      setTimeout(() => {
+        window.window.location.replace(whatsappUrl);
+      }, 1200);
+    });
+  });
+</script>
 <Layout title="All Access - Incrementa tu consulta">
   <section class="">
     <h1
@@ -38,22 +55,46 @@ const plc4 = "eYjRHgJErMc";
       titulo="Como ofrecer o vender tu consulta online"
       source={plc1}
     />
+    <div class="my-4 flex justify-center">
+      <button
+        class="hover:bg-green mx-4 flex animate-none items-center gap-4 rounded-full bg-primary py-4 px-8 text-center font-bold text-white shadow-lg md:text-2xl"
+        id="groupbutton"
+      >
+        Quiero Incrementar Mi Consulta
+      </button>
+    </div>
 
     <Replay
       clase="2"
       titulo="Las top 7 formas de tener dinero online y los 5 errores de novato"
       source={plc2}
     />
+    <div class="my-4 flex justify-center">
+      <button
+        class="hover:bg-green mx-4 flex animate-none items-center gap-4 rounded-full bg-primary py-4 px-8 text-center font-bold text-white shadow-lg md:text-2xl"
+        id="groupbutton"
+      >
+        Quiero Incrementar Mi Consulta
+      </button>
+    </div>
 
     <Replay
       clase="3"
       titulo="Como ofrecer o vender tu consulta online"
       source={plc3}
     />
+    <div class="my-4 flex justify-center">
+      <button
+        class="hover:bg-green mx-4 flex animate-none items-center gap-4 rounded-full bg-primary py-4 px-8 text-center font-bold text-white shadow-lg md:text-2xl"
+        id="groupbutton"
+      >
+        Quiero Incrementar Mi Consulta
+      </button>
+    </div>
     <div class="my-8 flex justify-center">
       <a href="/inscripciones-abiertas">
         <img
-          src="images/clase4_min.webp"
+          src="/images/clase4_min.webp"
           alt="clase 4"
           height="315"
           width="760"
