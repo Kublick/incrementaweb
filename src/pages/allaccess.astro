@@ -4,17 +4,17 @@ import { ChinneseCountDown } from "../components/pqina";
 import Replay from "../components/Replay.astro";
 import Layout from "../layouts/Layout.astro";
 
-const plc1 = "DKBLjsDY0E0";
-const plc2 = "tVrTvb5F5Rs";
-const plc3 = "qtMjE1d2qPs";
-const plc4 = "eYjRHgJErMc";
+const plc1 = "aZfj1uUlbwk";
+const plc2 = "xk_LWuMZA6M";
+const plc3 = "-o0Datq1hR8";
+const plc4 = "JCoLxVvFuiY";
 ---
 
-<script>
+<!-- <script>
   window.onload = function () {
     window.location.replace("https://www.incrementatuconsulta.com/testimonios");
   };
-</script>
+</script> -->
 <script>
   // import { getLead } from "../hooks/getLead";
   import JSConfetti from "js-confetti";
@@ -40,7 +40,7 @@ const plc4 = "eYjRHgJErMc";
       Mira todas las clases antes de que se detenga el reloj:
     </h1>
     <div class="flex justify-center">
-      <ChinneseCountDown client:load date={"2023-03-26 23:59"} color={false} />
+      <ChinneseCountDown client:load date={"2023-05-15 09:00"} color={false} />
     </div>
 
     <div
@@ -55,16 +55,16 @@ const plc4 = "eYjRHgJErMc";
       titulo="Como ofrecer o vender tu consulta online"
       source={plc1}
     />
-    <div class="my-4 flex justify-center">
+    <!-- <div class="my-4 flex justify-center">
       <button
         class="hover:bg-green mx-4 flex animate-none items-center gap-4 rounded-full bg-primary py-4 px-8 text-center font-bold text-white shadow-lg md:text-2xl"
         id="groupbutton"
       >
         Quiero Incrementar Mi Consulta
       </button>
-    </div>
+    </div> -->
 
-    <Replay
+    <!-- <Replay
       clase="2"
       titulo="Las top 7 formas de tener dinero online y los 5 errores de novato"
       source={plc2}
@@ -101,7 +101,7 @@ const plc4 = "eYjRHgJErMc";
           class="rounded-md"
         />
       </a>
-    </div>
+    </div> -->
   </section>
   <Footer />
 </Layout>
