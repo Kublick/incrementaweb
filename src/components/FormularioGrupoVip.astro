@@ -214,10 +214,6 @@ import { countries } from "../data/countries";
 >
   <div class="headers" style="">
     <h4 id="ewf_formheader" class="EWF__header" style="display: none;"></h4>
-    <p id="ewf_formdesc">
-      Enter specific and clear language on the intended use of the collected
-      information.
-    </p>
   </div>
   <fieldset style="border:none;" class="webform-custominputs">
     <div class="inputs">
@@ -243,6 +239,17 @@ import { countries } from "../data/countries";
           type="text"
           false=""
           placeholder="Ingresa tu nombre"
+        />
+      </div>
+      <div>
+        <label for="field_phone">Telefono</label>
+        <input
+          maxlength="100"
+          class="form-control webform__form-control"
+          name="field_phone"
+          size="20"
+          type="text"
+          placeholder=""
         />
       </div>
       <div>
@@ -283,17 +290,6 @@ import { countries } from "../data/countries";
           placeholder=""
         />
       </div>
-      <div>
-        <label for="field_phone">Telefono</label>
-        <input
-          maxlength="100"
-          class="form-control webform__form-control"
-          name="field_phone"
-          size="20"
-          type="text"
-          placeholder=""
-        />
-      </div>
     </div>
     <div class="checkboxes"></div>
     <div class="webform-lists" style="display: none;">
@@ -316,7 +312,7 @@ import { countries } from "../data/countries";
     <input
       type="submit"
       name="submit"
-      value="Registrarme"
+      value="¡ Quiero ser VIP !"
       id="eesubmit"
       class="EWF__subscribe"
     />
