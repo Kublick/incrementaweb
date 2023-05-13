@@ -19,13 +19,13 @@ const plc4 = "JCoLxVvFuiY";
   // import { getLead } from "../hooks/getLead";
   import JSConfetti from "js-confetti";
 
-  const whatsappUrl =
-    "https://www.incrementatuconsulta.com/inscripciones-abiertas";
+  const whatsappUrl = "https://www.incrementatuconsulta.com/acceso-vip/";
   const jsConfetti = new JSConfetti();
 
-  document.querySelectorAll("#groupbutton").forEach((e) => {
+  document.querySelectorAll("#botonazo").forEach((e) => {
     e.addEventListener("click", () => {
       jsConfetti.addConfetti();
+
       setTimeout(() => {
         window.window.location.replace(whatsappUrl);
       }, 1200);
@@ -55,43 +55,43 @@ const plc4 = "JCoLxVvFuiY";
       titulo="Como ofrecer o vender tu consulta privada"
       source={plc1}
     />
-    <!-- <div class="my-4 flex justify-center">
+    <div class="my-4 flex justify-center">
       <button
-        class="hover:bg-green mx-4 flex animate-none items-center gap-4 rounded-full bg-primary py-4 px-8 text-center font-bold text-white shadow-lg md:text-2xl"
-        id="groupbutton"
+        class="hover:bg-green mx-4 flex animate-none items-center gap-4 rounded-full bg-primary px-8 py-4 text-center font-bold text-white shadow-lg md:text-2xl"
+        id="botonazo"
       >
-        Quiero Incrementar Mi Consulta
+        Unirme al grupo VIP
       </button>
-    </div> -->
+    </div>
 
     <Replay
       clase="2"
       titulo="Las top 7 formas de tener dinero online y los 5 errores de novato"
       source={plc2}
     />
-    <!-- <div class="my-4 flex justify-center">
+    <div class="my-4 flex justify-center">
       <button
-        class="hover:bg-green mx-4 flex animate-none items-center gap-4 rounded-full bg-primary py-4 px-8 text-center font-bold text-white shadow-lg md:text-2xl"
-        id="groupbutton"
+        class="hover:bg-green mx-4 flex animate-none items-center gap-4 rounded-full bg-primary px-8 py-4 text-center font-bold text-white shadow-lg md:text-2xl"
+        id="botonazo"
       >
-        Quiero Incrementar Mi Consulta
+        Unirme al grupo VIP
       </button>
-    </div> -->
+    </div>
 
-    <!-- <Replay
+    <Replay
       clase="3"
       titulo="Como ofrecer o vender tu consulta online"
       source={plc3}
     />
     <div class="my-4 flex justify-center">
       <button
-        class="hover:bg-green mx-4 flex animate-none items-center gap-4 rounded-full bg-primary py-4 px-8 text-center font-bold text-white shadow-lg md:text-2xl"
-        id="groupbutton"
+        class="hover:bg-green mx-4 flex animate-none items-center gap-4 rounded-full bg-primary px-8 py-4 text-center font-bold text-white shadow-lg md:text-2xl"
+        id="botonazo"
       >
-        Quiero Incrementar Mi Consulta
+        Unirme al grupo VIP
       </button>
     </div>
-    <div class="my-8 flex justify-center">
+    <!-- <div class="my-8 flex justify-center">
       <a href="/inscripciones-abiertas">
         <img
           src="/clase4_min.webp"
