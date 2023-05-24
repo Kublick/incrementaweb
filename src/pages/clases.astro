@@ -2,19 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import { ChinneseCountDown } from "../components/pqina";
 import { Image } from "@astrojs/image/components";
-const plc1 = "wIZcwPMFjus";
-const plc2 = "orNpWwIspkY";
-const plc3 = "0L7euyc274g";
-const plc4 = "Nq5NNH2_cE0";
+const plc1 = "-7PTz_RzTQo";
 ---
 
-<script>
-  window.onload = function () {
-    window.location.replace("https://www.incrementatuconsulta.com/testimonios");
-  };
-</script>
-
-<!-- <script
+<script
   type="module"
   async
   src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.4.0/lite-youtube.js"
@@ -23,83 +14,67 @@ const plc4 = "Nq5NNH2_cE0";
 <script>
   const whatsappUrl = "https://chat.whatsapp.com/HgFC6iUMp3V9ibZKAvVe1r";
   const button = document.getElementById("groupbutton");
-  const button2 = document.getElementById("groupbutton2");
-  const button3 = document.getElementById("groupbutton3");
 
   button?.addEventListener("click", () => {
-    window.location.replace("https://www.incrementatuconsulta.com/acceso-vip");
+    window.location.replace(
+      "https://www.incrementatuconsulta.com/inscripciones-abiertas"
+    );
   });
+</script>
 
-  button2?.addEventListener("click", () => {
-    window.location.replace("https://www.incrementatuconsulta.com/acceso-vip");
-  });
-
-  button3?.addEventListener("click", () => {
-    window.location.replace("https://www.incrementatuconsulta.com/acceso-vip");
-  });
-
-  // button?.addEventListener("click", () => {
-  //   window.location.replace("https://www.incrementatuconsulta.com/acceso-vip");
-  // });
-</script> -->
-
-<Layout title="Clases | Incrementa tu consulta">
-  <!-- <div class="bg-mango py-4 md:py-12">
+<Layout title="Clase Especial | Incrementa tu consulta">
+  <div class="bg-mango py-4 md:py-12">
     <img src="/whiteLogo.svg" alt="whiteLogo" class="mx-auto py-2" />
     <div class="mx-2">
-      <h1
-        class="text-center font-coolvetica text-4xl text-ventaBlue md:text-5xl"
-      >
-        Las clases desapareceran en:
-      </h1>
-      <div class="my-4 flex justify-center">
-        <ChinneseCountDown client:load date={"January 29 2023 22:00"} color />
-      </div>
-
-
-      <h2
+      <!-- <h2
         class="mt-2 px-4 text-center font-coolvetica text-white md:px-24 md:text-2xl"
       >
-        conoce el método para multiplicar por 2 tu número de consultas aplicando
-        estrategias comprobadas por decenas de expertos de 14 paises diferentes
-        sin tener que publicar en redes todos los días
-      </h2>
+        conoce como
+      </h2> -->
     </div>
   </div>
 
   <div class="mt-2 px-2">
     <div>
-      <h2 class="py-8 text-center text-3xl font-bold text-primary">Clase 1</h2>
+      <h2 class="py-8 text-center text-3xl font-bold text-primary">
+        🌱 Los 3 secretos que atraen pacientes, sin pagar publicidad este 2023
+      </h2>
       <div class="mx-auto md:w-[650px]">
         <lite-youtube
           videoid={plc1}
           videoStartAt="329"
-          class="rounded-lg shadow-lg"
-        />
+          class="rounded-lg shadow-lg"></lite-youtube>
       </div>
       <div class="flex flex-col items-center px-4 pb-8">
         <button
           id="groupbutton"
-          class="mt-8 flex items-center gap-4 rounded-full bg-green-600 py-2 px-8 font-bold text-white shadow-lg md:text-2xl"
+          class="mt-8 flex items-center gap-4 rounded-full bg-green-600 px-8 py-2 font-bold text-white shadow-lg hover:bg-blue-700 md:text-2xl"
         >
-          <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
-          Pulsa el botón para unirte al grupo VIP
+          <!-- <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" /> -->
+          Pulsa el botón para Incrementar tu consulta
         </button>
       </div>
+      <h1
+        class="text-center font-coolvetica text-4xl text-ventaBlue md:text-5xl"
+      >
+        El boton desaparecerá cuando el reloj se detenga
+      </h1>
+      <div class="my-4 flex justify-center">
+        <ChinneseCountDown client:load date={"May 25 2023 12:00"} />
+      </div>
     </div>
-    <div>
+    <!-- <div>
       <h2 class="py-8 text-center text-3xl font-bold text-primary">Clase 2</h2>
       <div class="mx-auto md:w-[650px]">
         <lite-youtube
           videoid={plc2}
           videoStartAt="436"
-          class="rounded-lg shadow-lg"
-        />
+          class="rounded-lg shadow-lg"></lite-youtube>
       </div>
       <div class="flex flex-col items-center px-4 pb-8">
         <button
           id="groupbutton"
-          class="mt-8 flex items-center gap-4 rounded-full bg-green-600 py-2 px-8 font-bold text-white shadow-lg md:text-2xl"
+          class="mt-8 flex items-center gap-4 rounded-full bg-green-600 px-8 py-2 font-bold text-white shadow-lg md:text-2xl"
         >
           <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
           Pulsa el botón para unirte al grupo VIP
@@ -112,32 +87,17 @@ const plc4 = "Nq5NNH2_cE0";
         <lite-youtube
           videoid={plc3}
           class="rounded-lg shadow-lg"
-          videoStartAt="477"
-        />
+          videoStartAt="477"></lite-youtube>
       </div>
       <div class="flex flex-col items-center px-4 pb-8">
         <button
           id="groupbutton3"
-          class="mt-8 flex items-center gap-4 rounded-full bg-green-600 py-2 px-8 font-bold text-white shadow-lg md:text-2xl"
+          class="mt-8 flex items-center gap-4 rounded-full bg-green-600 px-8 py-2 font-bold text-white shadow-lg md:text-2xl"
         >
           <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
           Pulsa el botón para unirte al grupo VIP
         </button>
       </div>
-    </div>
- -->
+    </div> -->
+  </div>
 </Layout>
-
-<!-- <div class="pb-10">
-  <h2 class="py-8 text-center text-3xl font-bold text-primary">
-    Clase 4 Proximamente
-  </h2>
-  <Image
-    src="/Mini_clase4.png"
-    alt="clase 4 mini"
-    width={650}
-    aspectRatio="16:9"
-    format="webp"
-    class="mx-auto rounded-xl"
-  />
-</div> -->
