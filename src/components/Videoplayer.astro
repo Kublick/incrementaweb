@@ -27,16 +27,12 @@ const { width = 560, height = 315, source } = Astro.props as Props;
 </style>
 
 <div class="video-responsive rounded-lg shadow-lg">
-  <lite-youtube
-    videoid={source}
-    params="enablejsapi=1"
-    loading="lazy"
-    autoload
-  />
+  <lite-youtube videoid={source} params="enablejsapi=1" loading="lazy" autoload
+  ></lite-youtube>
 
   <iframe
     width="100%"
     height="315"
-    src={`https://www.youtube.com/embed/${source}`}
+    src={`https://www.youtube-nocookie.com/embed/${source}`}
     title="YouTube video player"></iframe>
 </div>
