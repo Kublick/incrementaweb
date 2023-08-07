@@ -85,8 +85,8 @@
           />
         </label>
         <label class="publiclistlabel" for="bsGcRStW"
-          >[13] Lanzamiento Septiembre 2023</label
-        >
+          >[13] Lanzamiento Septiembre 2023
+        </label>
       </div>
     </div>
     <div class="consent">
@@ -95,6 +95,9 @@
     </div>
     <p id="ewf_datadisclaimer"></p>
   </fieldset>
+
+  <input class="hidden" name="field_lastname" type="text" />
+
   <fieldset class="webform-options style-updated" style="border:none;">
     <div id="trackconsentscript"></div>
     <input
@@ -146,3 +149,29 @@
     </button>
   </fieldset>
 </form>
+
+<script>
+  const form = document.querySelector("form");
+
+  if (form) {
+    const url = form.action;
+
+    form.addEventListener("submit", (e) => {
+      const lastnameInput = form.querySelector('input[name="field_lastname"]');
+      const lastnameValue = (lastnameInput as HTMLInputElement).value.trim();
+
+      const data = new FormData(form);
+
+      if (lastnameValue !== "") {
+        return;
+      } else {
+        fetch(url, {
+          method: "POST",
+          body: data,
+        })
+          .then((res) => res.json())
+          .catch((err) => console.log(err));
+      }
+    });
+  }
+</script>
