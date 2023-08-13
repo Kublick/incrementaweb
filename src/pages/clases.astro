@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { ChinneseCountDown } from "../components/pqina";
 import { Image } from "@astrojs/image/components";
+import { endEspecialEventDate } from "../utils/constants";
 const plc1 = "-7PTz_RzTQo";
 ---
 
@@ -60,44 +61,8 @@ const plc1 = "-7PTz_RzTQo";
         El boton desaparecerá cuando el reloj se detenga
       </h1>
       <div class="my-4 flex justify-center">
-        <ChinneseCountDown client:load date={"May 25 2023 12:00"} />
+        <ChinneseCountDown color date={endEspecialEventDate} />
       </div>
     </div>
-    <!-- <div>
-      <h2 class="py-8 text-center text-3xl font-bold text-primary">Clase 2</h2>
-      <div class="mx-auto md:w-[650px]">
-        <lite-youtube
-          videoid={plc2}
-          videoStartAt="436"
-          class="rounded-lg shadow-lg"></lite-youtube>
-      </div>
-      <div class="flex flex-col items-center px-4 pb-8">
-        <button
-          id="groupbutton"
-          class="mt-8 flex items-center gap-4 rounded-full bg-green-600 px-8 py-2 font-bold text-white shadow-lg md:text-2xl"
-        >
-          <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
-          Pulsa el botón para unirte al grupo VIP
-        </button>
-      </div>
-    </div>
-    <div>
-      <h2 class="py-8 text-center text-3xl font-bold text-primary">Clase 3</h2>
-      <div class="mx-auto md:w-[650px]">
-        <lite-youtube
-          videoid={plc3}
-          class="rounded-lg shadow-lg"
-          videoStartAt="477"></lite-youtube>
-      </div>
-      <div class="flex flex-col items-center px-4 pb-8">
-        <button
-          id="groupbutton3"
-          class="mt-8 flex items-center gap-4 rounded-full bg-green-600 px-8 py-2 font-bold text-white shadow-lg md:text-2xl"
-        >
-          <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
-          Pulsa el botón para unirte al grupo VIP
-        </button>
-      </div>
-    </div> -->
   </div>
 </Layout>
