@@ -1,0 +1,34 @@
+---
+import Videoplayer from "../Videoplayer.astro";
+const { titulo, source, clase } = Astro.props;
+---
+
+<script>
+  // import { getLead } from "../hooks/getLead";
+  import JSConfetti from "js-confetti";
+
+  const whatsappUrl =
+    "https://www.incrementatuconsulta.com/inscripciones-abiertas";
+  const jsConfetti = new JSConfetti();
+
+  document.querySelectorAll("#groupbutton").forEach((e) => {
+    e.addEventListener("click", () => {
+      jsConfetti.addConfetti();
+      setTimeout(() => {
+        window.window.location.replace(whatsappUrl);
+      }, 1200);
+    });
+  });
+</script>
+
+<div class="mt-4 pb-4 md:mt-12">
+  <h1 class="text-center text-3xl font-semibold text-primary md:text-7xl">
+    Clase #{clase}
+  </h1>
+  <p class="mx-4 my-3 text-center text-xl md:my-8 md:text-3xl">
+    {titulo}
+  </p>
+  <div class="mx-4 md:mx-auto md:w-1/2">
+    <Videoplayer source={source} />
+  </div>
+</div>
