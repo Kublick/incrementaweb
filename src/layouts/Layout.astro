@@ -16,17 +16,20 @@ const { title } = Astro.props as Props;
     content="Incrementa tu consulta y numero de pacientes utilizando las redes sociales"
   />
   <title>{title}</title>
+
+  <style is="global">
+    @font-face {
+      font-family: "Coolvetica";
+      src: url("/fonts/Coolvetica.ttf.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
     @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap");
-    @font-face {
-      font-family: "Coolvetica";
-      src: url("Coolvetica.ttf.svg#Coolvetica") format("svg"),
-        url("Coolvetica.ttf.eot"),
-        url("Coolvetica.ttf.eot?#iefix") format("embedded-opentype");
-      font-weight: normal;
-      font-style: normal;
-    }
   </style>
 
   <script async>
