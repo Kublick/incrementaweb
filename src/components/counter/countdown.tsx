@@ -1,6 +1,6 @@
 import FlipClockCountdown from "@leenguyen/react-flip-clock-countdown";
 import "@leenguyen/react-flip-clock-countdown/dist/index.css";
-import "../utils/flip.css";
+import "./flip.css";
 
 type Props = {
   date?: string;
