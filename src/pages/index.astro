@@ -14,9 +14,53 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Incrementa tu Consulta">
   <main class="bg-gray-100">
     <Hero />
+    <button
+      onclick="topFunction()"
+      id="myBtn"
+      class="fixed bottom-4 right-4 hidden rounded-full bg-black p-6 opacity-60"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="3"
+        stroke="white"
+        class="h-6 w-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M4.5 15.75l7.5-7.5 7.5 7.5"></path>
+      </svg>
+    </button>
     <Entrenamiento />
     <Quien />
   </main>
-
   <Footer />
 </Layout>
+
+<script type="text/javascript">
+  // Get the button
+  let mybutton = document.getElementById("myBtn");
+
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 300 ||
+      document.documentElement.scrollTop > 300
+    ) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none"; // Set the display style to none
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
