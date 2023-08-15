@@ -74,22 +74,22 @@ const date = "2023-03-28 20:59:00";
           return bono.id % 2 ? (
             <div class="grid items-center gap-4 md:grid-cols-2 md:gap-24 ">
               <div class="mx-4">
-                <h2 class="font-inter text-ventaBlue pb-4 text-center text-2xl font-bold md:text-right">
+                <h2 class="pb-4 text-center font-inter text-2xl font-bold text-ventaBlue md:text-right">
                   {bono.title}
                 </h2>
 
                 <p
                   class={`${
                     bono.id < 3
-                      ? "font-inter stuff show text-sm text-white md:text-right "
-                      : "font-inter stuff show text-sm text-black md:text-right"
+                      ? "stuff show font-inter text-sm text-white md:text-right "
+                      : "stuff show font-inter text-sm text-black md:text-right"
                   } `}
                 >
                   {bono.description}
                 </p>
 
                 <div class="flex justify-end">
-                  <h2 class="font-coolvetica text-redVenta my-4 bg-white p-2 text-right text-2xl line-through">
+                  <h2 class="my-4 bg-white p-2 text-right font-coolvetica text-2xl text-redVenta line-through">
                     {bono.value}
                   </h2>
                 </div>
@@ -112,20 +112,20 @@ const date = "2023-03-28 20:59:00";
                 class="mx-auto mt-8 place-self-end md:m-0  "
               />
               <div class="mx-4">
-                <h2 class="font-inter text-ventaBlue text-2xl font-bold">
+                <h2 class="font-inter text-2xl font-bold text-ventaBlue">
                   {bono.title}
                 </h2>
                 <p
                   class={`${
                     bono.id < 3
-                      ? "font-inter stuff show text-sm text-white"
-                      : "font-inter stuff show text-sm text-black"
+                      ? "stuff show font-inter text-sm text-white"
+                      : "stuff show font-inter text-sm text-black"
                   }`}
                 >
                   {bono.description}
                 </p>
                 <div class="flex justify-start">
-                  <h2 class="font-coolvetica text-redVenta my-4 bg-white p-2 text-right text-2xl line-through">
+                  <h2 class="my-4 bg-white p-2 text-right font-coolvetica text-2xl text-redVenta line-through">
                     {bono.value}
                   </h2>
                 </div>
@@ -147,7 +147,7 @@ const date = "2023-03-28 20:59:00";
     <div class="mx-auto my-20 w-1/2 rounded-md bg-secondary py-1 shadow-lg">
     </div>
   </div>
-  <!-- <BonosAccionRapida /> -->
+  <BonosAccionRapida />
   <div class="mb-24">
     <CTAVenta />
   </div>
