@@ -4,23 +4,17 @@ import Videoplayer from "../components/player/Videoplayer.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<script>
-  import { getRegistro } from "../hooks/getRegistro";
+<!-- <script>
   import JSConfetti from "js-confetti";
-  const whatsappUrl = await getRegistro();
+
   const jsConfetti = new JSConfetti();
 
   const button = document.getElementById("groupbutton");
 
-  if (button)
-    button.addEventListener("click", () => {
-      jsConfetti.addConfetti();
-      setTimeout(() => {
-        window.window.location.replace(whatsappUrl);
-      }, 1200);
-    });
-</script>
-
+  button?.addEventListener("click", () => {
+    jsConfetti.addConfetti();
+  });
+</script> -->
 <Layout title="Gracias por registrarte">
   <div class="hidden scale-75 transform justify-center md:flex">
     <MainLogo />
@@ -65,8 +59,9 @@ import Layout from "../layouts/Layout.astro";
 
     <div class="hidden justify-center pt-4 md:flex">
       <button
-        id="groupbutton"
         class="flex animate-bounce items-center gap-4 rounded-full bg-whats px-6 py-2 text-sm font-bold text-white hover:animate-none disabled:cursor-not-allowed lg:text-2xl"
+        onclick="clicked()"
+        id="groupbutton"
       >
         <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
         <span>Quiero ingresa ya al grupo de WhatsApp</span>
@@ -74,3 +69,11 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </div>
 </Layout>
+
+<script type="text/javascript">
+  function clicked() {
+    window.window.location.replace(
+      "https://chat.whatsapp.com/DgudhEKk2RCDK6WBKorwy1"
+    );
+  }
+</script>
