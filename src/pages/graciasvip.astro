@@ -4,18 +4,14 @@ import Layout from "../layouts/Layout.astro";
 
 <script>
   import JSConfetti from "js-confetti";
-  import { getLead } from "../hooks/getLead";
   const jsConfetti = new JSConfetti();
-  const whatsappUrl = await getLead();
 
-  const button = document.getElementById("groupbutton");
-
-  button?.addEventListener("click", () => {
+  setTimeout(() => {
     jsConfetti.addConfetti();
-    setTimeout(() => {
-      window.window.location.replace(whatsappUrl);
-    }, 1200);
-  });
+    window.window.location.replace(
+      "https://chat.whatsapp.com/IYNkPvp1EkAFL7nm9hH8aq"
+    );
+  }, 1200);
 </script>
 
 <Layout title="Gracias Vip">
@@ -35,7 +31,7 @@ import Layout from "../layouts/Layout.astro";
     <div class="flex flex-col items-center px-4 pb-8">
       <button
         id="groupbutton"
-        class="flex items-center gap-4 rounded-full bg-green-600 py-4 px-8 font-bold text-white shadow-lg md:text-2xl"
+        class="flex items-center gap-4 rounded-full bg-green-600 px-8 py-4 font-bold text-white shadow-lg md:text-2xl"
       >
         <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
         Pulsa el botón para unirte al grupo VIP de WhatsApp
