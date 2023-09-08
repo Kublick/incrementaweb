@@ -6,6 +6,15 @@ import Layout from "../layouts/Layout.astro";
   import JSConfetti from "js-confetti";
   const jsConfetti = new JSConfetti();
 
+  const button = document.getElementById("groupbutton");
+
+  button?.addEventListener("click", () => {
+    jsConfetti.addConfetti();
+    window.window.location.replace(
+      "https://chat.whatsapp.com/IYNkPvp1EkAFL7nm9hH8aq"
+    );
+  });
+
   setTimeout(() => {
     jsConfetti.addConfetti();
     window.window.location.replace(
