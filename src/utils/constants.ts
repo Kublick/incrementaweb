@@ -8,4 +8,4 @@ export const endEspecialEventDate = "2023-09-10";
 
 export const quickActionBonus = "2023-09-12 23:59";
 
-export const endVipDate = "2023-09-11 11:00";
+
