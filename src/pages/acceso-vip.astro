@@ -6,6 +6,12 @@ import FormularioGrupoVip from "../components/FormularioGrupoVip.astro";
 import { allAccessEndDate } from "../utils/constants";
 ---
 
+<script>
+  window.onload = function () {
+    window.location.replace("https://www.incrementatuconsulta.com/");
+  };
+</script>
+
 <style>
   .curved {
     background: #e7407b;
@@ -14,13 +20,6 @@ import { allAccessEndDate } from "../utils/constants";
     border-top-right-radius: 75% 100%;
   }
 </style>
-<!-- <script>
-  window.onload = function () {
-    window.location.replace(
-      "https://www.incrementatuconsulta.com/inscripciones-abiertas"
-    );
-  };
-</script> -->
 
 <Layout title="Grupo VIP Incrementa Tu Consulta">
   <div class="mt-4s">
@@ -272,4 +271,4 @@ import { allAccessEndDate } from "../utils/constants";
       </div>
     </div>
   </section>
-</Layout>../components/counter/pqina ../components/counter/countdown
+</Layout>
