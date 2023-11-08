@@ -5,31 +5,20 @@ import Replay from "../components/player/Replay.astro";
 import Layout from "../layouts/Layout.astro";
 import { allAccessEndDate } from "../utils/constants";
 
-const plc1 = "FgqiCiMOx7A";
-const plc2 = "PRj9z8WtqSw";
-const plc3 = "nYfE61t07xM";
+const plc1 = "90YFvbfFu3g";
+const plc2 = "9FiWEsxnmTU";
+const plc3 = "YBTuG8jvTNg";
 // const plc4 = "JCoLxVvFuiY";
+const text = "¡ Quiero incrementar mi consulta !";
+const vip = "¡ Quiero Registrame al grupo VIP !";
 ---
 
-<!-- <script>
-  window.onload = function () {
-    window.location.replace("https://www.incrementatuconsulta.com/inscripciones-abiertas");
-  };
-</script> -->
-
-
-<script>
-  window.onload = function () {
-    window.location.replace("https://www.incrementatuconsulta.com/");
-  };
-</script>
 
 <script>
   // import { getLead } from "../hooks/getLead";
   import JSConfetti from "js-confetti";
 
-  const whatsappUrl =
-    "https://www.incrementatuconsulta.com/inscripciones-abiertas";
+  const whatsappUrl = "https://www.incrementatuconsulta.com/acceso-vip";
   const jsConfetti = new JSConfetti();
 
   document.querySelectorAll("#botonazo").forEach((e) => {
@@ -66,15 +55,15 @@ const plc3 = "nYfE61t07xM";
       source={plc1}
     />
     <div class="my-4 flex justify-center">
-      <button
+      <!-- <button
         class="mx-4 flex animate-none items-center gap-4 rounded-full bg-primary px-8 py-4 text-center font-bold text-white shadow-lg hover:bg-green-600 md:text-2xl"
         id="botonazo"
       >
-        ¡ Quiero incrementar mi consulta !
-      </button>
+        {vip}
+      </button> -->
     </div>
 
-    <Replay
+    <!-- <Replay
       clase="2"
       titulo="Las top 7 formas de tener dinero online y los 5 errores de novato"
       source={plc2}
@@ -84,7 +73,7 @@ const plc3 = "nYfE61t07xM";
         class="mx-4 flex animate-none items-center gap-4 rounded-full bg-primary px-8 py-4 text-center font-bold text-white shadow-lg hover:bg-green-600 md:text-2xl"
         id="botonazo"
       >
-        ¡ Quiero incrementar mi consulta !
+        {vip}
       </button>
     </div>
 
@@ -98,9 +87,9 @@ const plc3 = "nYfE61t07xM";
         class="mx-4 flex animate-none items-center gap-4 rounded-full bg-primary px-8 py-4 text-center font-bold text-white shadow-lg hover:bg-green-600 md:text-2xl"
         id="botonazo"
       >
-        ¡ Quiero incrementar mi consulta !
+        {vip}
       </button>
-    </div>
+    </div> -->
     <!-- ¡ Quiero incrementar mi consulta ! -->
     <!-- <div class="my-8 flex justify-center">
       <a href="/inscripciones-abiertas">
