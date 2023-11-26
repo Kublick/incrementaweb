@@ -5,9 +5,9 @@ import Replay from "../components/player/Replay.astro";
 import Layout from "../layouts/Layout.astro";
 import { allAccessEndDate } from "../utils/constants";
 
-const plc1 = "90YFvbfFu3g";
-const plc2 = "9FiWEsxnmTU";
-const plc3 = "kAjApaynBeg";
+const plc1 = "7PwJL1E29W0";
+const plc2 = "_iajV548vYc";
+const plc3 = "V57uTx9EFKg";
 // const plc4 = "JCoLxVvFuiY";
 const text = "¡ Quiero incrementar mi consulta !";
 const vip = "¡ Quiero Registrame al grupo VIP !";
@@ -17,7 +17,7 @@ const vip = "¡ Quiero Registrame al grupo VIP !";
   // import { getLead } from "../hooks/getLead";
   import JSConfetti from "js-confetti";
 
-  const whatsappUrl = "https://www.incrementatuconsulta.com/acceso-vip";
+  const grupovip = "https://www.incrementatuconsulta.com/acceso-vip";
   const jsConfetti = new JSConfetti();
 
   document.querySelectorAll("#botonazo").forEach((e) => {
@@ -25,7 +25,7 @@ const vip = "¡ Quiero Registrame al grupo VIP !";
       jsConfetti.addConfetti();
 
       setTimeout(() => {
-        window.window.location.replace(whatsappUrl);
+        window.window.location.replace(grupovip);
       }, 1200);
     });
   });
@@ -58,7 +58,7 @@ const vip = "¡ Quiero Registrame al grupo VIP !";
         class="mx-4 flex animate-none items-center gap-4 rounded-full bg-primary px-8 py-4 text-center font-bold text-white shadow-lg hover:bg-green-600 md:text-2xl"
         id="botonazo"
       >
-        {vip}
+        {text}
       </button>
     </div>
 
@@ -72,7 +72,7 @@ const vip = "¡ Quiero Registrame al grupo VIP !";
         class="mx-4 flex animate-none items-center gap-4 rounded-full bg-primary px-8 py-4 text-center font-bold text-white shadow-lg hover:bg-green-600 md:text-2xl"
         id="botonazo"
       >
-        {vip}
+        {text}
       </button>
     </div>
 
@@ -86,7 +86,7 @@ const vip = "¡ Quiero Registrame al grupo VIP !";
         class="mx-4 flex animate-none items-center gap-4 rounded-full bg-primary px-8 py-4 text-center font-bold text-white shadow-lg hover:bg-green-600 md:text-2xl"
         id="botonazo"
       >
-        {vip}
+        {text}
       </button>
     </div>
 
