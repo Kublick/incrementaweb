@@ -71,19 +71,17 @@
     </div>
     <div class="checkboxes"></div>
     <div class="hidden">
-      <div class="checkboxes js-[15] Lanzamiento Noviembre">
+      <div class="checkboxes js-[16] Lanzamiento">
         <label class="container-box">
           <input
             type="checkbox"
             name="publiclistid"
-            id="gCqWzTDV"
-            value="88524044-c5cb-40b2-abc9-163875f47464"
+            id="zmsmOVOS"
+            value="ae7f5c96-521e-4a11-87ce-4a344b990f73"
             checked="checked"
           />
         </label>
-        <label class="publiclistlabel" for="gCqWzTDV"
-          >[13] Latam Lanzamiento Septiembre
-        </label>
+        <label class="publiclistlabel" for="zmsmOVOS">[16] Lanzamiento</label>
       </div>
     </div>
     <div class="consent">
@@ -97,7 +95,27 @@
 
   <fieldset class="webform-options style-updated" style="border:none;">
     <div id="trackconsentscript"></div>
-
+    <div id="captcha" style="text-align:center">
+      <div
+        class="text-center"
+        style="display: inline-block;margin: auto;padding: 10px;"
+      >
+        <div id="webformcaptcha"></div>
+      </div>
+      <script type="text/javascript">
+        var grecaptchaready = function () {
+          var eewebformsubmit = document.getElementById("eesubmit");
+          grecaptcha.render("webformcaptcha", {
+            sitekey: "6LcrnnAeAAAAAKCHYWuH2_5kSi9xvFn298xVJsZQ",
+            callback: function (response) {
+              if (response) {
+                eewebformsubmit.disabled = false;
+              }
+            },
+          });
+        };
+      </script>
+    </div>
     <script
       id="recaptchaScript"
       src="https://www.google.com/recaptcha/api.js?onload=grecaptchaready&render=explicit"
