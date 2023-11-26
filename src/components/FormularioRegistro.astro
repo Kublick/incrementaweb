@@ -95,32 +95,7 @@
 
   <fieldset class="webform-options style-updated" style="border:none;">
     <div id="trackconsentscript"></div>
-    <div id="captcha" style="text-align:center">
-      <div
-        class="text-center"
-        style="display: inline-block;margin: auto;padding: 10px;"
-      >
-        <div id="webformcaptcha"></div>
-      </div>
-      <script type="text/javascript">
-        var grecaptchaready = function () {
-          var eewebformsubmit = document.getElementById("eesubmit");
-          grecaptcha.render("webformcaptcha", {
-            sitekey: "6LcrnnAeAAAAAKCHYWuH2_5kSi9xvFn298xVJsZQ",
-            callback: function (response) {
-              if (response) {
-                eewebformsubmit.disabled = false;
-              }
-            },
-          });
-        };
-      </script>
-    </div>
-    <script
-      id="recaptchaScript"
-      src="https://www.google.com/recaptcha/api.js?onload=grecaptchaready&render=explicit"
-      async=""
-      defer=""></script>
+
     <input
       type="submit"
       name="submit"
