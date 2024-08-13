@@ -4,9 +4,7 @@ import HeroForm from "./HeroForm.astro";
 import { ChinneseCountDown } from "./counter/countdown";
 ---
 
-<div
-  class="h-full bg-[#ff5c00a2] bg-[url(/background_berenice.webp)] bg-cover pb-12 text-white"
->
+<div class="h-full bg-[url(subtle-prism.svg)] bg-cover pb-12 text-white">
   <div class="header">
     <div
       class="container mx-auto grid items-center justify-items-center md:grid-cols-2"
@@ -21,17 +19,17 @@ import { ChinneseCountDown } from "./counter/countdown";
       </div>
     </div>
   </div>
-  <h1 class="mt-4 text-center text-xl font-bold md:text-3xl">
+  <h1 class="mt-4 text-center text-xl font-bold text-black md:text-3xl">
     TALLER CONSIGUE PACIENTES EN REDES SOCIALES
   </h1>
   <div class="container mx-auto">
-    <div>
+    <div class="text-black">
       <h1
         class="mx-4 rounded-lg p-4 px-2 text-center text-xl font-semibold md:mx-auto md:px-16 md:text-3xl"
       >
         Conoce el método para multiplicar tu número de consultas,<span
           class="underline"
-          >aplicando estrategias comprobadas por 67 expertos</span
+          >aplicando estrategias comprobadas por cientos de expertos</span
         > y sin tener que publicar en redes todos los días
       </h1>
       <div class="grid justify-items-center md:grid-cols-2">
@@ -43,7 +41,7 @@ import { ChinneseCountDown } from "./counter/countdown";
           class="place-self-center px-6 lg:px-0"
         />
         <div class="order-first md:order-last">
-          <!-- <HeroForm /> -->
+          <HeroForm />
         </div>
       </div>
     </div>

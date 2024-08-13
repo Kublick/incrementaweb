@@ -1,15 +1,64 @@
-<form
-  action="https://api.smtprelay.co/contact/add?version=2"
-  data-id="xgJqOJUTir"
-  method="post"
-  id="ewf_subscriptionForm_xgJqOJUTir"
->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form");
+
+    if (form) {
+      const url = "https://incrementaback.blancarte.workers.dev/form"; 
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const emailInput = form.querySelector(
+          'input[name="email"]'
+        ) as HTMLInputElement;
+        const lastNameInput = form.querySelector(
+          'input[name="lastName"]'
+        ) as HTMLInputElement;
+
+        const emailValue = emailInput.value.trim();
+        const lastNameValue = lastNameInput.value.trim();
+
+        if (lastNameValue !== "") {
+          return;
+        }
+
+        // Check if fields are filled
+        if (!emailValue) {
+          return;
+        }
+
+        fetch(url, {
+          method: "POST",
+          body: JSON.stringify({
+            email: emailValue,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => {
+            if (!res.ok) {
+              throw new Error("Network response was not ok " + res.statusText);
+            }
+            return res.json();
+          })
+          .then((data) => {
+            window.location.href = "/gracias";
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      });
+    }
+  });
+</script>
+
+<form method="POST">
   <fieldset style="border:none;" class="webform-custominputs">
     <div class="inputs mx-4 mt-4 flex flex-col gap-4 md:mt-8">
-      <div class="mt-2">
-        <!-- <label for="field_firstname" class="mb-2 block text-sm font-medium"
+      <!-- <div class="mt-2">
+        <label for="field_firstname" class="mb-2 block text-sm font-medium"
           >Nombre:</label
-        > -->
+        >
         <div class="relative">
           <div
             class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
@@ -29,15 +78,8 @@
               ></path>
             </svg>
           </div>
-          <input
-            type="text"
-            id="field_firstname"
-            name="field_firstname"
-            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pl-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-            placeholder="Tú Nombre y Apellido"
-          />
         </div>
-      </div>
+      </div> -->
 
       <div class="mt-2">
         <!-- <label class="mb-2 block text-sm font-medium">Correo</label> -->
@@ -67,85 +109,21 @@
             placeholder="Tu mejor correo"
           />
         </div>
+        <input type="hidden" name="lastName" />
       </div>
     </div>
-    <div class="checkboxes"></div>
-    <div class="hidden">
-      <div class="checkboxes js-[16] Lanzamiento">
-        <label class="container-box">
-          <input
-            type="checkbox"
-            name="publiclistid"
-            id="zmsmOVOS"
-            value="ae7f5c96-521e-4a11-87ce-4a344b990f73"
-            checked="checked"
-          />
-        </label>
-        <label class="publiclistlabel" for="zmsmOVOS">[16] Lanzamiento</label>
-      </div>
-    </div>
-    <div class="consent">
-      <div class="consentcontainer"></div>
-      <div class="consentcontainer"></div>
-    </div>
-    <p id="ewf_datadisclaimer"></p>
   </fieldset>
 
-  <input class="hidden" name="field_lastname" type="text" />
-
-  <fieldset class="webform-options style-updated" style="border:none;">
-    <div id="trackconsentscript"></div>
-
-    <input
-      type="submit"
-      name="submit"
-      value="¡Quiero tener más pacientes!"
-      id="eesubmit"
-      class={`mt-8 w-full transform rounded-xl bg-gradient-to-r from-teal-500 to-teal-400 px-7 py-5 font-bold leading-none text-white shadow-lg transition-all hover:scale-105
+  <input
+    type="submit"
+    name="submit"
+    value="¡Quiero tener más pacientes!"
+    id="eesubmit"
+    class={`mt-8 w-full transform rounded-xl bg-gradient-to-r from-blue-500 to-blue-400 px-7 py-5 font-bold leading-none text-white shadow-lg transition-all hover:scale-105
       } `}
-    />
-
-    <input
-      type="hidden"
-      name="publicaccountid"
-      value="9377d1ed-c310-4467-b52c-bee4e5379dcb"
-    />
-    <input
-      type="hidden"
-      name="returnUrl"
-      value="https://www.incrementatuconsulta.com/gracias/"
-    />
-    <input
-      type="hidden"
-      name="activationReturnUrl"
-      value="https://www.incrementatuconsulta.com/gracias/"
-    />
-    <input
-      type="hidden"
-      name="alreadyactiveurl"
-      value="https://www.incrementatuconsulta.com/gracias/"
-    />
-    <input type="hidden" name="activationTemplate" value="" />
-    <input type="hidden" name="source" value="WebForm" />
-    <input
-      type="hidden"
-      name="verifyemail"
-      value="false"
-      id="ewf_verifyEmails"
-    />
-    <input type="hidden" id="ewf_captcha" name="captcha" value="true" />
-    <input type="hidden" name="sendActivation" value="false" />
-    <input type="hidden" name="notifyEmail" value="" />
-    <button
-      type="button"
-      name="dismissForm"
-      id="ewf_dismissForm"
-      style="display:none; position: absolute; top: 0; right: 0; float: right"
-      >X
-    </button>
-  </fieldset>
+  />
 </form>
-
+<!-- 
 <script>
   const form = document.querySelector("form");
 
@@ -170,4 +148,4 @@
       }
     });
   }
-</script>
+</script> -->

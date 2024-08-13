@@ -1,8 +1,8 @@
-export const freeEventEndDate = "2023-12-11 11:00";
+export const freeEventEndDate = "2024-09-23 11:00";
 
 export const allAccessEndDate = "2023-12-17 23:00";
 
-export const salesEndDate = "2023-12-17 23:59";
+export const salesEndDate = "2024-09-23 11:00";
 
 export const endEspecialEventDate = "2023-12-15";
 
