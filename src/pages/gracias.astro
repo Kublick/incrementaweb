@@ -9,10 +9,10 @@ import Layout from "../layouts/Layout.astro";
 
   const jsConfetti = new JSConfetti();
 
-  // setTimeout(() => {
-  //   jsConfetti.addConfetti();
-  //   window.location.replace("https://chat.whatsapp.com/CF2sxUkRrtk81XeLZsF1qc");
-  // }, 4000);
+  setTimeout(() => {
+    jsConfetti.addConfetti();
+    window.location.replace("https://chat.whatsapp.com/CF2sxUkRrtk81XeLZsF1qc");
+  }, 4000);
 </script>
 <Layout title="Gracias por registrarte">
   <div class="bg-black">
@@ -26,7 +26,7 @@ import Layout from "../layouts/Layout.astro";
       >
         <div class="h-full bg-yellow-300" style="width: 80%;">
           <p
-            class="absolute inset-0 flex items-center justify-center text-2xl font-bold"
+            class="absolute inset-0 flex items-center justify-center font-bold md:text-2xl"
           >
             80%
           </p>
