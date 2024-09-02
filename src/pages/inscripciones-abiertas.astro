@@ -2,20 +2,18 @@
 import VentaPuntos from "../components/venta/VentaPuntos.astro";
 import Layout from "../layouts/Layout.astro";
 import Programa from "../components/venta/Programa.astro";
-import Bonos from "../components/venta/Bonos..astro";
+import Bonos from "../components/venta/Bonos.astro";
 import VentaFooter from "../components/venta/VentaFooter.astro";
 import CTAVenta from "../components/venta/CTAVenta.astro";
 import { ChinneseCountDown } from "../components/counter/countdown";
-import { salesEndDate } from "../utils/constants";
+import { salesEndDate, freeEventEndDate } from "../utils/constants";
 ---
 
-
-// <!-- <script>
+<!-- <script>
 //   window.onload = function () {
 //     window.location.replace("https://www.incrementatuconsulta.com/");
 //   };
 // </script> -->
-
 <script
   type="module"
   async
@@ -23,6 +21,14 @@ import { salesEndDate } from "../utils/constants";
 ></script>
 
 <Layout title="Inscripciones | Incrementa tu consulta">
+  <div class="my-4 flex flex-col items-center justify-center">
+    <h1 class="text-xl md:pb-4 md:text-2xl">Las inscripciones se abren en:</h1>
+    <ChinneseCountDown
+      date={freeEventEndDate}
+      color={false}
+      client:only="react"
+    />
+  </div>
   <div class="h-[380px] bg-mango md:h-[424px]">
     <img src="/whiteLogo.svg" alt="whiteLogo" class="mx-auto py-2" />
     <div class="mx-2">
@@ -32,13 +38,13 @@ import { salesEndDate } from "../utils/constants";
         Llena tu agenda de pacientes
       </h1>
       <h1
-        class="text-center font-coolvetica text-4xl text-ventaBlue md:text-5xl"
+        class="text-center font-coolvetica text-3xl text-ventaBlue md:text-5xl"
       >
-        En menos de 60 días
+        Para tu consulta privada en 21 días o menos
       </h1>
 
       <h2 class="mt-2 text-center font-coolvetica text-white md:text-2xl">
-        Y multiplica tus ingresos
+        Ganando reconocimiento,autoridad y dinero
       </h2>
     </div>
   </div>
@@ -48,7 +54,7 @@ import { salesEndDate } from "../utils/constants";
       class="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 transform px-4 md:w-[650px] md:px-0"
     >
       <lite-youtube
-        videoid={"AawFg7cDXtA"}
+        videoid={"G-xwSscbSos"}
         class="rounded-lg shadow-lg"
         videoStartAt="1933"></lite-youtube>
     </div>
@@ -61,18 +67,28 @@ import { salesEndDate } from "../utils/constants";
       Sólo 10 cupos disponibles para los bonos de acción rápida
     </h2>
     <div class="my-4">
-      <CTAVenta />
-    </div>
+      <div>
+        <CTAVenta />
+        <p class="pt-6 text-center text-sm md:mt-4 md:text-xl">
+          Puedes diferir tus costos, hay facilidades de pago con tarjeta de
+          crédito
+        </p>
+      </div>
 
-    <h2 class="mt-12 text-center font-inter text-2xl">
-      El programa cerrará sus puertas en:
-    </h2>
-    <div class="mt-8 flex justify-center">
-      <ChinneseCountDown client:load date={salesEndDate} color={false} />
+      <h2 class="mt-12 text-center font-inter text-2xl">
+        El programa cerrará sus puertas en:
+      </h2>
+      <div class="mt-8 flex justify-center">
+        <ChinneseCountDown
+          date={salesEndDate}
+          color={false}
+          client:only="react"
+        />
+      </div>
     </div>
+    <!-- <VentaPuntos /> -->
+    <Programa />
+    <Bonos />
+    <VentaFooter />
   </div>
-  <VentaPuntos />
-  <Programa />
-  <Bonos />
-  <VentaFooter />
 </Layout>

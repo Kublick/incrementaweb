@@ -1,9 +1,9 @@
 export const entrenamiento = [
   {
     id: 1,
-    title: "Clase #1",
+    title: "Módulo #1",
     contents:
-      "Conocerás la fórmula para iniciar y crecer en el mundo digital. Verás las nuevas tendencia del mercado.",
+      "Aquí vamos a construir las bases necesarias del futuro negocio lucrativo de tuconsulta, porque antes de comenzar debemos tener una mentalidad con absoluta autoconfianza tanto en nosotros mismos, así como también en el proceso que estamos implementando y que si podemos conseguirlo.",
     img: "images/c1.webp",
     alt: "Clase 1",
   },
