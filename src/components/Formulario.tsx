@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { z } from "zod";
-import { ErrorResult, validateForm } from "../utils/utils";
+import { type ErrorResult, validateForm } from "../utils/utils";
 
 const User = z.object({
   fullname: z

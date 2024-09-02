@@ -3,8 +3,14 @@ import Layout from "../layouts/Layout.astro";
 // import FormularioVip from "../components/FormularioVip";
 import { ChinneseCountDown } from "../components/counter/countdown";
 import FormularioGrupoVip from "../components/FormularioGrupoVip.astro";
+import { allAccessEndDate } from "../utils/constants";
 ---
 
+<!-- <script>
+  window.onload = function () {
+    window.location.replace("https://www.incrementatuconsulta.com/");
+  };
+</script> -->
 <style>
   .curved {
     background: #e7407b;
@@ -13,11 +19,6 @@ import FormularioGrupoVip from "../components/FormularioGrupoVip.astro";
     border-top-right-radius: 75% 100%;
   }
 </style>
-<!-- <script>
-  window.onload = function () {
-    window.location.replace("https://www.incrementatuconsulta.com/testimonios");
-  };
-</script> -->
 
 <Layout title="Grupo VIP Incrementa Tu Consulta">
   <div class="mt-4s">
@@ -122,7 +123,7 @@ import FormularioGrupoVip from "../components/FormularioGrupoVip.astro";
       este grupo estara activo hasta
     </h1>
     <div class="mt-6">
-      <ChinneseCountDown client:load date={"May 15 2023 09:00"} color={false} />
+      <ChinneseCountDown client:load date={allAccessEndDate} color={false} />
     </div>
   </div>
 
@@ -159,7 +160,7 @@ import FormularioGrupoVip from "../components/FormularioGrupoVip.astro";
     </div>
 
     <div class="mx-auto max-w-3xl">
-      <FormularioGrupoVip />
+      <!-- <FormularioGrupoVip /> -->
       <!-- <FormularioVip client:only="react" /> -->
     </div>
 
@@ -188,8 +189,8 @@ import FormularioGrupoVip from "../components/FormularioGrupoVip.astro";
                 stroke-linejoin="round"
                 d="M4.5 12.75l6 6 9-13.5"></path>
             </svg>
-          </div>Para personas que desean cambiar su vida incrementado su número de
-          pacientes.
+          </div>Para personas que desean cambiar su vida incrementado su número
+          de pacientes.
         </li>
 
         <li class="my-4 flex items-center gap-4 font-bold">
@@ -207,8 +208,8 @@ import FormularioGrupoVip from "../components/FormularioGrupoVip.astro";
                 stroke-linejoin="round"
                 d="M4.5 12.75l6 6 9-13.5"></path>
             </svg>
-          </div>Para quienes incluso empiezan desde cero y no saben como promocionar
-          sus servicios de consulta.
+          </div>Para quienes incluso empiezan desde cero y no saben como
+          promocionar sus servicios de consulta.
         </li>
         <li class="my-4 flex items-center gap-4 font-bold">
           <div class="rounded-full bg-green-600 p-2">
@@ -225,8 +226,8 @@ import FormularioGrupoVip from "../components/FormularioGrupoVip.astro";
                 stroke-linejoin="round"
                 d="M4.5 12.75l6 6 9-13.5"></path>
             </svg>
-          </div>Para quien cree en sí mismo y está dispuesto a invertir en sí, para
-          conseguir resultados diferentes.
+          </div>Para quien cree en sí mismo y está dispuesto a invertir en sí,
+          para conseguir resultados diferentes.
         </li>
       </div>
     </ul>
@@ -269,4 +270,4 @@ import FormularioGrupoVip from "../components/FormularioGrupoVip.astro";
       </div>
     </div>
   </section>
-</Layout>../components/counter/pqina ../components/counter/countdown
+</Layout>

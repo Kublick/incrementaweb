@@ -6,11 +6,18 @@ import Layout from "../layouts/Layout.astro";
   import JSConfetti from "js-confetti";
   const jsConfetti = new JSConfetti();
 
+  const button = document.getElementById("groupbutton");
+
+  const whatsappUrl = "https://chat.whatsapp.com/EthDcMVKvFL3S32NNoUMRj";
+
+  button?.addEventListener("click", () => {
+    jsConfetti.addConfetti();
+    window.window.location.replace(whatsappUrl);
+  });
+
   setTimeout(() => {
     jsConfetti.addConfetti();
-    window.window.location.replace(
-      "https://chat.whatsapp.com/IYNkPvp1EkAFL7nm9hH8aq"
-    );
+    window.window.location.replace(whatsappUrl);
   }, 1200);
 </script>
 
