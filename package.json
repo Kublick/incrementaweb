@@ -27,7 +27,7 @@
     "@astrojs/ts-plugin": "^1.9.1",
     "@headlessui/react": "^1.7.16",
     "@hookform/resolvers": "^2.9.11",
-    "@leenguyen/react-flip-clock-countdown": "^1.4.1",
+    "@leenguyen/react-flip-clock-countdown": "^1.6.0",
     "@rumess/react-flip-countdown": "^1.2.6",
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",

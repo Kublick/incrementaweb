@@ -1,0 +1,113 @@
+---
+import { bonosData, bonosNuevos } from "./ventaData";
+import CTAVenta from "./CTAVenta.astro";
+import { FlipCD } from "../FlipCountdown";
+import BonosAccionRapida from "./BonosAccionRapida.astro";
+
+const date = "2023-03-28 20:59:00";
+---
+
+<script define:vars={{ date }}>
+  if (new Date(date).getTime() < Date.now()) {
+    document.getElementById("bonos")?.classList.add("hidden");
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  });
+
+  const hiddenElements = document.querySelectorAll(".stuff");
+
+  hiddenElements.forEach((el) => observer.observe(el));
+</script>
+
+<style>
+  .stuff {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1.25s;
+  }
+
+  @media (prefers-reduced-motion) {
+    .stuff {
+      transition: none;
+    }
+  }
+  .show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+</style>
+
+<section>
+  <div class="spacer layer1"></div>
+  <div class="hidden p-4 md:block md:p-0">
+    <svg viewBox="0 0 1200 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M0 144L67 120C133 96 267 48 400 36C533 24 667 48 800 48C933 48 1067 24 1133 12L1200 0V180H1133C1067 180 933 180 800 180C667 180 533 180 400 180C267 180 133 180 67 180H0V144Z"
+        fill="#FF8840"></path>
+    </svg>
+  </div>
+
+  <div class="bg-[#ff8840] py-4">
+    <h2 class="text-center font-coolvetica text-base text-white md:text-2xl">
+      También obtendrás estosjuhnb
+    </h2>
+    <h1
+      class="mt-2 text-center font-inter text-3xl font-black text-white md:mt-4 md:text-6xl"
+    >
+      BONOS DE REGALO
+    </h1>
+  </div>
+  <div class="bg-gradient-to-b from-[#ff8840] to-white">
+    <div class="mx-2 pt-8 font-inter font-bold md:mx-24">
+      <div>
+        {
+          bonosNuevos.map((bono) => (
+            <div>
+              <div class="mx-auto md:mb-12 md:grid md:grid-cols-3 md:items-center md:gap-10">
+                {/* This div will now align with the image */}
+                <div class="md:col-span-2">
+                  <h2 class="pb-4 text-center font-inter text-2xl font-bold text-ventaBlue md:text-4xl">
+                    {bono.title}
+                  </h2>
+                  <p class="stuff show text-md mx-4 mb-4 font-inter text-black md:mb-8 md:text-lg">
+                    {bono.description}
+                  </p>
+                </div>
+                {/* Flex utilities to center the image */}
+                <div class="flex items-center justify-center md:col-span-1">
+                  <img src={bono.image} alt={`Imagen programa ${bono.id}`} />
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- <h2 class="text-center text-4xl text-ventaBlue">
+        5 bonos de regalo valorados en
+      </h2>
+      <h1 class="text-center text-4xl text-ventaBlue">
+        <span class="text-6xl text-redVenta line-through"> $1,288 dólares</span>
+        completamente GRATIS
+      </h1> -->
+    </div>
+    <div class="mx-auto my-20 w-1/2 rounded-md bg-secondary py-1 shadow-lg">
+    </div>
+  </div>
+  <!-- <BonosAccionRapida /> -->
+  <div class="mb-24">
+    <CTAVenta />
+  </div>
+</section>

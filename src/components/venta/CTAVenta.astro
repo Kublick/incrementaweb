@@ -7,13 +7,13 @@ const ventainfo = [
     price: "$697 dólares",
     element: "unico",
   },
-  {
-    title: "PAGO FLEXIBLE",
-    texthead: "Paga a tu ritmo",
-    textprice: "2 pagos mensuales de",
-    price: "$397 dólares",
-    element: "flexible",
-  },
+  // {
+  //   title: "PAGO FLEXIBLE",
+  //   texthead: "Paga a tu ritmo",
+  //   textprice: "2 pagos mensuales de",
+  //   price: "$397 dólares",
+  //   element: "flexible",
+  // },
 ];
 ---
 
@@ -22,10 +22,7 @@ const ventainfo = [
 
   hotmart.forEach((element) => {
     element.addEventListener("click", () => {
-      window.open(
-        "https://pay.hotmart.com/W42168207B?off=5kj23v80&checkoutMode=10",
-        "_blank"
-      );
+      window.open("https://pay.hotmart.com/L93933144S", "_blank");
     });
   });
 
@@ -41,10 +38,7 @@ const ventainfo = [
 
   flex.forEach((element) => {
     element.addEventListener("click", () => {
-      window.open(
-        "https://pay.hotmart.com/W42168207B?off=j7noda03&checkoutMode=10",
-        "_blank"
-      );
+      window.open("https://pay.hotmart.com/L93933144S", "_blank");
     });
   });
 
@@ -52,29 +46,26 @@ const ventainfo = [
 
   unico.forEach((element) => {
     element.addEventListener("click", () => {
-      window.open(
-        "https://pay.hotmart.com/W42168207B?off=tfh21x75&checkoutMode=10",
-        "_blank"
-      );
+      window.open("https://pay.hotmart.com/L93933144S", "_blank");
     });
   });
 </script>
 
 <div>
-  <h2
+  <!-- <h2
     class="py-4 text-center text-4xl font-bold text-redVenta line-through md:text-6xl"
   >
     $6,170 USD
-  </h2>
+  </h2> -->
 
   <h2 class="py-4 text-center text-2xl font-bold md:text-4xl">
     Recibe 88% de descuento
   </h2>
 
-  <div class="container mx-auto grid gap-8 py-4 px-4 md:w-3/4 md:grid-cols-2">
+  <div class="container mx-auto grid gap-8 px-4 py-4 md:w-[420px]">
     {
       ventainfo.map((v) => (
-        <div class="border-primary border-4 border-dashed p-8 text-center ">
+        <div class="border-4 border-dashed border-primary p-8 text-center ">
           <h2 class="bg-mango p-2 text-2xl font-bold text-white">{v.title}</h2>
           <h3 class="my-2 text-xl">{v.texthead}</h3>
           <p class="my-2 text-xl">{v.textprice}</p>
@@ -84,10 +75,10 @@ const ventainfo = [
             class={`my-2 w-full rounded-lg py-2 text-2xl font-bold uppercase shadow-lg  ${
               v.element === "unico"
                 ? "bg-primary text-white hover:bg-blue-800"
-                : "border-primary hover:bg-primary border-4 hover:text-white"
+                : "border-4 border-primary hover:bg-primary hover:text-white"
             } `}
           >
-            Seleccionar
+            Quiero llenar mi consulta
           </button>
         </div>
       ))

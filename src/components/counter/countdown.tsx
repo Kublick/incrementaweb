@@ -11,12 +11,14 @@ export const ChinneseCountDown = ({
   color,
 }: Props) => {
   return (
-    <FlipClockCountdown
-      className={color ? "flip-clock" : "flip-clock-black"}
-      to={new Date(date)}
-      digitBlockStyle={{ fontSize: 24, fontFamily: "Coolvetica" }}
-      showLabels={false}
-      showSeparators={false}
-    />
+    <div>
+      <FlipClockCountdown
+        className={color ? "flip-clock" : "flip-clock-black"}
+        to={new Date(date)}
+        digitBlockStyle={{ fontSize: 24, fontFamily: "Coolvetica" }}
+        showLabels={false}
+        showSeparators={false}
+      />
+    </div>
   );
 };
