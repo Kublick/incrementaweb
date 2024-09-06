@@ -1,11 +1,22 @@
 <script>
+  let isSubmitting = false;
+
   document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector("form");
 
     if (form) {
-      const url = "https://incrementaback.blancarte.workers.dev/form"; 
+      const url = "https://incrementaback.blancarte.workers.dev/form";
       form.addEventListener("submit", (e) => {
+        const submitButton = document.querySelector(
+          "#submit"
+        ) as HTMLInputElement;
+
         e.preventDefault();
+
+        if (isSubmitting) return;
+
+        isSubmitting = true;
+        submitButton.disabled = true;
 
         const emailInput = form.querySelector(
           'input[name="email"]'
@@ -18,11 +29,15 @@
         const lastNameValue = lastNameInput.value.trim();
 
         if (lastNameValue !== "") {
+          isSubmitting = false;
+          submitButton.disabled = false;
           return;
         }
 
         // Check if fields are filled
         if (!emailValue) {
+          isSubmitting = false;
+          submitButton.disabled = false;
           return;
         }
 
@@ -46,6 +61,8 @@
           })
           .catch((error) => {
             console.error("Error:", error);
+            isSubmitting = false;
+            submitButton.disabled = false;
           });
       });
     }
@@ -55,34 +72,7 @@
 <form method="POST">
   <fieldset style="border:none;" class="webform-custominputs">
     <div class="inputs mx-4 mt-4 flex flex-col gap-4 md:mt-8">
-      <!-- <div class="mt-2">
-        <label for="field_firstname" class="mb-2 block text-sm font-medium"
-          >Nombre:</label
-        >
-        <div class="relative">
-          <div
-            class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 20 20"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="h-5 w-5 text-gray-500 dark:text-gray-400"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
-              ></path>
-            </svg>
-          </div>
-        </div>
-      </div> -->
-
       <div class="mt-2">
-        <!-- <label class="mb-2 block text-sm font-medium">Correo</label> -->
         <div class="relative">
           <div
             class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
@@ -118,34 +108,8 @@
     type="submit"
     name="submit"
     value="¡Quiero tener más pacientes!"
-    id="eesubmit"
+    id="submit"
     class={`mt-8 w-full transform rounded-xl bg-gradient-to-r from-blue-500 to-blue-400 px-7 py-5 font-bold leading-none text-white shadow-lg transition-all hover:scale-105
       } `}
   />
 </form>
-<!-- 
-<script>
-  const form = document.querySelector("form");
-
-  if (form) {
-    const url = form.action;
-
-    form.addEventListener("submit", (e) => {
-      const lastnameInput = form.querySelector('input[name="field_lastname"]');
-      const lastnameValue = (lastnameInput as HTMLInputElement).value.trim();
-
-      const data = new FormData(form);
-
-      if (lastnameValue !== "") {
-        return;
-      } else {
-        fetch(url, {
-          method: "POST",
-          body: data,
-        })
-          .then((res) => res.json())
-          .catch((err) => console.log(err));
-      }
-    });
-  }
-</script> -->
