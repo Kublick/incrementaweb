@@ -152,25 +152,29 @@ export const bonosData = [
 export const programExtrasData = [
   {
     id: 1,
-    title: "Servicio de soporte y ayuda Valorado en $200 dólares",
+    title: "Servicio de soporte y ayuda",
+    price: " Valorado en 200 USD.",
     description:
       "Además de todo el contenido recibirás durante 30 días, a partir de que te inscribas, el servicio de soporte y ayuda dentro de la comunidad de alumnos, un espacio reservado para que puedas apuntar tus dudas y comentarios. Yo misma los leo y respondo, así que asegúrate de usar esta herramienta tan importante para tu aprendizaje.",
   },
   {
     id: 2,
-    title: "Ticket VIP por un año Valorado en $100 dólares",
+    title: "Ticket VIP por un año",
+    price: "Valorado en 100 USD.",
     description:
       "Acceso completo a la grabación del curso durante 12 meses, dentro de la plataforma del curso para que así puedas, para que elijas tus propios horarios para ver la repetición, de todo el programa durante 1 ano con acceso a la plataforma y a todo su contenido y actualizaciones.",
   },
   {
     id: 3,
-    title: "App Mobile Valorado en $50",
+    title: "App Mobile",
+    price: "Valorado en 50 USD.",
     description:
       "El curso puede ser visto con la App desde cualquier dispositivo móvil, como smartphones y tablets, y me puedes ver cuándo y dónde lo creas más conveniente, beneficios completamente gratuita para alumnos.",
   },
   {
     id: 4,
-    title: "Plan de estudios Valorado en $50 dólares",
+    title: "Plan de estudios",
+    price: "Valorado en 50 USD.",
     description:
       "Con ejercicios 100% prácticos a implementar y metas semanales de trabajo que aceleraran tus resultados para que sepas exactamente en donde debes enfocarte cada semana, para así lograr avanzar en una secuencia ordenada, logrando el crecimiento de tu negocio de consulta privada presencial.",
   },

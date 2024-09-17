@@ -1,8 +1,46 @@
 ---
 import Videoplayer from "../player/Videoplayer.astro";
+import Check from "./Check.astro";
 import CTAVenta from "./CTAVenta.astro";
 import NewFooter from "./NewFooter.astro";
-import { bonosData, programaData } from "./ventaData";
+
+const footerData = [
+  {
+    desc: "El programa incrementa tu consulta completo tiene un valor aproximado de ",
+    price: "$997 dólares",
+  },
+  {
+    desc: "Servicio de soporte y ayuda Valorado en",
+    price: "$200 dólares",
+  },
+  {
+    desc: "Ticket VIP por un año Valorado en",
+    price: "$100 dólares",
+  },
+  {
+    desc: "App Mobile Valorado en",
+    price: "$50 dólares",
+  },
+  {
+    desc: "Plan de estudios Valorado en",
+    price: "$50 dólares",
+  },
+  {
+    desc: "Membresía en la comunidad internacional Invaluable",
+  },
+  {
+    desc: "Crea anuncios potentes Valorado en",
+    price: "$500 dólares",
+  },
+  {
+    desc: "Templetes de poder Valorado en",
+    price: "$200 dólares",
+  },
+  {
+    desc: "Coaching en mentoría uno a uno Valorado en",
+    price: "$300 dólares",
+  },
+];
 ---
 
 <style>
@@ -102,7 +140,7 @@ import { bonosData, programaData } from "./ventaData";
     <div
       class="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 transform md:w-[650px]"
     >
-      <Videoplayer source="dhcktckrBWg" />
+      <Videoplayer source="4qgL9sRgQss" />
     </div>
   </div>
   <div class="bg-mango pb-12 pt-44 md:py-64">
@@ -145,71 +183,24 @@ import { bonosData, programaData } from "./ventaData";
       height={725}
       width={1426}
     />
-    <h1
-      class="my-8 text-center font-inter text-2xl font-bold text-ventaBlue md:text-4xl"
-    >
-      Todo lo que recibirás:
-    </h1>
-    <div class="mx-4 md:mx-14 lg:mx-36">
-      {
-        programaData.map((programa) => (
-          <div class="stuff show flex items-center justify-between font-inter lg:mx-12 lg:text-2xl">
-            <p class="w-52 md:w-auto">{programa.subtitle}</p>
-            <span class="short" />
-            <p>{programa.value}</p>
-          </div>
-        ))
-      }
-    </div>
-
-    <h1
-      class="my-8 text-center font-inter text-2xl font-bold uppercase text-ventaBlue md:text-4xl"
-    >
-      BONOS DE REGALO
-    </h1>
-
-    <div class="mx-4 md:mx-14 lg:mx-36">
-      {
-        bonosData.map((bono) => (
-          <div class="stuff show flex items-center justify-between font-inter lg:mx-12 lg:text-2xl">
-            <p class="w-52 md:w-auto">{bono.title}</p>
-            <span class="short" />
-            <p>{bono.value}</p>
-          </div>
-        ))
-      }
-    </div>
-    <!-- <div>
-      <h1
-        class="my-8 text-center font-inter text-2xl font-bold uppercase text-ventaBlue md:text-4xl"
-      >
-        BONOS DE ACCIÓN RÁPIDA
-      </h1>
-
-      <div class="mx-4 md:mx-14 lg:mx-36">
-        <div
-          class="stuff show flex items-center justify-between font-inter lg:mx-12 lg:text-2xl"
-        >
-          <p>Mentoría 1 a 1</p>
-          <span class="short"></span>
-          <p>Valor $300 USD</p>
-        </div>
-        <div
-          class="stuff show flex items-center justify-between font-inter lg:mx-12 lg:text-2xl"
-        >
-          <p>Vende fuera de tus fronteras</p>
-          <span class="short"></span>
-          <p>Valor $197 USD.</p>
-        </div>
-        <div
-          class="stuff show flex items-center justify-between font-inter lg:mx-12 lg:text-2xl"
-        >
-          <p>Crea anuncios potentes</p>
-          <span class="short"></span>
-          <p>Valor $500 USD</p>
-        </div>
+    <div class="flex justify-center">
+      <div class="md:text-2xl">
+        {
+          footerData.map((item) => {
+            return (
+              <div class="flex items-center space-x-2">
+                <span class="h-6 flex-shrink-0">
+                  <Check />
+                </span>
+                <p class="text-sm md:text-xl">
+                  {item.desc} <span class="line-through">{item.price}</span>
+                </p>
+              </div>
+            );
+          })
+        }
       </div>
-    </div> -->
+    </div>
 
     <div class="my-24">
       <CTAVenta />
