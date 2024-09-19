@@ -1,0 +1,110 @@
+---
+import Accordion from "../Accordion.astro";
+
+const preguntas = [
+  {
+    title:
+      "1-¿Cuánto tiempo tengo que dedicarle al programa por semana para tener resultados en 21 días o menos?",
+    details:
+      "Aproximadamente dos horas por semana + una sesión privada con Berenice de 45 minutos para montar tu campaña paso a paso.",
+  },
+  {
+    title: "2-¿Si hago campaña publicitaria cuanto tengo que invertirle?",
+    details:
+      "Aproximadamente el valor de tu primera consulta varía dependiendo de tus precios a profundidad lo veremos en las sesiones personalizadas.",
+  },
+  {
+    title: "3-¿Puedo hacer todo yo solo o necesito un equipo de trabajo?",
+    details:
+      "Para empezar puedes hacerlo tu solo porque es un programa para principiantes, te va a servir que sepas hacer esto, y para cuando quieras delegarlo sepas cómo evaluar que la persona que vayas a contratar te esté haciendo un buen trabajo. <br /> ¡Porque el que aprende, no depende! <br /> Dice un dicho",
+  },
+  {
+    title: "4-¿Necesito página web?",
+    details: "No",
+  },
+  {
+    title: "5-¿Necesito tener una marca personal?",
+    details:
+      "¡No será necesario!, no tienes que hacer videos, si no quieres. Porque uno de los bonos de regalo si te inscribes yo te daré las plantillas que podrás personalizar, editar de images para tus anuncios.",
+  },
+  {
+    title: "6-¿Cuándo empieza el curso?",
+    details: "El jueves 3 de octubre 6:30 pm hora de la ciudad de México",
+  },
+  {
+    title: "7-¿Cuándo es el último día que tengo para inscribirme?",
+    details: "El lunes 30 de septiembre",
+  },
+  {
+    title: "8-¿Cuánto tiempo dura el programa?",
+    details:
+      "En las primeras cuatro semanas, se darán las clases en vivo, vía zoom, por que como te explique es un curso muy concreto, ¡va directo al grano! por que la intención es que tu tengas resultados lo antes posible en 21 días o menos, pero una vez que adquieres el curso tienes acceso a ver la repetición del curso todo",
+  },
+  {
+    title:
+      "9-¿Este programa es para alguien que recién va saliendo de la universidad?",
+    details:
+      "Si tu ahorita eres alguien que va empezando, es por esta razón, que precisamente, que ocupas este curso, tienes que aprender como atraer pacientes para tu consulta, antes de abrir un consultorio.",
+  },
+  {
+    title: "10-¿Hay pago en cuotas?",
+    details:
+      "Si solo se habilita con tarjeta de crédito facilidades de 3, 6, 9, o 12 cuotas una por mes",
+  },
+  {
+    title: "11-¿Qué pasa si no soy bueno con la tecnología?",
+    details:
+      "Si sabe usar whats app y darle play a un video de YouTube, con eso tienes para empezar, yo te enseno lo que te falte",
+  },
+  {
+    title: "12-¿El acceso al curso es de por vida o por cuantos meses?",
+    details: "Es por 12 meses",
+  },
+  {
+    title: "13-¿Cada cuando son las clases?",
+    details: "Cada semana los jueves de octubre",
+  },
+  {
+    title: "14-¿Si no puedo estar en vivo quedaran grabadas?",
+    details: "Si",
+  },
+  {
+    title: "15-¿Me puedo inscribir en otro momento?",
+    details:
+      "No porque cierro las inscripciones el lunes 19 de febrero el programa no está abierto todo el tiempo porque se entregarán las clases el vivo y estaré ocupada con los que si se anoten al curso.",
+  },
+  {
+    title: "16-¿Si pago a cuotas, también tendré derecho a los bonos?",
+    details: "Si",
+  },
+  {
+    title: "17-¿Cuándo volverán abrir inscripciones?",
+    details:
+      "Nose, no será pronto y tampoco creo que sea a este precio de lanzamiento con el 40% de descuento, si se vuelve abrir quizá ya esté más caro.",
+  },
+  {
+    title:
+      "18-No tengo tarjeta de crédito ¿Puedo pagar con tarjeta de débito o en efectivo?",
+    details: "Si",
+  },
+];
+---
+
+<section>
+  <div class="mx-auto my-8 px-6 md:my-16 md:max-w-6xl md:px-0">
+    <h1 class="font-soap text-naranja text-center text-4xl">
+      preguntas <span class="align-top md:text-6xl">Frecuentes</span>
+    </h1>
+    <p class="mx-auto text-center md:mt-4 md:w-1/2 md:text-xl">
+      A continuación, responderé las preguntas más frecuentes que me hacen
+      referente al curso:
+    </p>
+    <div class="md:my-16">
+      {
+        preguntas.map((pregunta) => (
+          <Accordion title={pregunta.title} details={pregunta.details} />
+        ))
+      }
+    </div>
+  </div>
+</section>

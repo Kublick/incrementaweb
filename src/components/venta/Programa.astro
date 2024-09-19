@@ -82,16 +82,24 @@ import { programaData, programExtrasData } from "./ventaData";
                   </p>
                 </div>
               </div>
-              <p class="font-inter text-sm">{programa.description}</p>
+              <p class="font-inter text-sm">{programa.description} </p>
 
-              <h2 class="my-4 font-coolvetica text-2xl text-ventaBlue ">
+              {/* <h2 class="my-4 font-coolvetica text-2xl text-ventaBlue ">
                 {programa.value}
-              </h2>
+              </h2> */}
             </div>
           </div>
         );
       })
     }
+
+    <h1 class="py-4 text-center font-inter text-xl text-primary md:text-3xl">
+      Los modulos del programa completo tienen un valor aproximado de <span
+        class="font-semibold line-through"
+      >
+        $997</span
+      > USD
+    </h1>
 
     <div class="stuff show mx-auto p-2 md:text-xl">
       <p>
@@ -100,7 +108,7 @@ import { programaData, programExtrasData } from "./ventaData";
         >
           la cita</span
         > es los días <span class="font-semibold text-primary">
-          Miércoles 6:30 pm hora de la ciudad de México
+          Jueves 6:30 pm hora de la ciudad de México
         </span>
         , si no puedes estar en vivo, no te preocupes porque no te perderás de absolutamente
         de nada, ¡te tenemos cubierto!, para ti la clase quedara grabada y la miras
@@ -108,10 +116,11 @@ import { programaData, programExtrasData } from "./ventaData";
       </p>
       <p class="py-2">Las fechas de las clases en vivo son los días:</p>
       <ul class="ml-4 pb-2 md:pb-4">
-        <li>Miércoles 2 de Ocubre</li>
-        <li>Miércoles 9 de Octubre</li>
-        <li>Miércoles 16 de Noviembre</li>
-        <li>Miércoles 23 de Diciembre</li>
+        <li>Jueves 3 de Ocubre</li>
+        <li>Jueves 10 de Octubre</li>
+        <li>Jueves 17 de Octubre</li>
+        <li>Jueves 24 de Octubre</li>
+        <li>Jueves 31 de Octubre</li>
       </ul>
       <p>
         Y además tendrás acceso durante todo un año, 12 meses al contenido del
@@ -128,6 +137,9 @@ import { programaData, programExtrasData } from "./ventaData";
                 <CheckBlack />
                 <h2 class="font-coolvetica  text-ventaBlue md:text-2xl">
                   {programa.title}
+                  <span class="font-semibold text-primary line-through">
+                    {programa.price}
+                  </span>
                 </h2>
               </div>
               <p class="mx-2 font-inter text-sm">{programa.description}</p>
