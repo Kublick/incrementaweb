@@ -45,6 +45,7 @@
           method: "POST",
           body: JSON.stringify({
             email: emailValue,
+            eventId: 1,
           }),
           headers: {
             "Content-Type": "application/json",
@@ -79,7 +80,7 @@
           >
             <svg
               aria-hidden="true"
-              class="h-5 w-5 text-gray-500 dark:text-gray-400"
+              class="text-lightPurple h-5 w-5"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +96,7 @@
             type="email"
             id="email"
             name="email"
-            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pl-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+            class="focus:ring-blueLight block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pl-10 text-sm text-gray-600"
             placeholder="Tu mejor correo"
           />
         </div>
@@ -109,7 +110,7 @@
     name="submit"
     value="¡Quiero tener más pacientes!"
     id="submit"
-    class={`mt-8 w-full transform rounded-xl bg-gradient-to-r from-blue-500 to-blue-400 px-7 py-5 font-bold leading-none text-white shadow-lg transition-all hover:scale-105
+    class={`mt-8 w-full transform rounded-xl bg-gradient-to-r from-blue to-purple text-white px-7 py-5 font-bold leading-none  shadow-lg transition-all hover:scale-105
       } `}
   />
 </form>
