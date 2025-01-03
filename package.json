@@ -27,7 +27,6 @@
     "@headlessui/react": "^2.2.0",
     "@hookform/resolvers": "^3.9.1",
     "@leenguyen/react-flip-clock-countdown": "^1.6.0",
-    "@rumess/react-flip-countdown": "^1.2.6",
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@types/react-dom": "^19.0.2",
