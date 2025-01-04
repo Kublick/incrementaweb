@@ -4,7 +4,7 @@ const ventainfo = [
     title: "PAGO UNICO",
     texthead: "Ahorra $97 dólares",
     textprice: "Pago Único",
-    price: "$997 dólares",
+    price: "$947 dólares",
     element: "unico",
   },
   // {
@@ -64,11 +64,10 @@ const ventainfo = [
     $6,170 USD
   </h2> -->
 
-
   <div class="container mx-auto grid gap-8 px-4 py-4 md:w-[420px]">
     {
       ventainfo.map((v) => (
-        <div class="border-4 border-dashed border-primary p-8 text-center ">
+        <div class="border-4 border-dashed border-primary p-8 text-center">
           {/* <h2 class="bg-mango p-2 text-2xl font-bold text-white">{v.title}</h2> */}
 
           {/* <h2 class="text-4xl font-bold">697</h2> */}
@@ -77,9 +76,9 @@ const ventainfo = [
           <p class="my-2 text-3xl font-bold">{v.price}</p>
           <button
             name={v.element}
-            class={`my-2 w-full rounded-lg py-2 text-2xl font-bold uppercase shadow-lg  ${
+            class={`my-2 w-full rounded-lg py-2 text-2xl font-bold uppercase shadow-lg ${
               v.element === "unico"
-                ? "bg-primary text-white hover:bg-blue-800"
+                ? "hover:bg-blue-800 bg-primary text-white"
                 : "border-4 border-primary hover:bg-primary hover:text-white"
             } `}
           >

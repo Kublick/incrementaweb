@@ -80,7 +80,7 @@
           >
             <svg
               aria-hidden="true"
-              class="text-lightPurple h-5 w-5"
+              class="h-5 w-5 text-lightPurple"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +96,7 @@
             type="email"
             id="email"
             name="email"
-            class="focus:ring-blueLight block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pl-10 text-sm text-gray-600"
+            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pl-10 text-sm text-gray-600 focus:ring-blueLight"
             placeholder="Tu mejor correo"
           />
         </div>
@@ -104,13 +104,14 @@
       </div>
     </div>
   </fieldset>
-
-  <input
-    type="submit"
-    name="submit"
-    value="¡Quiero tener más pacientes!"
-    id="submit"
-    class={`mt-8 w-full transform rounded-xl bg-gradient-to-r from-blue to-purple text-white px-7 py-5 font-bold leading-none  shadow-lg transition-all hover:scale-105
+  <div class="mx-4 md:mx-0">
+    <input
+      type="submit"
+      name="submit"
+      value="¡Quiero tener más pacientes!"
+      id="submit"
+      class={`mt-8 w-full transform rounded-xl bg-gradient-to-r from-blue to-purple text-white px-7 py-5 font-bold leading-none  shadow-lg transition-all hover:scale-105 uppercase
       } `}
-  />
+    />
+  </div>
 </form>

@@ -1,5 +1,4 @@
 ---
-import VentaPuntos from "../components/venta/VentaPuntos.astro";
 import Layout from "../layouts/Layout.astro";
 import Programa from "../components/venta/Programa.astro";
 import Bonos from "../components/venta/Bonos.astro";
@@ -8,12 +7,6 @@ import CTAVenta from "../components/venta/CTAVenta.astro";
 import { ChinneseCountDown } from "../components/counter/countdown";
 import { salesEndDate, freeEventEndDate } from "../utils/constants";
 ---
-
-// <!-- <script>
-//   window.onload = function () {
-//     window.location.replace("https://www.incrementatuconsulta.com/");
-//   };
-// </script> -->
 
 <script
   type="module"
@@ -24,11 +17,7 @@ import { salesEndDate, freeEventEndDate } from "../utils/constants";
 <Layout title="Inscripciones | Incrementa tu consulta">
   <div class="my-4 flex flex-col items-center justify-center">
     <h1 class="text-xl md:pb-4 md:text-2xl">Las inscripciones se abren en:</h1>
-    <ChinneseCountDown
-      date={freeEventEndDate}
-      color={false}
-      client:only="react"
-    />
+    <ChinneseCountDown date={freeEventEndDate} color={false} client:visible />
   </div>
   <div class="h-[380px] bg-mango md:h-[424px]">
     <img src="/whiteLogo.svg" alt="whiteLogo" class="mx-auto py-2" />
@@ -41,12 +30,8 @@ import { salesEndDate, freeEventEndDate } from "../utils/constants";
       <h1
         class="text-center font-coolvetica text-3xl text-ventaBlue md:text-5xl"
       >
-        Para tu consulta privada en 21 días o menos
+        Para tu consulta privada en 30 días o menos
       </h1>
-
-      <h2 class="mt-2 text-center font-coolvetica text-white md:text-2xl">
-        Ganando reconocimiento,autoridad y dinero
-      </h2>
     </div>
   </div>
 
