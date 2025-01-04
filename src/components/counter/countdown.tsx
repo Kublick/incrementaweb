@@ -7,7 +7,7 @@ type Props = {
   color: boolean;
 };
 export const ChinneseCountDown = ({
-  date = "2023-01-25 16:40",
+  date = "2025-02-6 16:40",
   color,
 }: Props) => {
   return (

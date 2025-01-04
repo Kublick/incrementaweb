@@ -13,7 +13,7 @@ const RegistrosWebTable = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        "https://incrementaback.blancarte.workers.dev/users"
+        "https://incrementaback.blancarte.workers.dev/users/event/1",
       );
       const result = await response.json();
       setData(result);
