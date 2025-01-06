@@ -10,5 +10,3 @@ export const quickActionBonus = "2025-09-12";
 
 export const whatsappthanksUrl =
   "https://chat.whatsapp.com/DgudhEKk2RCDK6WBKorwy1";
-
-  export const allAccessEndDate = "2025-12-17 23:00";
