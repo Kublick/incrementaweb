@@ -43,7 +43,7 @@ import { programaData, programExtrasData } from "./ventaData";
 
 <section class="mt-8 md:mt-16">
   <img
-    src={"/venta/centro.webp"}
+    src={"/venta/MOCKUP.webp"}
     alt={`centro`}
     height={484}
     width={951}
@@ -51,17 +51,17 @@ import { programaData, programExtrasData } from "./ventaData";
   />
 
   <img
-    src={"/venta/centro.webp"}
+    src={"/venta/MOCKUP.webp"}
     alt={`centro`}
     height={323}
     width={566}
     class="mx-auto block md:hidden"
   />
 
-  <div class="mx-auto my-2 w-1/2 rounded-md bg-secondary py-1 shadow-lg"></div>
+  <div class="mx-auto my-2 w-1/2 rounded-md bg-blueLight py-1 shadow-lg"></div>
 
   <h1
-    class="my-4 text-center font-coolvetica text-xl text-ventaBlue md:my-8 md:text-3xl"
+    class="my-4 text-center font-coolvetica text-xl text-blue md:my-8 md:text-3xl"
   >
     Incrementa tu consulta incluye:
   </h1>
@@ -71,43 +71,39 @@ import { programaData, programExtrasData } from "./ventaData";
         return (
           <div class="stuff show mt-4 grid items-center gap-4 md:mx-12 md:gap-8 lg:mx-0 lg:gap-24">
             <div class="mx-4">
-              <h2 class="font-coolvetica text-2xl text-ventaBlue">
+              <h2 class="font-coolvetica text-2xl text-purple">
                 {programa.title}
               </h2>
               <div>
                 <div class="flex items-center gap-2">
                   <Check />
-                  <p class=" font-semibold text-secondary md:text-xl">
+                  <p class="font-semibold text-blue md:text-xl">
                     {programa.subtitle}
                   </p>
                 </div>
               </div>
               <p class="font-inter text-sm">{programa.description} </p>
-
-              {/* <h2 class="my-4 font-coolvetica text-2xl text-ventaBlue ">
-                {programa.value}
-              </h2> */}
             </div>
           </div>
         );
       })
     }
 
-    <h1 class="py-4 text-center font-inter text-xl text-primary md:text-3xl">
-      Convierte tu consulta en un negocio rentable de  <span
-        class="font-semibold "
+    <h1 class="py-4 text-center font-inter text-xl text-blue md:text-3xl">
+      Convierte tu consulta en un negocio rentable de <span
+        class="font-semibold"
       >
-      verdad</span
-      > 
+        verdad</span
+      >
     </h1>
 
     <div class="stuff show mx-auto p-2 md:text-xl">
       <p>
         Revisaremos un módulo por semana, <span
-          class="font-semibold text-primary"
+          class="font-semibold text-blueLight"
         >
           la cita</span
-        > es los días <span class="font-semibold text-primary">
+        > es los días <span class="font-semibold text-blueLight">
           Jueves 6:30 pm hora de la ciudad de México
         </span>
         , si no puedes estar en vivo, no te preocupes porque no te perderás de absolutamente
@@ -135,9 +131,9 @@ import { programaData, programExtrasData } from "./ventaData";
             <div class="stuff show mt-4 md:mx-12 md:gap-8 lg:mx-0 lg:gap-24">
               <div class="mx-2 flex gap-2 md:items-center">
                 <CheckBlack />
-                <h2 class="font-coolvetica  text-ventaBlue md:text-2xl">
+                <h2 class="font-coolvetica text-blue md:text-2xl">
                   {programa.title}
-                  <span class="font-semibold text-primary line-through">
+                  <span class="font-semibold text-blueLight line-through">
                     {programa.price}
                   </span>
                 </h2>

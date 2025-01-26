@@ -194,7 +194,7 @@ export const bonosNuevos = [
     description:
       "Recibirás una sesión de acompañamiento durante la creación de tu primera campaña a partir del tercer modulo, para poner tus anuncios de tu consulta en Facebook e Instagram Berenice la hará personalmente contigo, clic por clic. Será de 60 minutos aproximadamente y no necesitas ser un experto en la plataforma o haber tenido campañas que no hayan tenido resultado, esta vez, todo será diferente. con este bono conocerás la estrategia que usan las grandes agencias de marketing, para conseguir más pacientes y llenar sus agendas utilizando Facebook e Instagram ADS.",
     value: "Valor 500 USD.",
-    image: "/venta/1.png",
+    image: "/venta/1.webp",
   },
   {
     id: 2,
@@ -203,7 +203,7 @@ export const bonosNuevos = [
     description:
       "Para personalizar tus anuncios, para que te sea tan fácil, como solo copiar y pegar, no necesitaras saber nada de diseño, ni descargar programas complicados, por que, con este bono, recibirás la bóveda de 30 plantillas digitales y editables que te facilitarán la creación de potentes imágenes de venta que te generen conversiones rápidas en consultas, cuando pongas tus campañas",
     value: "Valor 200 USD.",
-    image: "/venta/programa5.png",
+    image: "/venta/2.webp",
   },
   {
     id: 3,
@@ -212,6 +212,6 @@ export const bonosNuevos = [
     description:
       "Sesión privada con la psicóloga Berenice Bastidas de 45 minutos para hablar de tu negocio y proyecto profesional. Se enfocarán en lo que estás haciendo, verán estrategias personalizadas y, al finalizar, tendrás una ruta clara de qué pasos tienes que seguir para generar los resultados que sueñas. ",
     value: "Valor 300 USD.",
-    image: "/venta/programa2.png",
+    image: "/venta/4.webp",
   },
 ];

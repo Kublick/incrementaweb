@@ -58,28 +58,17 @@ const ventainfo = [
 </script>
 
 <div>
-  <!-- <h2
-    class="py-4 text-center text-4xl font-bold text-redVenta line-through md:text-6xl"
-  >
-    $6,170 USD
-  </h2> -->
-
   <div class="container mx-auto grid gap-8 px-4 py-4 md:w-[420px]">
     {
       ventainfo.map((v) => (
         <div class="border-4 border-dashed border-primary p-8 text-center">
-          {/* <h2 class="bg-mango p-2 text-2xl font-bold text-white">{v.title}</h2> */}
-
-          {/* <h2 class="text-4xl font-bold">697</h2> */}
-          {/* <h3 class="my-2 text-xl">{v.texthead}</h3> */}
-          {/* <p class="my-2 text-xl">{v.textprice}</p> */}
           <p class="my-2 text-3xl font-bold">{v.price}</p>
           <button
             name={v.element}
             class={`my-2 w-full rounded-lg py-2 text-2xl font-bold uppercase shadow-lg ${
               v.element === "unico"
-                ? "hover:bg-blue-800 bg-primary text-white"
-                : "border-4 border-primary hover:bg-primary hover:text-white"
+                ? "bg-purple text-white hover:bg-purple/90"
+                : "blue-primary border-4 hover:bg-blue hover:text-white"
             } `}
           >
             Quiero llenar mi consulta
@@ -90,12 +79,6 @@ const ventainfo = [
   </div>
 
   <div class="mt-4 flex flex-col items-center gap-4 px-4 md:gap-10">
-    <!-- <button
-      name="hotmart"
-      class="rounded-2xl bg-redVenta px-24 py-3 text-center font-coolvetica text-xl text-white shadow-[10px_10px_2px_0px_rgba(0,0,0,0.07)] hover:bg-red-700 md:text-3xl"
-    >
-      QUIERO MI CUPO YA
-    </button> -->
     <div>
       <p class="pt-2 text-center text-sm md:mt-4 md:text-xl">
         Conoce las facilidades de pago 3, 6, 9 o 12 pagos chiquitos, con tarjeta
