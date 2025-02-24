@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import Banner from "../assets/banner_checkout.png";
+import Sidebar from "../assets/sidebar.png";
+import CheckoutForm from "../components/checkout/CheckoutForm";
+import Privacidad from "../components/checkout/PrivacidadIcon.astro";
+import CompraIcon from "../components/checkout/CompraIcon.astro";
+import EntregaIcon from "../components/checkout/EntregaIcon.astro";
+import ContenidoIcon from "../components/checkout/ContenidoIcon.astro";
+import GarantiaIcon from "../components/checkout/GarantiaIcon.astro";
+---
+
+<Layout title="Checkout Incrementa tu consulta">
+  <div class="mx-auto max-w-screen-lg md:px-4">
+    <Image
+      src={Banner}
+      height={384}
+      width={1024}
+      alt="banner"
+      class="mx-auto pt-2 md:pt-8"
+    />
+    <div class="grid grid-cols-3">
+      <div
+        class="col-span-2 mt-2 rounded-md border border-slate-200 p-2 md:mt-8"
+      >
+        <CheckoutForm />
+      </div>
+      <div
+        class="flex flex-col items-center space-y-2 px-2 md:mx-6 md:space-y-6"
+      >
+        <div class"flex flex-col">
+          <div class="py-2 md:space-y-4 md:px-6 md:py-8">
+            <Privacidad />
+            <CompraIcon />
+            <EntregaIcon />
+            <ContenidoIcon />
+          </div>
+        </div>
+        <Image src={Sidebar} width={300} alt="sidebar" />
+        <GarantiaIcon />
+      </div>
+    </div>
+  </div>
+</Layout>
