@@ -8,7 +8,7 @@
       const url = "https://incrementaback.blancarte.workers.dev/form";
       form.addEventListener("submit", (e) => {
         const submitButton = document.querySelector(
-          "#submit"
+          "#submit",
         ) as HTMLInputElement;
 
         e.preventDefault();
@@ -19,10 +19,10 @@
         submitButton.disabled = true;
 
         const emailInput = form.querySelector(
-          'input[name="email"]'
+          'input[name="email"]',
         ) as HTMLInputElement;
         const lastNameInput = form.querySelector(
-          'input[name="lastName"]'
+          'input[name="lastName"]',
         ) as HTMLInputElement;
 
         const emailValue = emailInput.value.trim();
@@ -45,7 +45,7 @@
           method: "POST",
           body: JSON.stringify({
             email: emailValue,
-            eventId: 1,
+            eventId: 2,
           }),
           headers: {
             "Content-Type": "application/json",
