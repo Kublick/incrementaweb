@@ -24,7 +24,7 @@ const ventainfo = [
     element.addEventListener("click", () => {
       window.open(
         "https://pay.hotmart.com/L93933144S?checkoutMode=10",
-        "_blank"
+        "_blank",
       );
     });
   });
@@ -37,11 +37,14 @@ const ventainfo = [
     });
   });
 
-  const flex = document.getElementsByName("flexible");
+  const flex = document.getElementsByName("stripe");
 
   flex.forEach((element) => {
     element.addEventListener("click", () => {
-      window.open("https://pay.hotmart.com/L93933144S", "_blank");
+      window.open(
+        "https://buy.stripe.com/3csbKVa0z0wTaOIaF0?locale=es-419",
+        "_blank",
+      );
     });
   });
 
@@ -51,47 +54,106 @@ const ventainfo = [
     element.addEventListener("click", () => {
       window.open(
         "https://pay.hotmart.com/L93933144S?checkoutMode=10",
-        "_blank"
+        "_blank",
       );
     });
   });
 </script>
 
 <div>
-  <div class="container mx-auto grid gap-8 px-4 py-4 md:w-[420px]">
-    {
-      ventainfo.map((v) => (
-        <div class="border-4 border-dashed border-primary p-8 text-center">
-          <p class="my-2 text-3xl font-bold">{v.price}</p>
-          <button
-            name={v.element}
-            class={`my-2 w-full rounded-lg py-2 text-2xl font-bold uppercase shadow-lg ${
-              v.element === "unico"
-                ? "bg-purple text-white hover:bg-purple/90"
-                : "blue-primary border-4 hover:bg-blue hover:text-white"
-            } `}
-          >
-            Quiero llenar mi consulta
-          </button>
-        </div>
-      ))
-    }
-  </div>
+  <div
+    class="mx-4 flex flex-col items-center justify-center gap-8 py-2 md:flex-row md:py-6"
+  >
+    <!-- <div>
+      {
+        ventainfo.map((v) => (
+          <div class="border-4 border-dashed border-primary p-8 text-center">
+            <p class="my-2 text-3xl font-bold">{v.price}</p>
+            <button
+              name={v.element}
+              class={`my-2 w-full rounded-lg px-2 py-2 text-2xl font-bold uppercase shadow-lg ${
+                v.element === "unico"
+                  ? "bg-purple text-white hover:bg-purple/90"
+                  : "blue-primary border-4 hover:bg-blue hover:text-white"
+              } `}
+            >
+              Quiero llenar mi consulta
+            </button>
+          </div>
+        ))
+      }
+    </div> -->
 
-  <div class="mt-4 flex flex-col items-center gap-4 px-4 md:gap-10">
-    <div>
-      <p class="pt-2 text-center text-sm md:mt-4 md:text-xl">
-        Conoce las facilidades de pago 3, 6, 9 o 12 pagos chiquitos, con tarjeta
-        de crédito.
-      </p>
-    </div>
-
-    <button
-      name="whats"
-      class="flex items-center gap-4 rounded-2xl bg-[#0bd100] px-24 py-3 text-center font-coolvetica text-base text-white shadow-[10px_10px_2px_0px_rgba(0,0,0,0.07)] hover:bg-green-500 md:text-lg"
+    <div
+      class="max-w-xs overflow-hidden rounded-xl border bg-purple/10 p-8 shadow-xl md:max-w-xl lg:p-10"
     >
-      <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
-      ¿Necesitas ayuda?
-    </button>
+      <section class="flex h-full flex-col justify-between">
+        <div>
+          <div class="flex w-full flex-col gap-2">
+            <div class="flex flex-col md:px-4">
+              <p class="text-base-900 text-xl font-bold tracking-tight">
+                Precio Regular
+              </p>
+              <p class="text-sm">(variable al tipo de cambio)</p>
+
+              <p class="mt-8 text-4xl font-bold tracking-tighter text-purple">
+                $947 USD
+              </p>
+            </div>
+          </div>
+        </div>
+        <button
+          name="unico"
+          class="my-2 w-full rounded-lg bg-purple px-2 py-2 text-2xl font-bold uppercase text-white shadow-lg"
+        >
+          Quiero llenar mi consulta
+        </button>
+      </section>
+    </div>
+    <div
+      class="relative max-w-xs overflow-hidden rounded-xl border bg-blue/10 p-8 shadow-xl md:max-w-xl lg:p-10"
+    >
+      <div class="absolute right-0 top-0 h-16 w-16">
+        <div
+          class="absolute right-[-35px] top-[32px] w-[170px] rotate-45 transform bg-blue py-1 text-center font-bold text-white"
+        >
+          Promo -10%
+        </div>
+      </div>
+      <section class="flex h-full flex-col justify-between">
+        <div>
+          <div class="flex w-full flex-col gap-2">
+            <div class="flex flex-col md:px-4">
+              <p class="text-base-900 text-base font-medium tracking-tight">
+                Oferta exclusiva para:
+              </p>
+              <p>
+                <span class="font-bold">Mexico</span> y los primeros 12 inscritos
+                al programa
+              </p>
+              <p class="mt-8 text-4xl font-bold tracking-tighter text-purple">
+                $18,000 MXN
+              </p>
+            </div>
+          </div>
+        </div>
+        <button
+          name="stripe"
+          class="my-2 w-full rounded-lg bg-blue px-2 py-2 text-2xl font-bold uppercase text-white shadow-lg"
+        >
+          Acepto la oferta
+        </button>
+      </section>
+    </div>
   </div>
+</div>
+
+<div class="mt-4 flex flex-col items-center gap-4 px-4 md:gap-10">
+  <button
+    name="whats"
+    class="flex items-center gap-4 rounded-2xl bg-[#0bd100] px-24 py-3 text-center font-coolvetica text-base text-white shadow-[10px_10px_2px_0px_rgba(0,0,0,0.07)] hover:bg-green-500 md:text-lg"
+  >
+    <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
+    ¿Necesitas ayuda?
+  </button>
 </div>
