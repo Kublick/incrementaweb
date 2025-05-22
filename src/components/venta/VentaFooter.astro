@@ -1,8 +1,47 @@
 ---
 import Videoplayer from "../player/Videoplayer.astro";
+import Check from "./Check.astro";
 import CTAVenta from "./CTAVenta.astro";
 import NewFooter from "./NewFooter.astro";
-import { bonosData, programaData } from "./ventaData";
+import Preguntas from "./Preguntas.astro";
+
+const footerData = [
+  {
+    desc: "El programa incrementa tu consulta completo tiene un valor aproximado de ",
+    price: "$997 dólares",
+  },
+  {
+    desc: "Servicio de soporte y ayuda Valorado en",
+    price: "$200 dólares",
+  },
+  {
+    desc: "Ticket VIP por un año Valorado en",
+    price: "$100 dólares",
+  },
+  {
+    desc: "App Mobile Valorado en",
+    price: "$50 dólares",
+  },
+  {
+    desc: "Plan de estudios Valorado en",
+    price: "$50 dólares",
+  },
+  {
+    desc: "Membresía en la comunidad internacional Invaluable",
+  },
+  {
+    desc: "Crea anuncios potentes Valorado en",
+    price: "$500 dólares",
+  },
+  {
+    desc: "Templetes de poder Valorado en",
+    price: "$200 dólares",
+  },
+  {
+    desc: "Coaching en mentoría uno a uno Valorado en",
+    price: "$300 dólares",
+  },
+];
 ---
 
 <style>
@@ -69,49 +108,56 @@ import { bonosData, programaData } from "./ventaData";
       <h2>de Garantía</h2>
     </div>
   </div>
-  <div class="inline-grid items-center bg-mango lg:grid-cols-2">
+  <div class="inline-grid items-center bg-blueLight lg:grid-cols-2">
     <div class="">
       <img src="/venta/bereniceventa.png" alt="Berenice Bastidas" class="" />
     </div>
-    <div class="h-full bg-secondary py-4 text-white">
+    <div class="h-full bg-lightPurple py-4 text-white">
       <div class="mx-10 mt-4 md:mx-auto md:mt-0 md:w-3/4">
         <h1 class="text-center font-inter text-3xl font-bold lg:text-5xl">
           Hola, soy Berenice
         </h1>
 
         <div class="mx-4 my-8 bg-white p-0.5"></div>
-        <p class="md:text-2xl">
-          Soy Psicóloga Berenice Bastidas y descifré como llenar mi agenda medio
-          tiempo, de pacientes durante 3 años seguidos y esto fue antes de
-          dedicarme a ayudar a Nutriólogos, Psicólogos, Terapeutas,
-          Psicoterapeutas y Profesionales de la Salud a poder hacerlo para ellos
-          mismos multiplicando sus ingresos e incrementando su número de
-          pacientes y cuando empiezan desde cero con lo que aprenden en el
-          Entrenamiento Incrementa Tu Consulta, logran su primera venta de
-          consulta en 40 días o menos.
+        <p class="text-sm md:text-xl">
+          Ayudo a médicos, dentistas, psicólogos, nutriólogos, terapeutas y
+          otros profesionales que se dedican a la consulta privada particular a
+          incrementar su número de pacientes con estrategia a través de
+          internet, incluso si van empezando desde cero y se sienten poco
+          tecnológicos. Cree mi propia metodología de prospección de pacientes,
+          he podido compartir este conocimiento con otros profesionales de la
+          salud, que se dedican a la consulta privada, impactando de forma
+          positiva en la vida de más de 200 alumnos que han pasado ya por mis
+          formaciones y asesorías, teniendo presencia ya en 14 países de
+          Latinoamérica, con mi programa avanzado el METODO INCREMENTA TU
+          CONSULTA. Sabías que hoy en día tu puedes lograr generar miles de
+          dólares en ventas de tu consulta privada usando internet, haciéndolo
+          de forma fácil, generando tú mismo tu propia publicidad en las redes
+          sociales, ahorrándote con esto lo que te cobraría una agencia de
+          marketing y publicidad..
         </p>
       </div>
     </div>
   </div>
   <div
-    class="mx-4 my-20 text-center font-inter text-3xl font-bold text-ventaBlue md:text-5xl"
+    class="mx-4 my-20 text-center font-inter text-3xl font-bold text-blue md:text-5xl"
   >
-    <h1>Testimonio: Facturo $30,000 doláres</h1>
+    <h1>Testimonio</h1>
   </div>
   <div class="relative mt-[220px]">
     <div
       class="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 transform md:w-[650px]"
     >
-      <Videoplayer source="dhcktckrBWg" />
+      <Videoplayer source="4qgL9sRgQss" />
     </div>
   </div>
-  <div class="bg-mango pb-12 pt-44 md:py-64">
+  <div class="bg-lightPurple pb-12 pt-44 md:py-64">
     <div class="mx-4 md:mx-0">
       <h1 class="text-center text-2xl font-bold text-white md:text-4xl">
         Mira las historias inspiradoras, los casos de éxito
       </h1>
       <h1 class="text-center text-2xl font-bold text-white md:text-4xl">
-        que ya tomaron acción. <span class="font-extrabold text-ventaBlue"
+        que ya tomaron acción. <span class="font-extrabold text-black"
           >¿Serás el próximo?</span
         >
       </h1>
@@ -119,7 +165,7 @@ import { bonosData, programaData } from "./ventaData";
   </div>
   <div class="relative">
     <div
-      class="w-full bg-ventaBlue pb-8 md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:transform md:bg-transparent"
+      class="w-full bg-lightPurple pb-8 md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:transform md:bg-transparent"
     >
       <div class="mx-12 grid gap-12 md:grid-cols-3">
         <div>
@@ -136,84 +182,38 @@ import { bonosData, programaData } from "./ventaData";
       </div>
     </div>
   </div>
-  <div class="hidden bg-ventaBlue md:block md:py-28"></div>
+  <div class="hidden bg-blueLight md:block md:py-28"></div>
   <div class="mt-12 md:mt-24">
     <img
-      src={"/venta/centro.webp"}
+      src={"/venta/MOCKUP.webp"}
       alt={`centro`}
       class="mx-auto"
       height={725}
       width={1426}
     />
-    <h1
-      class="my-8 text-center font-inter text-2xl font-bold text-ventaBlue md:text-4xl"
-    >
-      Todo lo que recibirás:
-    </h1>
-    <div class="mx-4 md:mx-14 lg:mx-36">
-      {
-        programaData.map((programa) => (
-          <div class="stuff show flex items-center justify-between font-inter lg:mx-12 lg:text-2xl">
-            <p class="w-52 md:w-auto">{programa.title}</p>
-            <span class="short" />
-            <p>{programa.value}</p>
-          </div>
-        ))
-      }
-    </div>
-
-    <h1
-      class="my-8 text-center font-inter text-2xl font-bold uppercase text-ventaBlue md:text-4xl"
-    >
-      BONOS DE REGALO
-    </h1>
-
-    <div class="mx-4 md:mx-14 lg:mx-36">
-      {
-        bonosData.map((bono) => (
-          <div class="stuff show flex items-center justify-between font-inter lg:mx-12 lg:text-2xl">
-            <p class="w-52 md:w-auto">{bono.title}</p>
-            <span class="short" />
-            <p>{bono.value}</p>
-          </div>
-        ))
-      }
-    </div>
-    <!-- <div>
-      <h1
-        class="my-8 text-center font-inter text-2xl font-bold uppercase text-ventaBlue md:text-4xl"
-      >
-        BONOS DE ACCIÓN RÁPIDA
-      </h1>
-
-      <div class="mx-4 md:mx-14 lg:mx-36">
-        <div
-          class="stuff show flex items-center justify-between font-inter lg:mx-12 lg:text-2xl"
-        >
-          <p>Mentoría 1 a 1</p>
-          <span class="short"></span>
-          <p>Valor $300 USD</p>
-        </div>
-        <div
-          class="stuff show flex items-center justify-between font-inter lg:mx-12 lg:text-2xl"
-        >
-          <p>Vende fuera de tus fronteras</p>
-          <span class="short"></span>
-          <p>Valor $197 USD.</p>
-        </div>
-        <div
-          class="stuff show flex items-center justify-between font-inter lg:mx-12 lg:text-2xl"
-        >
-          <p>Crea anuncios potentes</p>
-          <span class="short"></span>
-          <p>Valor $500 USD</p>
-        </div>
+    <div class="flex justify-center">
+      <div class="md:text-2xl">
+        {
+          footerData.map((item) => {
+            return (
+              <div class="flex items-center space-x-2">
+                <span class="h-6 flex-shrink-0">
+                  <Check />
+                </span>
+                <p class="text-sm md:text-xl">
+                  {item.desc} <span class="line-through">{item.price}</span>
+                </p>
+              </div>
+            );
+          })
+        }
       </div>
-    </div> -->
+    </div>
 
     <div class="my-24">
       <CTAVenta />
     </div>
   </div>
+  <Preguntas />
   <NewFooter />
 </section>

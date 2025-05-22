@@ -4,16 +4,16 @@ const ventainfo = [
     title: "PAGO UNICO",
     texthead: "Ahorra $97 dólares",
     textprice: "Pago Único",
-    price: "$697 dólares",
+    price: "$947 dólares",
     element: "unico",
   },
-  {
-    title: "PAGO FLEXIBLE",
-    texthead: "Paga a tu ritmo",
-    textprice: "2 pagos mensuales de",
-    price: "$397 dólares",
-    element: "flexible",
-  },
+  // {
+  //   title: "PAGO FLEXIBLE",
+  //   texthead: "Paga a tu ritmo",
+  //   textprice: "2 pagos mensuales de",
+  //   price: "$397 dólares",
+  //   element: "flexible",
+  // },
 ];
 ---
 
@@ -23,8 +23,8 @@ const ventainfo = [
   hotmart.forEach((element) => {
     element.addEventListener("click", () => {
       window.open(
-        "https://pay.hotmart.com/W42168207B?off=5kj23v80&checkoutMode=10",
-        "_blank"
+        "https://pay.hotmart.com/L93933144S?checkoutMode=10",
+        "_blank",
       );
     });
   });
@@ -37,13 +37,13 @@ const ventainfo = [
     });
   });
 
-  const flex = document.getElementsByName("flexible");
+  const flex = document.getElementsByName("stripe");
 
   flex.forEach((element) => {
     element.addEventListener("click", () => {
       window.open(
-        "https://pay.hotmart.com/W42168207B?off=j7noda03&checkoutMode=10",
-        "_blank"
+        "https://buy.stripe.com/3csbKVa0z0wTaOIaF0?locale=es-419",
+        "_blank",
       );
     });
   });
@@ -53,61 +53,107 @@ const ventainfo = [
   unico.forEach((element) => {
     element.addEventListener("click", () => {
       window.open(
-        "https://pay.hotmart.com/W42168207B?off=tfh21x75&checkoutMode=10",
-        "_blank"
+        "https://pay.hotmart.com/L93933144S?checkoutMode=10",
+        "_blank",
       );
     });
   });
 </script>
 
 <div>
-  <h2
-    class="py-4 text-center text-4xl font-bold text-redVenta line-through md:text-6xl"
+  <div
+    class="mx-4 flex flex-col items-center justify-center gap-8 py-2 md:flex-row md:py-6"
   >
-    $6,170 USD
-  </h2>
+    <!-- <div>
+      {
+        ventainfo.map((v) => (
+          <div class="border-4 border-dashed border-primary p-8 text-center">
+            <p class="my-2 text-3xl font-bold">{v.price}</p>
+            <button
+              name={v.element}
+              class={`my-2 w-full rounded-lg px-2 py-2 text-2xl font-bold uppercase shadow-lg ${
+                v.element === "unico"
+                  ? "bg-purple text-white hover:bg-purple/90"
+                  : "blue-primary border-4 hover:bg-blue hover:text-white"
+              } `}
+            >
+              Quiero llenar mi consulta
+            </button>
+          </div>
+        ))
+      }
+    </div> -->
 
-  <h2 class="py-4 text-center text-2xl font-bold md:text-4xl">
-    Recibe 88% de descuento
-  </h2>
+    <div
+      class="max-w-xs overflow-hidden rounded-xl border bg-purple/10 p-8 shadow-xl md:max-w-xl lg:p-10"
+    >
+      <section class="flex h-full flex-col justify-between">
+        <div>
+          <div class="flex w-full flex-col gap-2">
+            <div class="flex flex-col md:px-4">
+              <p class="text-base-900 text-xl font-bold tracking-tight">
+                Precio Regular
+              </p>
+              <p class="text-sm">(variable al tipo de cambio)</p>
 
-  <div class="container mx-auto grid gap-8 py-4 px-4 md:w-3/4 md:grid-cols-2">
-    {
-      ventainfo.map((v) => (
-        <div class="border-primary border-4 border-dashed p-8 text-center ">
-          <h2 class="bg-mango p-2 text-2xl font-bold text-white">{v.title}</h2>
-          <h3 class="my-2 text-xl">{v.texthead}</h3>
-          <p class="my-2 text-xl">{v.textprice}</p>
-          <p class="my-2 text-3xl font-bold">{v.price}</p>
-          <button
-            name={v.element}
-            class={`my-2 w-full rounded-lg py-2 text-2xl font-bold uppercase shadow-lg  ${
-              v.element === "unico"
-                ? "bg-primary text-white hover:bg-blue-800"
-                : "border-primary hover:bg-primary border-4 hover:text-white"
-            } `}
-          >
-            Seleccionar
-          </button>
+              <p class="mt-8 text-4xl font-bold tracking-tighter text-purple">
+                $947 USD
+              </p>
+            </div>
+          </div>
         </div>
-      ))
-    }
-  </div>
-
-  <div class="mt-4 flex flex-col items-center gap-4 px-4 md:gap-10">
-    <!-- <button
-      name="hotmart"
-      class="rounded-2xl bg-redVenta px-24 py-3 text-center font-coolvetica text-xl text-white shadow-[10px_10px_2px_0px_rgba(0,0,0,0.07)] hover:bg-red-700 md:text-3xl"
+        <button
+          name="unico"
+          class="my-2 w-full rounded-lg bg-purple px-2 py-2 text-2xl font-bold uppercase text-white shadow-lg"
+        >
+          Quiero llenar mi consulta
+        </button>
+      </section>
+    </div>
+    <div
+      class="relative max-w-xs overflow-hidden rounded-xl border bg-blue/10 p-8 shadow-xl md:max-w-xl lg:p-10"
     >
-      QUIERO MI CUPO YA
-    </button> -->
-
-    <button
-      name="whats"
-      class="flex items-center gap-4 rounded-2xl bg-[#0bd100] px-24 py-3 text-center font-coolvetica text-base text-white shadow-[10px_10px_2px_0px_rgba(0,0,0,0.07)] hover:bg-green-500 md:text-lg"
-    >
-      <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
-      ¿Necesitas ayuda?
-    </button>
+      <div class="absolute right-0 top-0 h-16 w-16">
+        <div
+          class="absolute right-[-35px] top-[32px] w-[170px] rotate-45 transform bg-blue py-1 text-center font-bold text-white"
+        >
+          Promo -10%
+        </div>
+      </div>
+      <section class="flex h-full flex-col justify-between">
+        <div>
+          <div class="flex w-full flex-col gap-2">
+            <div class="flex flex-col md:px-4">
+              <p class="text-base-900 text-base font-medium tracking-tight">
+                Oferta exclusiva para:
+              </p>
+              <p>
+                <span class="font-bold">Mexico</span> y los primeros 12 inscritos
+                al programa
+              </p>
+              <p class="mt-8 text-4xl font-bold tracking-tighter text-purple">
+                $18,000 MXN
+              </p>
+            </div>
+          </div>
+        </div>
+        <button
+          name="stripe"
+          class="my-2 w-full rounded-lg bg-blue px-2 py-2 text-2xl font-bold uppercase text-white shadow-lg"
+        >
+          Acepto la oferta
+        </button>
+      </section>
+    </div>
   </div>
+</div>
+
+<div class="mt-4 flex flex-col items-center gap-4 px-4 md:gap-10">
+  <button
+    name="whats"
+    class="flex items-center gap-4 rounded-2xl bg-[#0bd100] px-24 py-3 text-center font-coolvetica text-base text-white shadow-[10px_10px_2px_0px_rgba(0,0,0,0.07)] hover:bg-green-500 md:text-lg"
+  >
+    <img src="/whatsapp-logo.webp" alt="logo whatsapp" class="h-8 w-8" />
+    ¿Necesitas ayuda?
+  </button>
 </div>

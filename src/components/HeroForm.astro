@@ -1,60 +1,39 @@
 ---
+import Whats from "../assets/whats.astro";
 import FormularioRegistro from "./FormularioRegistro.astro";
+import ArrowDown from "./icons/ArrowDown.astro";
 ---
 
 <section>
   <div class="flex flex-col items-center font-semibold">
-    <div
-      class="mx-2 items-center rounded-xl px-8 py-4 text-center md:text-white"
-    >
-      <h1 class="text-xl md:text-[28px]">
-        <span class="bg-blue-600 p-[2px] uppercase">REGISTRO GRATIS</span> al taller
-      </h1>
+    <div class="mx-2 items-center rounded-xl px-8 py-4 text-center">
       <h2 class="mt-2 text-xl font-semibold md:text-2xl">
-        Evento <span class="font-bold">100%</span> online del
+        Te lo explico en un Taller gratuito 100% online
       </h2>
-      <h2 class="text-xl font-bold md:text-2xl">
-        23 al 26 de Septiembre por Zoom
+      <h2 class="mt-2 text-xl font-semibold md:text-2xl">
+        por Zoom del 24 al 28 de Marzo a las 12:00 CDMX
       </h2>
     </div>
   </div>
   <div class="flex items-center justify-center">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke-width="3"
-      stroke="black"
-      class="h-6 w-6 animate-bounce"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"></path>
-    </svg>
-    <h2 class="px-4 text-xl font-semibold md:text-[28px] md:text-white">
-      Regístrate
-    </h2>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke-width="3"
-      stroke="black"
-      class="h-6 w-6 animate-bounce"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"></path>
-    </svg>
+    <ArrowDown />
+    <h2 class="px-4 text-xl font-semibold md:text-[28px]">Regístrate</h2>
+    <ArrowDown />
   </div>
   <div>
+    <div class="flex items-center justify-center px-4">
+      <h2 class="px-4 text-base font-semibold md:text-[28px] md:text-xl">
+        y unete al grupo de Whatsapp
+      </h2>
+      <div class="h-10 w-10 md:h-16 md:w-16">
+        <Whats />
+      </div>
+    </div>
     <FormularioRegistro />
 
     <div class="mx-4 flex flex-col items-center py-8 md:gap-4">
-      <p class="text-center text-2xl font-semibold text-white">
-        La oportunidad de registro expira en:
+      <p class="text-center text-2xl font-semibold text-purple">
+        La oportunidad de registro expira hoy
       </p>
       <div class="grid justify-items-center">
         <div class="mt-4 h-12 w-[300px] md:w-[450px]">
@@ -66,7 +45,6 @@ import FormularioRegistro from "./FormularioRegistro.astro";
     </div>
   </div>
 </section>
-
 <style>
   .meter {
     box-sizing: content-box;
@@ -77,6 +55,7 @@ import FormularioRegistro from "./FormularioRegistro.astro";
     padding: 5px;
     box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
   }
+
   .meter > span {
     display: block;
     height: 100%;
@@ -84,17 +63,15 @@ import FormularioRegistro from "./FormularioRegistro.astro";
     border-bottom-right-radius: 8px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-    background-color: rgb(43, 194, 83);
-    background-image: linear-gradient(
-      center bottom,
-      rgb(43, 194, 83) 37%,
-      rgb(84, 240, 84) 69%
-    );
-    box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3),
+    background-color: #b3a7d8;
+    background-image: linear-gradient(center bottom, #b3a7d8 37%, #b3a7d8 69%);
+    box-shadow:
+      inset 0 2px 9px rgba(255, 255, 255, 0.3),
       inset 0 -2px 6px rgba(0, 0, 0, 0.4);
     position: relative;
     overflow: hidden;
   }
+
   .meter > span:after,
   .animate > span > span {
     content: "";
@@ -137,7 +114,7 @@ import FormularioRegistro from "./FormularioRegistro.astro";
   }
 
   .red > span {
-    background-image: linear-gradient(#0341fb, #293e7e);
+    background-image: linear-gradient(#b3a7d8, #9182b0);
   }
 
   * {

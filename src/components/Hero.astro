@@ -2,10 +2,8 @@
 import HeroForm from "./HeroForm.astro";
 ---
 
-<div
-  class="h-full bg-red-600 bg-[url(/subtle-prism.svg)] bg-cover pb-12 text-white"
->
-  <h1 class="pt-2 text-center text-xl font-bold text-black md:pt-4 md:text-3xl">
+<div class="h-full bg-cover pb-12 text-white">
+  <h1 class="pt-2 text-center text-xl font-bold text-blue md:pt-4 md:text-3xl">
     TALLER CONSIGUE PACIENTES EN REDES SOCIALES
   </h1>
   <div class="container mx-auto">
@@ -13,23 +11,19 @@ import HeroForm from "./HeroForm.astro";
       <h1
         class="mx-4 rounded-lg p-4 px-2 text-center text-xl font-semibold md:mx-auto md:px-16 md:text-3xl"
       >
-        Conoce el método para multiplicar tu número de consultas,<span
-          class="underline"
-          >aplicando estrategias comprobadas por cientos de expertos</span
-        > y sin tener que publicar en redes todos los días
+        Multiplicar el número de pacientes si es posible, con el método
+        Incrementa Tu Consulta
       </h1>
       <div class="grid justify-items-center md:grid-cols-2">
-        <img
-          src="/images/atrae.webp"
-          width={412}
-          height={558}
-          alt="Berenice Bastidas"
-          class="place-self-center px-6 lg:px-0"
-        />
-
-        <div class="order-first md:order-last">
+        <div class="order-first">
           <HeroForm />
         </div>
+        <img
+          src="/images/atrae.webp"
+          height={512}
+          alt="Berenice Bastidas"
+          class="hidden h-auto place-self-center px-6 sm:block lg:px-0"
+        />
       </div>
     </div>
   </div>

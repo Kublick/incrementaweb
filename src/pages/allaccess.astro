@@ -5,7 +5,6 @@ import Replay from "../components/player/Replay.astro";
 import Layout from "../layouts/Layout.astro";
 import { allAccessEndDate } from "../utils/constants";
 
-
 const plc1 = "7PwJL1E29W0";
 const plc2 = "_iajV548vYc";
 const plc3 = "V57uTx9EFKg";
@@ -19,7 +18,8 @@ const vip = "¡ Quiero Registrame al grupo VIP !";
   // import { getLead } from "../hooks/getLead";
   import JSConfetti from "js-confetti";
 
-  const grupovip = "https://www.incrementatuconsulta.com/inscripciones-abiertas";
+  const grupovip =
+    "https://www.incrementatuconsulta.com/inscripciones-abiertas";
   const jsConfetti = new JSConfetti();
 
   document.querySelectorAll("#botonazo").forEach((e) => {
@@ -35,7 +35,7 @@ const vip = "¡ Quiero Registrame al grupo VIP !";
 <Layout title="All Access - Incrementa tu consulta">
   <section class="">
     <h1
-      class="mb-4 bg-ventaBlue px-4 py-6 text-center font-coolvetica text-xl font-bold text-white md:mb-12 md:text-5xl"
+      class="mb-4 bg-blue px-4 py-6 text-center font-coolvetica text-xl font-bold text-white md:mb-12 md:text-5xl"
     >
       Mira todas las clases antes de que se detenga el reloj:
     </h1>

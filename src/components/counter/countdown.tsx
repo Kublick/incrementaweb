@@ -7,16 +7,18 @@ type Props = {
   color: boolean;
 };
 export const ChinneseCountDown = ({
-  date = "2023-01-25 16:40",
+  date = "2025-02-6 16:40",
   color,
 }: Props) => {
   return (
-    <FlipClockCountdown
-      className={color ? "flip-clock" : "flip-clock-black"}
-      to={new Date(date)}
-      digitBlockStyle={{ fontSize: 24, fontFamily: "Coolvetica" }}
-      showLabels={false}
-      showSeparators={false}
-    />
+    <div>
+      <FlipClockCountdown
+        className={color ? "flip-clock" : "flip-clock-black"}
+        to={new Date(date)}
+        digitBlockStyle={{ fontSize: 24, fontFamily: "Coolvetica" }}
+        showLabels={false}
+        showSeparators={false}
+      />
+    </div>
   );
 };

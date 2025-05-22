@@ -1,5 +1,8 @@
 ---
-import { programaData } from "./ventaData";
+import Check from "./Check.astro";
+import CheckBlack from "./CheckBlack.astro";
+import CTAVenta from "./CTAVenta.astro";
+import { programaData, programExtrasData } from "./ventaData";
 ---
 
 <script>
@@ -40,65 +43,109 @@ import { programaData } from "./ventaData";
 
 <section class="mt-8 md:mt-16">
   <img
-    src={"/venta/centro.webp"}
+    src={"/venta/MOCKUP.webp"}
     alt={`centro`}
-    class="mx-auto"
-    height={725}
-    width={1426}
+    height={484}
+    width={951}
+    class="mx-auto hidden md:block"
   />
 
-  <div class="my-2 mx-auto w-1/2 rounded-md bg-secondary py-1 shadow-lg"></div>
+  <img
+    src={"/venta/MOCKUP.webp"}
+    alt={`centro`}
+    height={323}
+    width={566}
+    class="mx-auto block md:hidden"
+  />
+
+  <div class="mx-auto my-2 w-1/2 rounded-md bg-blueLight py-1 shadow-lg"></div>
 
   <h1
-    class="my-4 text-center font-coolvetica text-xl text-ventaBlue md:my-8 md:text-3xl"
+    class="my-4 text-center font-coolvetica text-xl text-blue md:my-8 md:text-3xl"
   >
     Incrementa tu consulta incluye:
   </h1>
-  <div class="mx-auto grid md:gap-8 lg:w-1/2 lg:gap-16">
+  <div class="mx-auto md:gap-8 lg:w-1/2 lg:gap-16">
     {
       programaData.map((programa) => {
-        return programa.id % 2 ? (
-          <div class="stuff show mt-4 grid items-center gap-4  md:mx-12 md:grid-cols-2 md:gap-8 lg:mx-0 lg:grid-cols-2 lg:gap-24">
-            <img
-              src={programa.image}
-              alt={`Imagen programa ${programa.id}`}
-              height={229}
-              width={233}
-              class=" mt-8 place-self-center p-1 md:mt-0"
-            />
+        return (
+          <div class="stuff show mt-4 grid items-center gap-4 md:mx-12 md:gap-8 lg:mx-0 lg:gap-24">
             <div class="mx-4">
-              <h2 class="font-coolvetica text-ventaBlue text-2xl">
+              <h2 class="font-coolvetica text-2xl text-purple">
                 {programa.title}
               </h2>
-              <p class="font-inter text-sm">{programa.description}</p>
-
-              <h2 class="font-coolvetica text-ventaBlue my-4 text-2xl ">
-                {programa.value}
-              </h2>
+              <div>
+                <div class="flex items-center gap-2">
+                  <Check />
+                  <p class="font-semibold text-blue md:text-xl">
+                    {programa.subtitle}
+                  </p>
+                </div>
+              </div>
+              <p class="font-inter text-sm">{programa.description} </p>
             </div>
-          </div>
-        ) : (
-          <div class="stuff show grid items-center gap-4 md:mx-12 md:grid-cols-2 md:gap-8 lg:mx-0 lg:grid-cols-2 lg:gap-24">
-            <div class="mx-4">
-              <h2 class="font-coolvetica text-ventaBlue text-2xl">
-                {programa.title}
-              </h2>
-              <p class="font-inter text-sm">{programa.description}</p>
-
-              <h2 class="font-coolvetica text-ventaBlue my-4 text-2xl ">
-                {programa.value}
-              </h2>
-            </div>
-            <img
-              src={programa.image}
-              alt={`Imagen programa ${programa.id}`}
-              height={229}
-              width={233}
-              class="order-first mt-4 place-self-center p-1 md:order-last md:mt-0"
-            />
           </div>
         );
       })
     }
+
+    <h1 class="py-4 text-center font-inter text-xl text-blue md:text-3xl">
+      Convierte tu consulta en un negocio rentable de <span
+        class="font-semibold"
+      >
+        verdad</span
+      >
+    </h1>
+
+    <div class="stuff show mx-auto p-2 md:text-xl">
+      <p>
+        Revisaremos un módulo por semana, <span
+          class="font-semibold text-blueLight"
+        >
+          la cita</span
+        > es los días <span class="font-semibold text-blueLight">
+          Miercoles 7 pm hora de la ciudad de México
+        </span>
+        , si no puedes estar en vivo, no te preocupes porque no te perderás de absolutamente
+        de nada, ¡te tenemos cubierto!, para ti la clase quedara grabada y la miras
+        después a la hora que tú quieras, desde tu celular o tu computadora.
+      </p>
+      <p class="py-2">Las fechas de las clases en vivo son los días:</p>
+      <ul class="ml-4 pb-2 md:pb-4">
+        <li>2 de Abril 2025</li>
+        <li>9 de Abril 2025</li>
+        <li>16 de Abril 2025</li>
+        <li>23 de Abril 2025</li>
+        <li>30 de Abril 2025</li>
+      </ul>
+      <p>
+        Y además tendrás acceso durante todo un año, 12 meses al contenido del
+        curso para que puedas verlo, repetirlo e incluso compartirlo con tu
+        equipo de la clínica o el consultorio con quien trabajas.
+      </p>
+      <p>En este curso tendras también acceso a:</p>
+
+      {
+        programExtrasData.map((programa) => {
+          return (
+            <div class="stuff show mt-4 md:mx-12 md:gap-8 lg:mx-0 lg:gap-24">
+              <div class="mx-2 flex gap-2 md:items-center">
+                <CheckBlack />
+                <h2 class="font-coolvetica text-blue md:text-2xl">
+                  {programa.title}
+                  <span class="font-semibold text-blueLight line-through">
+                    {programa.price}
+                  </span>
+                </h2>
+              </div>
+              <p class="mx-2 font-inter text-sm">{programa.description}</p>
+            </div>
+          );
+        })
+      }
+    </div>
+    <div class="mb-8 md:mb-24">
+      <CTAVenta />
+    </div>
   </div>
 </section>

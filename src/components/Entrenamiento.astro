@@ -48,20 +48,24 @@ import "animate.css";
     {
       entrenamiento.map((et) => {
         return et.id % 2 ? (
-          <div class="grid items-center justify-items-center gap-4 md:grid-cols-2 md:gap-8 lg:mx-0 lg:grid-cols-2 ">
+          <div class="grid items-center justify-items-center gap-4 md:grid-cols-2 md:gap-8 lg:mx-0 lg:grid-cols-2">
             <img src={et.img} alt={et.alt} width={458} class="animate px-2" />
             <div class="mx-4">
-              <h2 class="font-coolvetica text-3xl ">{et.title}</h2>
+              <h2 class="font-coolvetica text-3xl text-blue">{et.title}</h2>
               <div class="my-4 h-[2px] w-full bg-black" />
-              <p class="font-inter md:w-96 md:text-xl">{et.contents}</p>
+              <p class="font-inter text-slate-500 md:w-96 md:text-black/60">
+                {et.contents}
+              </p>
             </div>
           </div>
         ) : (
           <div class="grid items-center gap-4 md:mx-12 md:grid-cols-2 md:gap-8 lg:mx-0 lg:grid-cols-2 lg:gap-24">
             <div class="mx-4">
-              <h2 class="font-coolvetica  text-3xl">{et.title}</h2>
+              <h2 class="font-coolvetica text-3xl text-blue">{et.title}</h2>
               <div class="my-4 h-[2px] w-full bg-black" />
-              <p class="font-inter md:w-96 md:text-xl">{et.contents}</p>
+              <p class="font-inter text-slate-500 md:w-96 md:text-xl">
+                {et.contents}
+              </p>
             </div>
             <img
               src={et.img}

@@ -1,14 +1,13 @@
 ---
 import { quickActionBonus } from "../../utils/constants";
-import { FlipCD } from "../FlipCountdown";
 ---
 
 <div id="bonos">
-  <h2 class="text-center text-4xl font-extrabold uppercase text-ventaBlue">
+  <h2 class="text-center text-4xl font-extrabold uppercase text-blue">
     BONOS DE ACCIÓN RÁPIDA
   </h2>
   <h2
-    class="mt-2 animate-pulse text-center text-xl font-extrabold uppercase text-ventaBlue"
+    class="mt-2 animate-pulse text-center text-xl font-extrabold uppercase text-blue"
   >
     (Solo tenemos 10 cupos disponibles)
   </h2>
@@ -21,7 +20,7 @@ import { FlipCD } from "../FlipCountdown";
         height="79"
         class="mx-auto pt-8 md:pt-0"
       />
-      <h3 class="text-center font-coolvetica text-2xl text-ventaBlue">
+      <h3 class="text-center font-coolvetica text-2xl text-blue">
         Mentoria 1 a 1
       </h3>
       <p class="mx-10 mt-4 text-justify">
@@ -44,7 +43,7 @@ import { FlipCD } from "../FlipCountdown";
         height="79"
         class="mx-auto my-4"
       />
-      <h3 class="text-center font-coolvetica text-2xl text-ventaBlue">
+      <h3 class="text-center font-coolvetica text-2xl text-blue">
         Vende fuera de tus fronteras
       </h3>
       <p class="mx-10 mt-4 text-justify">
@@ -66,7 +65,7 @@ import { FlipCD } from "../FlipCountdown";
         height="79"
         class="mx-auto my-4 md:pt-0"
       />
-      <h3 class="text-center font-coolvetica text-2xl text-ventaBlue">
+      <h3 class="text-center font-coolvetica text-2xl text-blue">
         Crea anuncios potentes
       </h3>
       <p class="mx-10 my-4 text-justify">
@@ -85,10 +84,10 @@ import { FlipCD } from "../FlipCountdown";
   </div>
 
   <div class="mx-4 md:mx-0">
-    <h2 class="text-center text-4xl font-extrabold uppercase text-ventaBlue">
+    <h2 class="text-center text-4xl font-extrabold uppercase text-blue">
       3 bonos de regalo valorados en
     </h2>
-    <h1 class="text-center text-4xl font-extrabold text-ventaBlue">
+    <h1 class="text-center text-4xl font-extrabold text-blue">
       <span class="text-5xl text-redVenta line-through"> $997</span>
       <span class="text-5xl text-redVenta">dólares</span>
       completamente GRATIS
@@ -96,12 +95,12 @@ import { FlipCD } from "../FlipCountdown";
     <div class="mx-auto my-20 w-1/2 rounded-md bg-secondary py-1 shadow-lg">
     </div>
 
-    <h2 class="text-center text-4xl font-extrabold text-ventaBlue">
+    <h2 class="text-center text-4xl font-extrabold text-blue">
       Los bonos de acción rápida desaparecen en:
     </h2>
   </div>
 
   <div class="my-12">
-    <FlipCD date={quickActionBonus} client:only="react" />
+    <!-- <FlipCD date={quickActionBonus} client:only="react" /> -->
   </div>
 </div>
