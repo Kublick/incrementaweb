@@ -6,7 +6,7 @@ import VentaFooter from "../components/venta/VentaFooter.astro";
 import CTAVenta from "../components/venta/CTAVenta.astro";
 import { ChinneseCountDown } from "../components/counter/countdown";
 import { salesEndDate, freeEventEndDate } from "../utils/constants";
-import VentaPuntos from "../components/venta/VentaPuntos.astro";
+
 ---
 
 
@@ -22,56 +22,61 @@ import VentaPuntos from "../components/venta/VentaPuntos.astro";
 ></script>
 
 <Layout title="Inscripciones | Incrementa tu consulta">
-  <div class="h-[380px] bg-mango md:h-[424px]">
-    <img src="/whiteLogo.svg" alt="whiteLogo" class="mx-auto py-2" />
+  <div class="my-4 flex flex-col items-center justify-center">
+    <h1 class="text-xl md:pb-4 md:text-2xl">Las inscripciones se abren en:</h1>
+    <ChinneseCountDown date={freeEventEndDate} color={false} client:visible />
+  </div>
+  <div class="py-8 md:pb-16">
+    <img
+      src="/incrementa_logo_transparente.webp"
+      alt="logo incrementa tu consulta"
+      class="mx-auto py-2"
+      width="356"
+    />
     <div class="mx-2">
-      <h1
-        class="text-center font-coolvetica text-4xl text-ventaBlue md:text-5xl"
-      >
+      <h1 class="text-center font-coolvetica text-4xl text-blue md:text-5xl">
         Llena tu agenda de pacientes
       </h1>
-      <h1
-        class="text-center font-coolvetica text-4xl text-ventaBlue md:text-5xl"
-      >
-        En menos de 60 días
+      <h1 class="text-center font-coolvetica text-3xl text-blue md:text-5xl">
+        Para tu consulta privada en 30 días o menos
       </h1>
-
-      <h2 class="mt-2 text-center font-coolvetica text-white md:text-2xl">
-        Y multiplica tus ingresos
-      </h2>
     </div>
   </div>
 
-  <div class="relative">
-    <div
-      class="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 transform px-4 md:w-[650px] md:px-0"
-    >
+  <div>
+    <div class="mx-auto flex md:w-[650px] md:px-0">
       <lite-youtube
-        videoid={"f8-5KWITnQ8"}
+        videoid={"0k5O1vobdno"}
         class="rounded-lg shadow-lg"
         videoStartAt="1933"></lite-youtube>
     </div>
   </div>
 
   <div class="mx-2">
-    <h2
-      class="mt-36 text-center font-inter text-2xl font-bold text-primary md:mt-56"
+    <!-- <h2
+      class="mt-36 text-center font-inter text-2xl font-bold text-blue md:mt-56"
     >
-      Sólo 10 cupos disponibles para los bonos de acción rápida
-    </h2>
-    <div class="my-4">
-      <CTAVenta />
-    </div>
+      Sólo 15 cupos disponibles para los bonos de acción rápida
+    </h2> -->
+    <div class="my-4 md:my-8">
+      <div>
+        <CTAVenta />
+      </div>
 
-    <h2 class="mt-12 text-center font-inter text-2xl">
-      El programa cerrará sus puertas en:
-    </h2>
-    <div class="mt-8 flex justify-center">
-      <ChinneseCountDown client:load date={salesEndDate} color={false} />
+      <h2 class="mt-12 text-center font-inter text-2xl">
+        El programa cerrará sus puertas en:
+      </h2>
+      <div class="mt-8 flex justify-center">
+        <ChinneseCountDown
+          date={salesEndDate}
+          color={false}
+          client:only="react"
+        />
+      </div>
     </div>
+    <!-- <VentaPuntos /> -->
+    <Programa />
+    <Bonos />
+    <VentaFooter />
   </div>
-  <VentaPuntos />
-  <Programa />
-  <Bonos />
-  <VentaFooter />
 </Layout>
