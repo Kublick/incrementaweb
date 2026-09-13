@@ -6,26 +6,17 @@ import VentaFooter from "../components/venta/VentaFooter.astro";
 import CTAVenta from "../components/venta/CTAVenta.astro";
 import { ChinneseCountDown } from "../components/counter/countdown";
 import { salesEndDate, freeEventEndDate } from "../utils/constants";
-
 ---
 
-
-<!-- <script>
-  window.onload = function () {
-    window.location.replace("https://www.incrementatuconsulta.com/");
-  };
-</script> -->
 <script
-  type="module"
-  async
   src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.4.0/lite-youtube.js"
 ></script>
 
 <Layout title="Inscripciones | Incrementa tu consulta">
-  <div class="my-4 flex flex-col items-center justify-center">
+  <!-- <div class="my-4 flex flex-col items-center justify-center">
     <h1 class="text-xl md:pb-4 md:text-2xl">Las inscripciones se abren en:</h1>
     <ChinneseCountDown date={freeEventEndDate} color={false} client:visible />
-  </div>
+  </div> -->
   <div class="py-8 md:pb-16">
     <img
       src="/incrementa_logo_transparente.webp"
@@ -34,17 +25,17 @@ import { salesEndDate, freeEventEndDate } from "../utils/constants";
       width="356"
     />
     <div class="mx-2">
-      <h1 class="text-center font-coolvetica text-4xl text-blue md:text-5xl">
+      <h1 class="font-coolvetica text-blue text-center text-4xl md:text-5xl">
         Llena tu agenda de pacientes
       </h1>
-      <h1 class="text-center font-coolvetica text-3xl text-blue md:text-5xl">
+      <h1 class="font-coolvetica text-blue text-center text-3xl md:text-5xl">
         Para tu consulta privada en 30 días o menos
       </h1>
     </div>
   </div>
 
   <div>
-    <div class="mx-auto flex md:w-[650px] md:px-0">
+    <div class="mx-auto flex md:w-162.5 md:px-0">
       <lite-youtube
         videoid={"0k5O1vobdno"}
         class="rounded-lg shadow-lg"
@@ -63,7 +54,7 @@ import { salesEndDate, freeEventEndDate } from "../utils/constants";
         <CTAVenta />
       </div>
 
-      <h2 class="mt-12 text-center font-inter text-2xl">
+      <!-- <h2 class="font-inter mt-12 text-center text-2xl">
         El programa cerrará sus puertas en:
       </h2>
       <div class="mt-8 flex justify-center">
@@ -72,7 +63,7 @@ import { salesEndDate, freeEventEndDate } from "../utils/constants";
           color={false}
           client:only="react"
         />
-      </div>
+      </div> -->
     </div>
     <!-- <VentaPuntos /> -->
     <Programa />

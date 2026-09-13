@@ -58,10 +58,10 @@ import { programaData, programExtrasData } from "./ventaData";
     class="mx-auto block md:hidden"
   />
 
-  <div class="mx-auto my-2 w-1/2 rounded-md bg-blueLight py-1 shadow-lg"></div>
+  <div class="bg-blueLight mx-auto my-2 w-1/2 rounded-md py-1 shadow-lg"></div>
 
   <h1
-    class="my-4 text-center font-coolvetica text-xl text-blue md:my-8 md:text-3xl"
+    class="font-coolvetica text-blue my-4 text-center text-xl md:my-8 md:text-3xl"
   >
     Incrementa tu consulta incluye:
   </h1>
@@ -71,13 +71,13 @@ import { programaData, programExtrasData } from "./ventaData";
         return (
           <div class="stuff show mt-4 grid items-center gap-4 md:mx-12 md:gap-8 lg:mx-0 lg:gap-24">
             <div class="mx-4">
-              <h2 class="font-coolvetica text-2xl text-purple">
+              <h2 class="font-coolvetica text-purple text-2xl">
                 {programa.title}
               </h2>
               <div>
                 <div class="flex items-center gap-2">
                   <Check />
-                  <p class="font-semibold text-blue md:text-xl">
+                  <p class="text-blue font-semibold md:text-xl">
                     {programa.subtitle}
                   </p>
                 </div>
@@ -89,7 +89,7 @@ import { programaData, programExtrasData } from "./ventaData";
       })
     }
 
-    <h1 class="py-4 text-center font-inter text-xl text-blue md:text-3xl">
+    <h1 class="font-inter text-blue py-4 text-center text-xl md:text-3xl">
       Convierte tu consulta en un negocio rentable de <span
         class="font-semibold"
       >
@@ -100,11 +100,11 @@ import { programaData, programExtrasData } from "./ventaData";
     <div class="stuff show mx-auto p-2 md:text-xl">
       <p>
         Revisaremos un módulo por semana, <span
-          class="font-semibold text-blueLight"
+          class="text-blueLight font-semibold"
         >
           la cita</span
-        > es los días <span class="font-semibold text-blueLight">
-          Miercoles 7 pm hora de la ciudad de México
+        > es los días <span class="text-blueLight font-semibold">
+          Martes 7 pm hora de la ciudad de México
         </span>
         , si no puedes estar en vivo, no te preocupes porque no te perderás de absolutamente
         de nada, ¡te tenemos cubierto!, para ti la clase quedara grabada y la miras
@@ -112,11 +112,11 @@ import { programaData, programExtrasData } from "./ventaData";
       </p>
       <p class="py-2">Las fechas de las clases en vivo son los días:</p>
       <ul class="ml-4 pb-2 md:pb-4">
-        <li>2 de Abril 2025</li>
-        <li>9 de Abril 2025</li>
-        <li>16 de Abril 2025</li>
-        <li>23 de Abril 2025</li>
-        <li>30 de Abril 2025</li>
+        <li>6 de Febrero 2027</li>
+        <li>13 de Febrero 2027</li>
+        <li>20 de Febrero 2027</li>
+        <li>27 de Febrero 2027</li>
+        <li>6 de Marzo 2027</li>
       </ul>
       <p>
         Y además tendrás acceso durante todo un año, 12 meses al contenido del
@@ -133,12 +133,12 @@ import { programaData, programExtrasData } from "./ventaData";
                 <CheckBlack />
                 <h2 class="font-coolvetica text-blue md:text-2xl">
                   {programa.title}
-                  <span class="font-semibold text-blueLight line-through">
+                  <span class="text-blueLight font-semibold line-through">
                     {programa.price}
                   </span>
                 </h2>
               </div>
-              <p class="mx-2 font-inter text-sm">{programa.description}</p>
+              <p class="font-inter mx-2 text-sm">{programa.description}</p>
             </div>
           );
         })
