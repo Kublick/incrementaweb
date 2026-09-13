@@ -5,9 +5,9 @@ const { nombre, img, contenido, titulo } = Astro.props;
 ---
 
 <div
-  class="mx-12 my-4 flex min-w-[300px] flex-col flex-wrap justify-around rounded-xl border-2 border-secondary bg-secondary p-6"
+  class="border-secondary bg-secondary mx-12 my-4 flex min-w-75 flex-col flex-wrap justify-around rounded-xl border-2 p-6"
 >
-  <div class="h-[320px] text-white">
+  <div class="h-80 text-white">
     <div class="flex items-center gap-2">
       <img src={img} alt={nombre} loading="lazy" width="110" />
       <div>
